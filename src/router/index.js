@@ -7,8 +7,10 @@ const Home = () =>
 //   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventCreate.vue");
 const EventList = () =>
   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventList.vue");
+const HomeDetail = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/homeDetail/HomeDetail.vue");
 // const menu = () => 
-//   import("@/")
+//   import("@/")homeDetail
 
 const routes = [
   {
@@ -26,6 +28,15 @@ const routes = [
     component: EventList,
     meta: {
       title: "EventList",
+      layout: "",
+    },
+  },
+  {
+    path: "/home-detail",
+    name: "HomeDetail",
+    component: HomeDetail,
+    meta: {
+      title: "Home detail",
       layout: "",
     },
   },

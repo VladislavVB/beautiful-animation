@@ -1,0 +1,197 @@
+<template>
+  <Logo />
+  <Menu />
+  <Contact />
+  <Case />
+  <Lang />
+  <div class="homeDetail-wrapper">
+    <div class="homeDetail">
+      <div class="homeDetail-left">
+        <router-link to="/">
+          <div class="homeDetail-left-back">
+            <img src="@/assets/images/icon/back.png" alt="" />
+          </div>
+        </router-link>
+        <div class="slideHome-images">
+          <img src="@/assets/images/home/phoneOne.png" alt="" />
+        </div>
+        <p class="slideHome-description">Mobile application</p>
+        <h3 class="slideHome-title">AVATARS</h3>
+      </div>
+      <div class="homeDetail-right">
+        <div class="homeDetail-right-body">
+          <h2>AVATARS</h2>
+          <p>Разработка современного мобильного приложения</p>
+
+          <p class="paragraph-title">Задача</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
+            massa sollicitudin sed. Sapien in pellentesque nascetur purus
+            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
+            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
+            ullamcorper scelerisque.
+          </p>
+          <div class="paragraph-section">
+            <div class="paragraph-item">
+              <p class="paragraph-title">Задача</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="paragraph-item">
+              <p class="paragraph-title">Задача</p>
+              <p>до 800 000 рублей</p>
+            </div>
+          </div>
+          <div class="homeDetail-right-body-img">
+            <img src="@/assets/images/homeDetail/one.jpg" alt="" />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
+            massa sollicitudin sed. Sapien in pellentesque nascetur purus
+            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
+            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
+            ullamcorper scelerisque.
+          </p>
+          <div class="homeDetail-right-body-img">
+            <img src="@/assets/images/homeDetail/two.jpg" alt="" />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
+            massa sollicitudin sed. Sapien in pellentesque nascetur purus
+            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
+            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
+            ullamcorper scelerisque. <br /><br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
+            massa sollicitudin sed. Sapien in pellentesque nascetur purus
+            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
+            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
+            ullamcorper scelerisque.
+          </p>
+          <div class="homeDetail-right-body-img">
+            <img src="@/assets/images/homeDetail/three.jpg" alt="" />
+          </div>
+          <div class="paragraph-section">
+            <div class="paragraph-item">
+              <p class="paragraph-title">Сферы:</p>
+              <p>Социальные сети/ Реферальная система</p>
+            </div>
+            <div class="paragraph-item">
+              <p class="paragraph-title">Сроки:</p>
+              <p>Проект выполнен за 4 месяца</p>
+            </div>
+          </div>
+          <div class="like-prodgect">
+            <h3>Понравился проект?</h3>
+            <router-link to="/">
+              <div class="like-prodgect-item">
+                <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
+                <div class="arrow">
+                  <img src="@/assets/images/icon/arrowSm.png" alt="" />
+                </div>
+              </div>
+            </router-link>
+          </div>
+          <div class="homeDetail-right-bottom">
+            <div class="homeDetail-right-bottom-item">
+              <div class="item-arrow prev">
+                <svg
+                  width="33"
+                  height="22"
+                  viewBox="0 0 33 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M17.0818 0.140326C16.8918 -0.0431421 16.5891 -0.0378528 16.4057 0.15207C16.2267 0.337375 16.2267 0.631112 16.4057 0.816373L26.5861 10.9977L16.4047 21.1781C16.2148 21.3615 16.2096 21.6642 16.393 21.8542C16.5765 22.0441 16.8791 22.0493 17.0691 21.8659C17.0731 21.862 17.077 21.8582 17.0808 21.8542L27.5997 11.3353C27.7864 11.1486 27.7864 10.8459 27.5997 10.6592L17.0818 0.140326Z"
+                      fill="#F44336"
+                    />
+                    <path
+                      d="M16.7436 21.9946C16.4796 21.9951 16.2651 21.7814 16.2646 21.5173C16.2644 21.39 16.315 21.2679 16.4051 21.178L26.5865 10.9976L16.4051 0.817256C16.2182 0.630292 16.2182 0.327187 16.4051 0.140223C16.5921 -0.046741 16.8952 -0.046741 17.0822 0.140223L27.6011 10.6591C27.7877 10.8458 27.7877 11.1485 27.6011 11.3352L17.0822 21.8541C16.9925 21.944 16.8707 21.9946 16.7436 21.9946Z"
+                      fill="black"
+                    />
+                  </g>
+                  <g clip-path="url(#clip1)">
+                    <path
+                      d="M6.08177 0.140326C5.89185 -0.0431421 5.58915 -0.0378528 5.40568 0.15207C5.22674 0.337375 5.22674 0.631112 5.40568 0.816373L15.5861 10.9977L5.40474 21.1781C5.21482 21.3615 5.20957 21.6642 5.39299 21.8542C5.57646 22.0441 5.87912 22.0493 6.06909 21.8659C6.07308 21.862 6.07698 21.8582 6.08083 21.8542L16.5997 11.3353C16.7864 11.1486 16.7864 10.8459 16.5997 10.6592L6.08177 0.140326Z"
+                      fill="#F44336"
+                    />
+                    <path
+                      d="M5.74365 21.9946C5.47958 21.9951 5.26514 21.7814 5.26465 21.5173C5.26443 21.39 5.31499 21.2679 5.40513 21.178L15.5865 10.9976L5.40513 0.817256C5.21817 0.630292 5.21817 0.327187 5.40513 0.140223C5.59209 -0.046741 5.8952 -0.046741 6.08216 0.140223L16.6011 10.6591C16.7877 10.8458 16.7877 11.1485 16.6011 11.3352L6.08216 21.8541C5.99251 21.944 5.87068 21.9946 5.74365 21.9946Z"
+                      fill="black"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <rect
+                        width="22"
+                        height="22"
+                        fill="white"
+                        transform="translate(11)"
+                      />
+                    </clipPath>
+                    <clipPath id="clip1">
+                      <rect width="22" height="22" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <p>Проект CheckSkin</p>
+            </div>
+            <div class="homeDetail-right-bottom-item">
+              <p>Проект CheckSkin</p>
+              <div class="item-arrow next">
+                <svg
+                  width="33"
+                  height="22"
+                  viewBox="0 0 33 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0)">
+                    <path
+                      d="M17.0818 0.140326C16.8918 -0.0431421 16.5891 -0.0378528 16.4057 0.15207C16.2267 0.337375 16.2267 0.631112 16.4057 0.816373L26.5861 10.9977L16.4047 21.1781C16.2148 21.3615 16.2096 21.6642 16.393 21.8542C16.5765 22.0441 16.8791 22.0493 17.0691 21.8659C17.0731 21.862 17.077 21.8582 17.0808 21.8542L27.5997 11.3353C27.7864 11.1486 27.7864 10.8459 27.5997 10.6592L17.0818 0.140326Z"
+                      fill="#F44336"
+                    />
+                    <path
+                      d="M16.7436 21.9946C16.4796 21.9951 16.2651 21.7814 16.2646 21.5173C16.2644 21.39 16.315 21.2679 16.4051 21.178L26.5865 10.9976L16.4051 0.817256C16.2182 0.630292 16.2182 0.327187 16.4051 0.140223C16.5921 -0.046741 16.8952 -0.046741 17.0822 0.140223L27.6011 10.6591C27.7877 10.8458 27.7877 11.1485 27.6011 11.3352L17.0822 21.8541C16.9925 21.944 16.8707 21.9946 16.7436 21.9946Z"
+                      fill="black"
+                    />
+                  </g>
+                  <g clip-path="url(#clip1)">
+                    <path
+                      d="M6.08177 0.140326C5.89185 -0.0431421 5.58915 -0.0378528 5.40568 0.15207C5.22674 0.337375 5.22674 0.631112 5.40568 0.816373L15.5861 10.9977L5.40474 21.1781C5.21482 21.3615 5.20957 21.6642 5.39299 21.8542C5.57646 22.0441 5.87912 22.0493 6.06909 21.8659C6.07308 21.862 6.07698 21.8582 6.08083 21.8542L16.5997 11.3353C16.7864 11.1486 16.7864 10.8459 16.5997 10.6592L6.08177 0.140326Z"
+                      fill="#F44336"
+                    />
+                    <path
+                      d="M5.74365 21.9946C5.47958 21.9951 5.26514 21.7814 5.26465 21.5173C5.26443 21.39 5.31499 21.2679 5.40513 21.178L15.5865 10.9976L5.40513 0.817256C5.21817 0.630292 5.21817 0.327187 5.40513 0.140223C5.59209 -0.046741 5.8952 -0.046741 6.08216 0.140223L16.6011 10.6591C16.7877 10.8458 16.7877 11.1485 16.6011 11.3352L6.08216 21.8541C5.99251 21.944 5.87068 21.9946 5.74365 21.9946Z"
+                      fill="black"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <rect
+                        width="22"
+                        height="22"
+                        fill="white"
+                        transform="translate(11)"
+                      />
+                    </clipPath>
+                    <clipPath id="clip1">
+                      <rect width="22" height="22" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "homeDetail",
+};
+</script>

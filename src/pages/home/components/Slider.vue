@@ -9,7 +9,7 @@
     @slideChange="onSlideChange"
   >
     <swiper-slide v-for="item in casesList" :key="item.id">
-      <router-link to="/">
+      <router-link to="/home-detail">
         <div :style="{ background: item.background }" class="slideHome">
           <div class="slideHome-images">
             <img :src="require(`@/assets/images/home/${item.image}`)" alt="" />

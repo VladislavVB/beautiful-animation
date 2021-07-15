@@ -101,3 +101,135 @@
     }
   }
 }
+
+.sidebar {
+  &-logo {
+    z-index: 10;
+    position: absolute;
+    top: 37px;
+    font-weight: 400;
+    left: 30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  &-menu {
+    z-index: 10;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transition: 0.5s;
+      .sidebar {
+        &-menu {
+          &-one {
+            transition: 0.5s;
+            margin-right: 5px;
+          }
+          &-three {
+            transition: 0.5s;
+            margin-right: 22px;
+          }
+        }
+      }
+    }
+    span {
+      height: 2px;
+      margin-bottom: 12px;
+      border-radius: 2px;
+
+      display: block;
+    }
+    &-one {
+      transition: 0.5s;
+      width: 44px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &-two {
+      transition: 0.5s;
+      width: 69px;
+      background-color: #fff;
+    }
+    &-three {
+      transition: 0.5s;
+      width: 33px;
+      background-color: rgba(255, 255, 255, 0.18);
+    }
+  }
+  &-contact {
+    z-index: 10;
+    position: absolute;
+    left: 30px;
+    bottom: 54px;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      cursor: pointer;
+      margin-top: 16px;
+      border-radius: 50%;
+      width: 61px;
+      height: 61px;
+      backdrop-filter: blur(15px);
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 1s;
+      &:hover {
+        transition: 1s;
+        background-color: #fff;
+        color: #000;
+        // border: 1px solid rgba(255, 255, 255);
+        svg {
+          path {
+            transition: 1s;
+            fill: #000;
+          }
+        }
+      }
+    }
+  }
+  &-case {
+    position: absolute;
+    z-index: 10;
+    transform: rotate(90deg);
+    right: 2px;
+    bottom: 180px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 1s;
+    svg {
+      transform: rotate(-90deg);
+    }
+    &:hover {
+      transition: 1s;
+      svg {
+        transition: 1s;
+        margin-left: 10px;
+      }
+    }
+  }
+  &-lang {
+    position: absolute;
+    z-index: 10;
+    right: 30px;
+    bottom: 56px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    .sidebar-contact-item {
+      font-weight: 300;
+      margin: 0;
+      margin-right: 0;
+    }
+  }
+}
