@@ -2,17 +2,17 @@ import { createRouter, createWebHistory } from "vue-router";
 
 //pages
 const Home = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/Home.vue");
-const EventCreate = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/EventCreate.vue");
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/home/Home.vue");
+// const EventCreate = () =>
+//   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventCreate.vue");
 const EventList = () =>
   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventList.vue");
-const EventShow = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/EventShow.vue");
+// const menu = () => 
+//   import("@/")
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
     meta: {
@@ -21,7 +21,7 @@ const routes = [
     },
   },
   {
-    path: "/",
+    path: "/home",
     name: "event-list",
     component: EventList,
     meta: {
@@ -29,25 +29,30 @@ const routes = [
       layout: "",
     },
   },
-  {
-    path: "/event/create",
-    name: "event-create",
-    component: EventCreate,
-    meta: {
-      title: "EventCreate",
-      layout: "",
-    },
-  },
-  {
-    path: "/event/:id",
-    name: "event-show",
-    component: EventShow,
-    props: true,
-    meta: {
-      title: "EventShow",
-      layout: "",
-    },
-  },
+  // {
+  //   path: "/menulayout",
+  //   name: "menu",
+  //   component: () => import('./layouts/MenuLayout.vue')
+  // },
+  // {
+  //   path: "/event/create",
+  //   name: "event-create",
+  //   component: EventCreate,
+  //   meta: {
+  //     title: "EventCreate",
+  //     layout: "",
+  //   },
+  // },
+  // {
+  //   path: "/event/:id",
+  //   name: "event-show",
+  //   component: EventShow,
+  //   props: true,
+  //   meta: {
+  //     title: "EventShow",
+  //     layout: "",
+  //   },
+  // },
 ];
 
 const router = createRouter({

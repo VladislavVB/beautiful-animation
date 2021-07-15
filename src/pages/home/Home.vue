@@ -1,0 +1,256 @@
+<template>
+  <div class="sidebar-logo">CROUP 44</div>
+  <div class="sidebar-menu">
+    <span class="sidebar-menu-one"></span>
+    <span class="sidebar-menu-two"></span>
+    <span class="sidebar-menu-three"></span>
+  </div>
+  <div class="sidebar-contact">
+    <div class="sidebar-contact-item">
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 30 30"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 0C6.72865 0 0 6.72865 0 15C0 17.8217 0.784038 20.561 2.27135 22.9396C1.67885 25.0154 0.608654 28.9419 0.597115 28.9829C0.541731 29.186 0.601154 29.4029 0.752885 29.5488C0.904615 29.6948 1.12385 29.7467 1.32346 29.6856L7.26923 27.8567C9.59827 29.2598 12.2654 30 15 30C23.2713 30 30 23.2713 30 15C30 6.72865 23.2713 0 15 0ZM15 28.8462C12.3929 28.8462 9.85327 28.1175 7.65519 26.7398C7.56231 26.6815 7.45558 26.6521 7.34885 26.6521C7.29173 26.6521 7.23462 26.6608 7.17923 26.6775L1.9875 28.2756C2.36885 26.8835 3.05423 24.3935 3.45173 23.0083C3.49788 22.8479 3.47192 22.6748 3.38135 22.5346C1.92404 20.2921 1.15385 17.6867 1.15385 15C1.15385 7.36558 7.36558 1.15385 15 1.15385C22.6344 1.15385 28.8462 7.36558 28.8462 15C28.8462 22.6344 22.6344 28.8462 15 28.8462Z"
+          fill="white"
+        />
+        <path
+          d="M24.7991 18.5342C23.7341 17.9429 22.8272 17.3498 22.1655 16.9171C21.6601 16.5871 21.2949 16.3489 21.0272 16.2144C20.2789 15.8412 19.7118 16.1048 19.496 16.3229C19.4689 16.35 19.4447 16.3794 19.4239 16.4106C18.6468 17.5766 17.632 18.6917 17.3349 18.7517C16.9916 18.6981 15.3849 17.7848 13.788 16.455C12.1576 15.0964 11.1318 13.7954 10.9812 12.9092C12.0272 11.8327 12.4039 11.1554 12.4039 10.3846C12.4039 9.59021 10.5508 6.27348 10.2157 5.93829C9.87931 5.60252 9.12181 5.55002 7.96392 5.78079C7.85257 5.80329 7.74988 5.85809 7.66911 5.93829C7.52892 6.07848 4.24854 9.4229 5.80738 13.4764C7.51854 17.925 11.9107 23.096 17.5103 23.936C18.1466 24.0312 18.7432 24.0785 19.3016 24.0785C22.5958 24.0785 24.5401 22.421 25.0876 19.1331C25.1285 18.8925 25.0126 18.6525 24.7991 18.5342ZM17.6816 22.7948C11.7601 21.9069 8.03027 16.0402 6.8845 13.0621C5.74796 10.1083 7.84392 7.47463 8.37008 6.87925C8.79815 6.80655 9.24873 6.77598 9.43681 6.8054C9.82969 7.35175 11.1901 9.92194 11.2501 10.3846C11.2501 10.6875 11.1514 11.1092 9.97681 12.2844C9.86834 12.3923 9.80777 12.5389 9.80777 12.6923C9.80777 15.7131 16.1793 19.9039 17.3078 19.9039C18.2891 19.9039 19.5687 18.2544 20.2974 17.1796C20.3395 17.1814 20.4105 17.1958 20.5114 17.2466C20.7191 17.351 21.0791 17.5858 21.5343 17.8835C22.1355 18.2764 22.9339 18.7979 23.8766 19.3385C23.4485 21.3981 22.252 23.4814 17.6816 22.7948Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+    <div class="sidebar-contact-item">
+      <svg
+        width="31"
+        height="31"
+        viewBox="0 0 31 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0)">
+          <path
+            d="M23.3269 7.38182L10.5776 15.2341C9.8561 15.6795 9.51467 16.5592 9.74711 17.3728L11.1256 22.2166C11.2434 22.6296 11.6109 22.9041 12.0338 22.9041C12.0573 22.9041 12.0811 22.9033 12.105 22.9015C12.557 22.8687 12.9147 22.532 12.9749 22.0832L13.3333 19.4273C13.3816 19.0699 13.5538 18.7375 13.8177 18.4918L24.3387 8.71204C24.6566 8.41723 24.6986 7.93449 24.4366 7.5892C24.1742 7.24359 23.6974 7.15423 23.3269 7.38182ZM12.9765 17.5875C12.5038 18.0276 12.1958 18.6222 12.1093 19.262L11.9355 20.5503L10.9348 17.0342C10.8535 16.7494 10.9732 16.4414 11.2257 16.2855L20.5656 10.5332L12.9765 17.5875Z"
+            fill="white"
+          />
+          <path
+            d="M30.4957 2.26337C30.0973 1.92576 29.5477 1.83282 29.0608 2.02088L0.913064 12.8795C0.355609 13.0945 -0.00282888 13.6194 1.68209e-05 14.2167C0.00292307 14.8145 0.366628 15.3365 0.927353 15.5466L7.50214 18.0005L10.0668 26.2485C10.2077 26.7019 10.5631 27.0542 11.0176 27.1909C11.4718 27.3275 11.9624 27.2299 12.3291 26.93L16.152 23.8135C16.3356 23.6638 16.5977 23.6564 16.7894 23.7956L23.6847 28.8017C23.9327 28.982 24.2255 29.0748 24.5216 29.0748C24.6951 29.0748 24.8697 29.043 25.0373 28.9782C25.4906 28.8029 25.8202 28.4144 25.9189 27.939L30.9702 3.64099C31.0763 3.12937 30.8945 2.60153 30.4957 2.26337ZM29.761 3.39003L24.7097 27.688C24.6914 27.7758 24.6282 27.8123 24.5921 27.8263C24.5558 27.8403 24.484 27.8559 24.4106 27.8025L17.5151 22.7962C17.2069 22.5724 16.8445 22.4613 16.4827 22.4613C16.088 22.4613 15.6939 22.5936 15.3718 22.856L11.5481 25.9732C11.48 26.0289 11.4093 26.019 11.3734 26.0082C11.3372 25.9973 11.2726 25.9664 11.2463 25.8819L8.59162 17.3444C8.53489 17.162 8.39684 17.016 8.21786 16.9492L1.36002 14.3897C1.25733 14.3513 1.23548 14.2711 1.23517 14.2107C1.23487 14.1507 1.25594 14.071 1.35766 14.0317L29.5055 3.17321C29.5056 3.17315 29.5058 3.17309 29.506 3.17303C29.5974 3.13773 29.665 3.1783 29.6972 3.20554C29.7296 3.23309 29.781 3.29364 29.761 3.39003Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect width="31" height="31" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <p class="sidebar-case">
+    КЕЙСЫ
+    <!-- <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0)">
+        <path
+          d="M0.140204 15.9182C-0.0432642 16.1082 -0.0379749 16.4109 0.151948 16.5943C0.337253 16.7733 0.63099 16.7733 0.816251 16.5943L10.9976 6.41394L21.1779 16.5953C21.3614 16.7852 21.6641 16.7904 21.854 16.607C22.044 16.4235 22.0492 16.1209 21.8658 15.9309C21.8619 15.9269 21.858 15.923 21.854 15.9192L11.3351 5.40027C11.1484 5.21362 10.8458 5.21362 10.6591 5.40027L0.140204 15.9182Z"
+          fill="#F44336"
+        />
+        <path
+          d="M21.9946 16.2565C21.9951 16.5205 21.7814 16.735 21.5173 16.7355C21.39 16.7357 21.2679 16.6851 21.178 16.595L10.9976 6.41365L0.817257 16.595C0.630292 16.7819 0.327187 16.7819 0.140223 16.595C-0.046741 16.408 -0.0467411 16.1049 0.140223 15.9179L10.6591 5.39905C10.8458 5.2124 11.1485 5.2124 11.3352 5.39905L21.8541 15.9179C21.944 16.0076 21.9946 16.1294 21.9946 16.2565Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <rect
+            width="22"
+            height="22"
+            fill="white"
+            transform="translate(0 22) rotate(-90)"
+          />
+        </clipPath>
+      </defs>
+    </svg> -->
+  </p>
+  <div class="sidebar-lang">
+    <!-- <p>КЕЙСЫ</p> -->
+    <div class="sidebar-contact-item">EN</div>
+  </div>
+  <div class="homePage-wrapper">
+    <div class="container-fluid p-0 homePage">
+      <div class="homePage-title">
+        <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+        <p>We have developed:</p>
+      </div>
+      <slideHome />
+      <div class="slideHome-progres">
+        <div class="slideHome-progres-bar"></div>
+      </div>
+    </div>
+
+    <!-- <div class="container-fluid">
+      <div class="homePage-wrapper">
+        <div class="homePage-title">
+          <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+          <p>We have developed:</p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+// import HelloWorld from "@/components/HelloWorld.vue";
+import slideHome from "@/pages/home/components/Slider";
+
+export default {
+  name: "Home",
+  components: {
+    // HelloWorld,
+    slideHome,
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.sidebar {
+  &-logo {
+    z-index: 10;
+    position: absolute;
+    top: 37px;
+    font-weight: 400;
+    left: 30px;
+    color: #fff;
+    font-size: 30px;
+  }
+  &-menu {
+    z-index: 10;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transition: 0.5s;
+      .sidebar {
+        &-menu {
+          &-one {
+            transition: 0.5s;
+            margin-right: 5px;
+          }
+          &-three {
+            transition: 0.5s;
+            margin-right: 22px;
+          }
+        }
+      }
+    }
+    span {
+      height: 2px;
+      margin-bottom: 12px;
+      border-radius: 2px;
+
+      display: block;
+    }
+    &-one {
+      transition: 0.5s;
+      width: 44px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &-two {
+      transition: 0.5s;
+      width: 69px;
+      background-color: #fff;
+    }
+    &-three {
+      transition: 0.5s;
+      width: 33px;
+      background-color: rgba(255, 255, 255, 0.18);
+    }
+  }
+  &-contact {
+    z-index: 10;
+    position: absolute;
+    left: 30px;
+    bottom: 54px;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      cursor: pointer;
+      margin-top: 16px;
+      border-radius: 50%;
+      width: 61px;
+      height: 61px;
+      backdrop-filter: blur(15px);
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 1s;
+      &:hover {
+        transition: 1s;
+        background-color: #fff;
+        color: #000;
+        // border: 1px solid rgba(255, 255, 255);
+        svg {
+          path {
+            transition: 1s;
+            fill: #000;
+          }
+        }
+      }
+    }
+  }
+  &-case {
+    position: absolute;
+    z-index: 10;
+    transform: rotate(90deg);
+    right: 2px;
+    bottom: 180px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 1s;
+    svg {
+      transform: rotate(-90deg);
+    }
+    &:hover {
+      transition: 1s;
+      svg {
+        transition: 1s;
+        margin-left: 10px;
+      }
+    }
+  }
+  &-lang {
+    position: absolute;
+    z-index: 10;
+    right: 30px;
+    bottom: 56px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    .sidebar-contact-item {
+      font-weight: 300;
+      margin: 0;
+      margin-right: 0;
+    }
+  }
+}
+</style>

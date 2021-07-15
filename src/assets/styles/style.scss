@@ -1,4 +1,7 @@
 //Импорт дефолтных стилей проекта
+@import "~bootstrap/scss/bootstrap.scss";
+@import '~swiper/swiper-bundle.css';
+@import "~swiper/swiper.scss";
 @import "_reset";
 
 @import "_variables";
@@ -7,4 +10,6 @@
 @import "_fonts";
 @import "_defaults";
 @import "_mixins";
-
+@import "_home";
+@import "includes/header";
+@import "includes/footer";
