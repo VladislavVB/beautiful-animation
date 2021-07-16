@@ -1,14 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 //pages
-const Home = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/home/Home.vue");
-// const EventCreate = () =>
-//   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventCreate.vue");
-const EventList = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/EventList.vue");
+const Home = () => import("@/pages/home/Home.vue");
+const EventList = () => import("@/pages/EventList.vue");
 const HomeDetail = () => import("@/pages/homeDetail/HomeDetail.vue");
 const MenuPage = () => import("@/pages/menuPage/MenuPage.vue");
+const AboutPage = () => import("@/pages/aboutCompany/AboutPage.vue");
 
 const routes = [
   {
@@ -47,26 +44,15 @@ const routes = [
       layout: "",
     },
   },
-  // {
-  // {
-  //   path: "/event/create",
-  //   name: "event-create",
-  //   component: EventCreate,
-  //   meta: {
-  //     title: "EventCreate",
-  //     layout: "",
-  //   },
-  // },
-  // {
-  //   path: "/event/:id",
-  //   name: "event-show",
-  //   component: EventShow,
-  //   props: true,
-  //   meta: {
-  //     title: "EventShow",
-  //     layout: "",
-  //   },
-  // },
+  {
+    path: "/about",
+    name: "AboutPage",
+    component: AboutPage,
+    meta: {
+      title: "AboutPage",
+      layout: "",
+    },
+  },
 ];
 
 const router = createRouter({
