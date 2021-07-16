@@ -53,9 +53,9 @@ a {
 
 .gradient {
   &-text {
-    color: #fa709a;
+    // color: #fa709a;
 
-    background: linear-gradient(to top, #fa709a, #fee140);
+    // background: linear-gradient(to top, #fa709a, #fee140);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textG 1s ease-in-out infinite;
@@ -283,5 +283,50 @@ a {
   100% {
     background: linear-gradient(#8A8FFD 0%, #D0A3FD 105.43%);
   }
+}
 
+@keyframes showText {
+  0% {
+    margin-right: 100%;
+    // transition: 0.5s;
+  }
+
+  100% {
+    margin-right: 0%;
+    // transition: 0.5s;
+  }
+}
+
+.presentation {
+  &-buttom {
+    display: flex;
+    align-items: center;
+    p {
+      margin-right: 22px;
+      font-weight: 400;
+      font-size: 30px;
+      font-family: 'Lato', sans-serif;
+    }
+    &-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #F8F9FF;
+      border: 1px solid #8B90FE;
+      box-sizing: border-box;
+      backdrop-filter: blur(15px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .5s;
+    }
+    &:hover {
+      .presentation-buttom-img {
+        width: 40px;
+        background-color: transparent;
+        border-color: transparent;
+        transition: .5s;
+      }
+    }
+  }
 }

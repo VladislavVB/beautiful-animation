@@ -5,10 +5,17 @@
 </template>
 
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default {
   name: "App",
   components: {},
 };
+
+AOS.init({
+  once: true,
+});
 </script>
 
 <style lang="scss">

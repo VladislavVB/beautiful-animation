@@ -7,10 +7,8 @@ const Home = () =>
 //   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventCreate.vue");
 const EventList = () =>
   import(/* webpackChunkName: "view-[request]" */ "@/pages/EventList.vue");
-const HomeDetail = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/homeDetail/HomeDetail.vue");
-const MenuPage = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/menuPage/MenuPage.vue");
+const HomeDetail = () => import("@/pages/homeDetail/HomeDetail.vue");
+const MenuPage = () => import("@/pages/menuPage/MenuPage.vue");
 
 const routes = [
   {
@@ -50,10 +48,6 @@ const routes = [
     },
   },
   // {
-  //   path: "/menulayout",
-  //   name: "menu",
-  //   component: () => import('./layouts/MenuLayout.vue')
-  // },
   // {
   //   path: "/event/create",
   //   name: "event-create",

@@ -6,7 +6,13 @@
   <Lang />
   <div class="homePage-wrapper">
     <div class="container-fluid p-0 homePage">
-      <div class="homePage-title">
+      <div
+        class="homePage-title"
+        data-aos="fade-down"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="1500"
+      >
         <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
         <p>We have developed:</p>
       </div>
@@ -28,10 +34,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
 import slideHome from "@/pages/home/components/Slider";
-
 export default {
   name: "Home",
   components: {
@@ -40,7 +43,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

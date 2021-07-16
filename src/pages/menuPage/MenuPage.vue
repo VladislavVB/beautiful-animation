@@ -13,13 +13,33 @@
       </div>
       <div class="menuPage-body-wrapper">
         <div class="menuPage-body-menu">
-          <p>О компании</p>
-          <p>Кейсы</p>
-          <p>Контакты</p>
+          <ul>
+            <li>
+              <span>О компании </span>
+              <p class="textHover">
+                Кто мы такие, наша философи и оказываемые услуги
+              </p>
+            </li>
+            <li>
+              <span>Кейсы </span>
+              <p class="textHover">
+                Кто мы такие, наша философи и оказываемые услуги
+              </p>
+            </li>
+            <li>
+              <span>Контакты </span>
+              <p class="textHover">
+                Кто мы такие, наша философи и оказываемые услуги
+              </p>
+            </li>
+          </ul>
         </div>
         <div class="menuPage-body-buttom">
           <div class="buttom-item">
-            <p>ПРЕЗЕНТАЦИЯ</p>
+            <PresentBtn />
+          </div>
+          <div class="buttom-item">
+            <CallBtn />
           </div>
         </div>
       </div>
