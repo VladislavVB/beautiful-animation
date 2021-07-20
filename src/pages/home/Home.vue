@@ -2,7 +2,9 @@
   <Logo />
   <Menu />
   <Contact />
-  <Case />
+  <div class="d-sm-none">
+    <Case />
+  </div>
   <Lang />
   <div class="homePage-wrapper">
     <div class="container-fluid p-0 homePage">
@@ -21,15 +23,6 @@
         <div class="slideHome-progres-bar"></div>
       </div>
     </div>
-
-    <!-- <div class="container-fluid">
-      <div class="homePage-wrapper">
-        <div class="homePage-title">
-          <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
-          <p>We have developed:</p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -38,7 +31,6 @@ import slideHome from "@/pages/home/components/Slider";
 export default {
   name: "Home",
   components: {
-    // HelloWorld,
     slideHome,
   },
 };

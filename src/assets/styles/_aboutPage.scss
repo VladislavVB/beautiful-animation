@@ -1,0 +1,111 @@
+.aboutPage {
+  &-wrapper {
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-between;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fff;
+    }
+  }
+
+  &-logo {
+    font-size: 144px;
+    font-weight: 700;
+    margin-bottom: 100px;
+    white-space: nowrap;
+  }
+
+  &-block {
+    max-width: 754px;
+    margin-top: 50px;
+
+    h5 {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      line-height: 24.56px;
+    }
+  }
+
+  &-left {
+    width: 55%;
+  }
+
+  &-right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-text {
+      p {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 29.23px;
+
+        @include bigDesctop {
+          margin-top: 240px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-btns {
+
+      .btns-item {
+        margin-top: 18px;
+      }
+    }
+  }
+}
+
+@include desctop {
+  .aboutPage {
+    &-logo {
+      font-size: 96px;
+      margin-bottom: 29px;
+    }
+
+    &-right {
+      &-text {
+        p {
+          margin-top: 140px;
+          font-size: 14px;
+          line-height: 22.74px;
+        }
+      }
+    }
+  }
+}
+
+
+@include tablet {
+  .aboutPage {
+    &-wrapper {
+      display: unset;
+    }
+    &-left {
+      width: 100%;
+      margin-top: 110px;
+    }
+    &-right {
+      width: 100%;
+      margin-bottom: 130px;
+      &-text {
+        p {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}

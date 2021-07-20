@@ -56,7 +56,7 @@
   }
 
   &-images {
-    display: flex;
+    // display: flex;
     justify-content: center;
     max-width: 530px;
     max-height: 675px;
@@ -105,17 +105,22 @@
 .sidebar {
   &-logo {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     top: 37px;
     font-weight: 400;
     left: 30px;
     color: #fff;
     font-size: 30px;
     cursor: pointer;
+
+    &.active {
+      color: $black;
+    }
   }
+
   &-menu {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     top: 40px;
     right: 30px;
     color: #fff;
@@ -124,14 +129,36 @@
     flex-direction: column;
     cursor: pointer;
     transition: 0.5s;
+
+    &.active {
+
+      .sidebar {
+        &-menu {
+          &-one {
+            background: rgba(0, 0, 0, 0.5);
+          }
+
+          &-two {
+            background: #000000;
+          }
+
+          &-three {
+            background: rgba(0, 0, 0, 0.18);
+          }
+        }
+      }
+    }
+
     &:hover {
       transition: 0.5s;
+
       .sidebar {
         &-menu {
           &-one {
             transition: 0.5s;
             margin-right: 5px;
           }
+
           &-three {
             transition: 0.5s;
             margin-right: 22px;
@@ -139,6 +166,7 @@
         }
       }
     }
+
     span {
       height: 2px;
       margin-bottom: 12px;
@@ -146,29 +174,36 @@
 
       display: block;
     }
+
     &-one {
       transition: 0.5s;
       width: 44px;
       background-color: rgba(255, 255, 255, 0.5);
     }
+
     &-two {
       transition: 0.5s;
       width: 69px;
       background-color: #fff;
     }
+
     &-three {
       transition: 0.5s;
       width: 33px;
       background-color: rgba(255, 255, 255, 0.18);
     }
   }
+
+
+
   &-contact {
     z-index: 10;
-    position: absolute;
+    position: fixed;
     left: 30px;
     bottom: 54px;
     display: flex;
     flex-direction: column;
+
     &-item {
       cursor: pointer;
       margin-top: 16px;
@@ -182,10 +217,12 @@
       justify-content: center;
       align-items: center;
       transition: 1s;
+
       &:hover {
         transition: 1s;
         background-color: #fff;
         color: #000;
+
         // border: 1px solid rgba(255, 255, 255);
         svg {
           path {
@@ -195,9 +232,14 @@
         }
       }
     }
+
+    &.active {
+      color: $black;
+    }
   }
+
   &-case {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     transform: rotate(90deg);
     right: 2px;
@@ -207,29 +249,146 @@
     font-size: 30px;
     cursor: pointer;
     transition: 1s;
+
     svg {
       transform: rotate(-90deg);
     }
+
+    &.active {
+      color: $black;
+    }
+
     &:hover {
       transition: 1s;
+
       svg {
         transition: 1s;
         margin-left: 10px;
       }
     }
+
   }
+
   &-lang {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     right: 30px;
     bottom: 56px;
     color: #fff;
     display: flex;
     flex-direction: column;
+
     .sidebar-contact-item {
       font-weight: 300;
       margin: 0;
       margin-right: 0;
+    }
+
+    &.active {
+      color: $black;
+
+      &.sidebar-lang .sidebar-contact-item {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
+
+@include ipad-mini {}
+
+@include mobile {
+  .slideHome {
+    
+
+    &-title {
+      font-size: 36px;
+    }
+  }
+
+  .slideHome {
+    &-progres {
+      width: 90%;
+      bottom: 13%;
+    }
+  }
+
+  .homePage {
+    &-title {
+      h3 {
+        text-align: center;
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      &::before {
+        font-size: 48px;
+        top: -30px;
+      }
+    }
+  }
+
+  .sidebar {
+    &-logo {
+      top: 17px;
+      left: 20px;
+      font-size: 18px;
+    }
+
+    &-menu {
+      top: 20px;
+      right: 19.5px;
+
+      span {
+        height: 1.2px;
+        margin-bottom: 7.2px;
+      }
+
+      &-one {
+        width: 26.4px;
+      }
+
+      &-two {
+        width: 41.4px;
+      }
+
+      &-three {
+        width: 19.8px;
+      }
+    }
+
+    &-contact {
+      flex-direction: row-reverse;
+      bottom: 28px;
+      left: 20px;
+
+      &-item {
+        margin-top: 0;
+        margin-right: 16.5px;
+        width: 42.4px;
+        height: 42.4px;
+        font-size: 14px;
+        svg {
+          width: 21.5px;
+          height: 18.9px;
+        }
+
+      }
+    }
+    &-lang {
+      bottom: 28px;
+      right: 20px;
+    }
+  }
+
+  .homePage-title {
+    top: 80px;
+
+    p {
+      margin-top: 8px;
     }
   }
 }

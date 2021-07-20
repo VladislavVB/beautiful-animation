@@ -1,6 +1,9 @@
 <template>
-  <router-link to="">
-    <div class="sidebar-logo">CROUP 44</div>
+  <router-link to="/">
+    <div v-if="this.$route.name === 'Home' || 'AboutPage'" class="sidebar-logo">
+      CROUP 44
+    </div>
+    <div style="color: red" v-else class="sidebar-logo active">CROUP 44</div>
   </router-link>
 </template>
 

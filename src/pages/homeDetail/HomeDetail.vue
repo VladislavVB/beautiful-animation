@@ -1,27 +1,52 @@
 <template>
   <Logo />
   <Menu />
-  <Contact />
-  <Case />
-  <Lang />
+  <div class="d-sm-none">
+    <Contact />
+    <Case />
+    <Lang />
+  </div>
   <div class="homeDetail-wrapper">
     <div class="homeDetail">
       <div class="homeDetail-left">
-        <router-link to="/">
-          <div class="homeDetail-left-back">
+        <div class="homeDetail-up-title">
+          <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+          <p>We have developed:</p>
+        </div>
+        <router-link class="homeDetail-left-back" to="/">
+          <div class="">
             <img src="@/assets/images/icon/back.png" alt="" />
           </div>
         </router-link>
-        <div class="slideHome-images">
-          <img src="@/assets/images/home/phoneOne.png" alt="" />
+        <div class="homeDetail-body">
+          <div class="slideHome-images">
+            <img src="@/assets/images/home/phoneOne.png" alt="" />
+            <p class="slideHome-description">Mobile application</p>
+            <h3 class="slideHome-title">AVATARS</h3>
+          </div>
+          <a :href="`#downDetail`" class="homeDetail-body-down">
+            <p>Листайте вниз, чтобы увидеть описание проекта</p>
+            <div
+              class="
+                arrow
+                animate__animated
+                animate__pulse
+                animate__delay-2s
+                animate__infinite
+                infinite
+              "
+            >
+              <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
+            </div>
+          </a>
         </div>
-        <p class="slideHome-description">Mobile application</p>
-        <h3 class="slideHome-title">AVATARS</h3>
       </div>
-      <div class="homeDetail-right">
+      <div :id="`downDetail`" class="homeDetail-right">
         <div class="homeDetail-right-body">
           <h2>AVATARS</h2>
-          <p>Разработка современного мобильного приложения</p>
+          <p class="mb-5 sm-mb-1">
+            Разработка современного мобильного приложения
+          </p>
 
           <p class="paragraph-title">Задача</p>
           <p>
@@ -195,3 +220,13 @@ export default {
   name: "homeDetail",
 };
 </script>
+
+<style lang="scss">
+@media screen and (min-width: 576px) {
+  .sidebar {
+    &-contact {
+      display: none;
+    }
+  }
+}
+</style>

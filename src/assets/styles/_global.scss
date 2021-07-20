@@ -11,9 +11,13 @@ body {
 }
 
 #app {
-  background-color: #efeeed;
+  background-color: $white;
   display: flex;
   flex-direction: column;
+  &::-webkit-scrollbar {
+    width: 0px;
+    border-bottom-right-radius: 5px;
+  }
 }
 
 img {
@@ -306,6 +310,9 @@ a {
       font-weight: 400;
       font-size: 30px;
       font-family: 'Lato', sans-serif;
+      @include desctop {
+        font-size: 24px;
+      }
     }
     &-img {
       width: 60px;
