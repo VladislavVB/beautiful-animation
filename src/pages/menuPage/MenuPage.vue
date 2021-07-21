@@ -2,7 +2,9 @@
   <Logo />
   <Menu />
   <Contact />
-  <Case />
+  <div class="d-sm-flex d-none">
+    <Case />
+  </div>
   <Lang />
   <div class="menuPage-wrapper">
     <div class="menuPage">
@@ -32,7 +34,7 @@
                 </p>
               </li>
             </router-link>
-            <router-link to="/">
+            <router-link to="/contact">
               <li>
                 <span>Контакты </span>
                 <p class="textHover">

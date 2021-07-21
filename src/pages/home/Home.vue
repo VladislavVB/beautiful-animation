@@ -2,9 +2,9 @@
   <Logo />
   <Menu />
   <Contact />
-  <div class="d-sm-none">
-    <Case />
-  </div>
+  <!-- <div class="d-sm-none"> -->
+  <Case />
+  <!-- </div> -->
   <Lang />
   <div class="homePage-wrapper">
     <div class="container-fluid p-0 homePage">

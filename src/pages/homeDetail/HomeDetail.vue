@@ -1,7 +1,7 @@
 <template>
   <Logo />
   <Menu />
-  <div class="d-sm-none">
+  <div class="d-sm-flex d-none">
     <Contact />
     <Case />
     <Lang />
@@ -222,7 +222,7 @@ export default {
 </script>
 
 <style lang="scss">
-@media screen and (min-width: 576px) {
+@media screen and (max-width: 576px) {
   .sidebar {
     &-contact {
       display: none;
