@@ -1,7 +1,7 @@
 <template>
-  <Logo />
-  <Menu />
-  <Contact />
+  <Logo class="notAcive" />
+  <Menu class="notAcive" />
+  <Contact class="notAcive" />
   <div class="d-sm-flex d-none">
     <Case />
   </div>
@@ -9,11 +9,11 @@
   <div class="menuPage-wrapper">
     <div class="menuPage">
       <div class="menuPage-left">
-        <router-link to="/">
-          <div class="menuPage-left-back">
-            <img src="@/assets/images/icon/back.png" alt="" />
-          </div>
-        </router-link>
+        <!-- <router-link :to="-1"> -->
+        <div @click="goBack" class="menuPage-left-back">
+          <img src="@/assets/images/icon/back.png" alt="" />
+        </div>
+        <!-- </router-link> -->
       </div>
       <div class="menuPage-body-wrapper">
         <div class="menuPage-body-menu">
@@ -59,5 +59,44 @@
 <script>
 export default {
   name: "menuPage",
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
+  },
 };
 </script>
+
+<style lang="scss">
+@media screen and (max-width: 1200px) {
+  .notAcive {
+    .sidebar-logo {
+      color: #fff !important;
+    }
+    .sidebar-menu {
+      .sidebar {
+        &-menu {
+          &-one {
+            background-color: rgba(255, 255, 255, 0.5) !important;
+          }
+          &-two {
+            background-color: #fff !important;
+          }
+          &-three {
+            background-color: rgba(255, 255, 255, 0.18);
+          }
+        }
+      }
+    }
+    .sidebar-contact-item {
+      background: rgba(0, 0, 0, 0.05) !important;
+      border: 1px solid rgba(0, 0, 0, 0.15) !important;
+      svg {
+        path {
+          fill: #000;
+        }
+      }
+    }
+  }
+}
+</style>

@@ -1,6 +1,10 @@
 <template>
   <p
-    v-if="this.$route.name === 'Home' || this.$route.name === 'Contact'"
+    v-if="
+      this.$route.name === 'Home' ||
+      this.$route.name === 'Contact' ||
+      this.$route.name === 'SubmitPage'
+    "
     class="sidebar-case"
   >
     КЕЙСЫ

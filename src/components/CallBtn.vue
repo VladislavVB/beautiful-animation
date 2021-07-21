@@ -1,5 +1,6 @@
 <template>
-  <router-link to="/">
+
+  <router-link to="/submit">
     <div class="presentation-buttom">
       <p class="gradient-text">ЗАКАЗАТЬ ЗВОНОК</p>
       <div class="presentation-buttom-img">

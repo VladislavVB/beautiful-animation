@@ -1,6 +1,10 @@
 <template>
   <div
-    v-if="this.$route.name === 'Home' || this.$route.name === 'Contact'"
+    v-if="
+      this.$route.name === 'Home' ||
+      this.$route.name === 'Contact' ||
+      this.$route.name === 'SubmitPage'
+    "
     class="sidebar-lang"
   >
     <div class="sidebar-contact-item">EN</div>

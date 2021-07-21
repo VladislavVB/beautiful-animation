@@ -1,6 +1,10 @@
 <template>
   <div
-    v-if="this.$route.name === 'Home' || this.$route.name === 'MenuPage'"
+    v-if="
+      this.$route.name === 'Home' ||
+      this.$route.name === 'MenuPage' ||
+      this.$route.name === 'HomeDetail'
+    "
     class="sidebar-contact"
   >
     <div class="sidebar-contact-item">

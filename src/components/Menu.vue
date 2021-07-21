@@ -1,7 +1,11 @@
 <template>
   <router-link to="/menu-page">
     <div
-      v-if="this.$route.name === 'Home' || this.$route.name === 'Contact'"
+      v-if="
+        this.$route.name === 'Home' ||
+        this.$route.name === 'Contact' ||
+        this.$route.name === 'SubmitPage'
+      "
       class="sidebar-menu"
     >
       <span class="sidebar-menu-one"></span>
@@ -19,11 +23,16 @@
 <script>
 export default {
   name: "Menu",
+  // props: {
+  //   className: String,
+  // },
 };
 </script>
 
-// <style lang="scss">
+//
+<style lang="scss">
 // #app {
 //   overflow: hidden;
 // }
-// </style>
+//
+</style>

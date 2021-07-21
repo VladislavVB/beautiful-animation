@@ -1,7 +1,11 @@
 <template>
   <router-link to="/">
     <div
-      v-if="this.$route.name === 'Home' || this.$route.name === 'AboutPage'"
+      v-if="
+        this.$route.name === 'Home' ||
+        this.$route.name === 'HomeDetail' ||
+        this.$route.name === 'MenuPage'
+      "
       class="sidebar-logo"
     >
       CROUP 44

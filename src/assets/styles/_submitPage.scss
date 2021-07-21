@@ -1,0 +1,76 @@
+.submitPage {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  &-footer {
+    margin-bottom: 100px;
+  }
+
+  &-right {
+    width: 17.5%;
+    height: 100%;
+    background: linear-gradient(180deg, #D0A3FD 0%, #8A8FFD 100%);
+    -webkit-animation: backgroundG 3s ease-in-out infinite;
+    animation: backgroundG 3s ease-in-out infinite;
+    transition: .5s;
+    position: relative;
+  }
+
+  &-left {
+    overflow-y: scroll;
+    width: 82.5%;
+    height: 100%;
+    padding: 149px 150px 150px 188px;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &-body {
+
+      // overflow-y: scroll;
+      .title {
+        font-weight: 700;
+        font-size: 72px;
+        margin-bottom: 70px;
+      }
+
+      .block {
+        &-choose {
+          margin-top: 55px;
+
+          &-title {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 20px;
+          }
+
+          &-card {
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FFFFFF;
+            border: 1px solid #EDEDED;
+            height: 80px;
+
+            p {
+              font-weight: 300;
+              font-size: 14px;
+              margin: 0;
+              padding: 0;
+            }
+
+            &.big {
+              padding-left: 47px;
+              justify-content: flex-start;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

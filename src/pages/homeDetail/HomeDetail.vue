@@ -1,6 +1,6 @@
 <template>
   <Logo />
-  <Menu />
+  <Menu :class="width < 1200 ? 'notActive' : null" />
   <div class="d-sm-flex d-none">
     <Contact />
     <Case />
@@ -13,11 +13,11 @@
           <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
           <p>We have developed:</p>
         </div>
-        <router-link class="homeDetail-left-back" to="/">
-          <div class="">
-            <img src="@/assets/images/icon/back.png" alt="" />
-          </div>
-        </router-link>
+        <!-- <router-link class="" to="/"> -->
+        <div @click="goBack" class="homeDetail-left-back">
+          <img src="@/assets/images/icon/back.png" alt="" />
+        </div>
+        <!-- </router-link> -->
         <div class="homeDetail-body">
           <div class="slideHome-images">
             <img src="@/assets/images/home/phoneOne.png" alt="" />
@@ -218,14 +218,45 @@
 <script>
 export default {
   name: "homeDetail",
+  // props: {
+
+  // },
+  data() {
+    return {
+      width: "0",
+    };
+  },
+  mounted() {
+    this.hendlResize();
+    window.addEventListener("resize", this.hendlResize);
+  },
+  beforeUnmount() {
+    window.addEventListener("resize", this.hendlResize);
+  },
+  methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
+    hendlResize() {
+      this.width = window.innerWidth;
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-@media screen and (max-width: 576px) {
+.notActive {
   .sidebar {
-    &-contact {
-      display: none;
+    &-menu {
+      &-one {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+      }
+      &-two {
+        background-color: #fff !important;
+      }
+      &-three {
+        background-color: rgba(255, 255, 255, 0.18) !important;
+      }
     }
   }
 }
