@@ -1,6 +1,8 @@
 <template>
-  <div v-if="this.$route.name === 'Home'" class="sidebar-lang">
-    <!-- <p>КЕЙСЫ</p> -->
+  <div
+    v-if="this.$route.name === 'Home' || this.$route.name === 'Contact'"
+    class="sidebar-lang"
+  >
     <div class="sidebar-contact-item">EN</div>
   </div>
   <div v-else class="sidebar-lang active">

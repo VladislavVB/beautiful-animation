@@ -235,6 +235,17 @@
 
     &.active {
       color: $black;
+
+      .sidebar-contact-item {
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+
+        svg {
+          path {
+            fill: $black
+          }
+        }
+      }
     }
   }
 
@@ -299,7 +310,7 @@
 
 @include mobile {
   .slideHome {
-    
+
 
     &-title {
       font-size: 36px;
@@ -371,6 +382,7 @@
         width: 42.4px;
         height: 42.4px;
         font-size: 14px;
+
         svg {
           width: 21.5px;
           height: 18.9px;
@@ -378,6 +390,7 @@
 
       }
     }
+
     &-lang {
       bottom: 28px;
       right: 20px;
