@@ -13,16 +13,16 @@
         <div class="block-choose">
           <h5 class="block-choose-title">Выберите услугу:</h5>
           <div class="row">
-            <div class="col-xxl-3 col-lg-6">
+            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
               <div class="block-choose-card"><p>Мобильное приложение</p></div>
             </div>
-            <div class="col-xxl-3 col-lg-6">
+            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
               <div class="block-choose-card"><p>Web-платформа</p></div>
             </div>
-            <div class="col-xxl-3 col-lg-6">
+            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
               <div class="block-choose-card"><p>Нейросеть</p></div>
             </div>
-            <div class="col-xxl-3 col-lg-6">
+            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
               <div class="block-choose-card"><p>Боты</p></div>
             </div>
           </div>
@@ -30,16 +30,16 @@
         <div class="block-choose">
           <h5 class="block-choose-title">Выберите бюджет проекта:</h5>
           <div class="row">
-            <div class="col-xxl-3 col-lg-4">
+            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
               <div class="block-choose-card"><p>до 1 млн</p></div>
             </div>
-            <div class="col-xxl-3 col-lg-4">
+            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
               <div class="block-choose-card"><p>1-3 млн</p></div>
             </div>
-            <div class="col-xxl-3 col-lg-4">
+            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
               <div class="block-choose-card"><p>3-5 млн</p></div>
             </div>
-            <div class="col-xxl-3 col-lg-4">
+            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
               <div class="block-choose-card"><p>Не знаю</p></div>
             </div>
           </div>
@@ -53,7 +53,7 @@
                 class="block-choose-card big"
               />
             </div>
-            <div class="col-xxl-3 col-lg-6">
+            <div class="col-xxl-3 col-lg-6 col-sm-6">
               <div class="block-choose-card"><p>Не знаю</p></div>
             </div>
           </div>

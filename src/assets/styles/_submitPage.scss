@@ -121,10 +121,40 @@
 @include tablet {
   .submitPage {
     &-left {
+      padding-left: 120px;
       &-body {
         .title {
           font-size: 48px;
         }
+      }
+    }
+  }
+}
+
+@include ipad {
+  .submitPage {
+    flex-direction: column;
+    &-right {
+      order: 0;
+      height: 162px;
+      width: 100%;
+    }
+    &-left {
+      width: 100%;
+      order: 1;
+      padding: 35px 104px 20px 104px;
+      &-body {
+        .title {
+          margin-bottom: 29px;
+        }
+        .block {
+          &-choose {
+            &-title {
+              font-size: 18px;
+            }
+          }
+        }
+
       }
     }
   }
