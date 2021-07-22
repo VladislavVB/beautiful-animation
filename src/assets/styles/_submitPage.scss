@@ -4,7 +4,26 @@
   overflow: hidden;
 
   &-footer {
-    margin-bottom: 100px;
+    margin-top: 120px;
+    &-content{
+      display: flex;
+      justify-content: space-between;
+      .item {
+        display: flex;
+        justify-content: space-between;
+        p {
+          &:first-child {
+            margin-right: 20px;
+          }
+        }
+        p {
+          margin: 0;
+          a {
+            color: #1c8eea;
+          }
+        }
+      }
+    }
   }
 
   &-right {
@@ -15,13 +34,28 @@
     animation: backgroundG 3s ease-in-out infinite;
     transition: .5s;
     position: relative;
+    .menuPage-left-back {
+      right: unset;
+      left: -40px;
+      transform: rotate(-0deg);
+      cursor: pointer;
+
+    }
+    &:hover {
+      .menuPage-left-back {
+        left: 20px;
+        transform: rotate(-180deg);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   &-left {
     overflow-y: scroll;
     width: 82.5%;
     height: 100%;
-    padding: 149px 150px 150px 188px;
+    padding: 149px 150px 30px 188px;
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -69,6 +103,27 @@
               width: 100%;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@include desctop {
+  .submitPage {
+    &-left {
+      padding-left: 150px;
+      padding-right: 260px;
+    }
+  }
+}
+
+@include tablet {
+  .submitPage {
+    &-left {
+      &-body {
+        .title {
+          font-size: 48px;
         }
       }
     }
