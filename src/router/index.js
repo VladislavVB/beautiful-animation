@@ -8,6 +8,7 @@ const MenuPage = () => import("@/pages/menuPage/MenuPage.vue");
 const AboutPage = () => import("@/pages/aboutCompany/AboutPage.vue");
 const ContactPage = () => import("@/pages/contact/ContactPage.vue");
 const SubmitPage = () => import("@/pages/submit/SubmitPage.vue");
+const CasesPage = () => import("@/pages/casesPage/CasesPage.vue");
 
 const routes = [
   {
@@ -70,6 +71,15 @@ const routes = [
     component: SubmitPage,
     meta: {
       title: "Submit",
+      layout: "",
+    },
+  },
+  {
+    path: "/cases",
+    name: "CasesPage",
+    component: CasesPage,
+    meta: {
+      title: "Cases page",
       layout: "",
     },
   },

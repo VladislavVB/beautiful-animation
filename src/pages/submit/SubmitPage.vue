@@ -1,11 +1,11 @@
 <template>
-  <Logo />
+  <Logo class="goWhiteSub" />
   <Menu />
   <Contact />
-  <!-- <div class="d-sm-none"> -->
-  <Case />
-  <!-- </div> -->
-  <Lang />
+  <div class="d-sm-flex d-none">
+    <Case class="goBlackSub" />
+  </div>
+  <Lang class="goBlackSub" />
   <div class="submitPage">
     <div class="submitPage-left">
       <div class="submitPage-left-body">
@@ -61,21 +61,29 @@
         <div class="block-choose">
           <h5 class="block-choose-title">Контактные данные:</h5>
           <div class="row">
-            <div class="col-xxl-4">
+            <div class="col-xxl-4 col-sm-6 order-1">
               <input
                 type="text"
                 placeholder="Как Вас зовут?"
                 class="block-choose-card big"
               />
             </div>
-            <div class="col-xxl-4">
+            <div class="col-xxl-4 col-sm-6 order-2">
               <input
                 type="tell"
                 placeholder="Ваш телефон"
                 class="block-choose-card big"
               />
             </div>
-            <div class="col-xxl-4 d-flex justify-content-end align-items-center">
+            <div
+              class="
+                col-xxl-4 col-lg-12
+                d-flex
+                justify-content-xl-end justify-content-start
+                align-items-center
+                order-5 order-md-5 order-lg-5 order-xl-5 order-xxl-3
+              "
+            >
               <div class="presentation-buttom">
                 <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
                 <div class="presentation-buttom-img">
@@ -86,7 +94,14 @@
                 </div>
               </div>
             </div>
-            <div class="col-xxl-4">
+            <div class="col-xxl-4 order-4 col-sm-6">
+              <input
+                type="email"
+                placeholder="Email"
+                class="block-choose-card big"
+              />
+            </div>
+            <div class="col-xxl-4 order-4 col-sm-6">
               <input
                 type="email"
                 placeholder="Email"

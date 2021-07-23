@@ -183,16 +183,18 @@
 
       &-back {
         top: unset;
-        bottom: -10px;
-        right: 37px;
+        bottom: 10px;
+        right: 20px;
         transform: rotate(-90deg);
+        opacity: 1;
+        visibility: visible;
       }
 
       &:hover {
         .menuPage-left-back {
           transform: rotate(-90deg);
-          right: 37px;
           bottom: 10px;
+          right: 20px;
         }
       }
     }
@@ -270,13 +272,16 @@
 
       &-menu {
         margin-bottom: 50px;
+
         ul {
           li {
             margin-bottom: 8px;
+
             span {
               margin-top: 10px;
               font-size: 48px;
             }
+
             &:hover {
               span {
                 margin-bottom: 35px;
@@ -287,6 +292,7 @@
       }
     }
   }
+
   .textHover {
     font-size: 14px;
     line-height: 18px;

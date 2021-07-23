@@ -109,3 +109,14 @@
     }
   }
 }
+
+@include mobile {
+  .aboutPage {
+    &-logo {
+      font-size: 55px;
+    }
+    &-block {
+      margin-top: 20px;
+    }
+  }
+}

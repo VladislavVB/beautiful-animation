@@ -26,7 +26,7 @@
                 </p>
               </li>
             </router-link>
-            <router-link to="/">
+            <router-link to="/cases">
               <li>
                 <span>Кейсы </span>
                 <p class="textHover">

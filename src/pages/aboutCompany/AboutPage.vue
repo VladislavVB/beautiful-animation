@@ -2,7 +2,9 @@
   <Logo />
   <Menu />
   <Contact />
-  <Case />
+  <div class="d-sm-flex d-none">
+    <Case />
+  </div>
   <Lang />
   <div style="margin: auto" class="container-axas h-100">
     <div class="aboutPage-wrapper">

@@ -5,19 +5,24 @@
 
   &-footer {
     margin-top: 120px;
-    &-content{
+
+    &-content {
       display: flex;
       justify-content: space-between;
+
       .item {
         display: flex;
         justify-content: space-between;
+
         p {
           &:first-child {
             margin-right: 20px;
           }
         }
+
         p {
           margin: 0;
+
           a {
             color: #1c8eea;
           }
@@ -34,6 +39,7 @@
     animation: backgroundG 3s ease-in-out infinite;
     transition: .5s;
     position: relative;
+
     .menuPage-left-back {
       right: unset;
       left: -40px;
@@ -41,6 +47,7 @@
       cursor: pointer;
 
     }
+
     &:hover {
       .menuPage-left-back {
         left: 20px;
@@ -89,6 +96,7 @@
             background: #FFFFFF;
             border: 1px solid #EDEDED;
             height: 80px;
+            cursor: pointer;
 
             p {
               font-weight: 300;
@@ -109,6 +117,20 @@
   }
 }
 
+@include bigDesctop {
+  .submitPage {
+    &-footer {
+      &-content {
+        flex-direction: column;
+
+        .item {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
 @include desctop {
   .submitPage {
     &-left {
@@ -122,31 +144,63 @@
   .submitPage {
     &-left {
       padding-left: 120px;
+
       &-body {
         .title {
           font-size: 48px;
         }
       }
     }
+
+    &-right {
+      .menuPage-left-back {
+        left: unset;
+        right: 20px;
+        transform: rotate(-90deg);
+      }
+
+      &:hover {
+        .menuPage-left-back {
+          left: unset;
+          transform: rotate(90deg);
+          bottom: 10px;
+        }
+      }
+    }
+
+    &-footer {
+      &-content {
+        flex-direction: column;
+
+        .item {
+          margin-top: 20px;
+        }
+      }
+    }
   }
+
 }
 
 @include ipad {
   .submitPage {
     flex-direction: column;
+
     &-right {
       order: 0;
       height: 162px;
       width: 100%;
     }
+
     &-left {
       width: 100%;
       order: 1;
       padding: 35px 104px 20px 104px;
+
       &-body {
         .title {
           margin-bottom: 29px;
         }
+
         .block {
           &-choose {
             &-title {
@@ -158,4 +212,61 @@
       }
     }
   }
+
+  .goWhiteSub {
+    color: #fff;
+
+    .sidebar-logo {
+      color: #fff;
+    }
+  }
+
+  .goBlackSub {
+    color: #000;
+
+    .sidebar-contact-item {
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+@include mobile {
+  .submitPage {
+    &-left {
+      padding: 20px;
+    }
+
+    &-footer {
+      margin-bottom: 100px;
+      margin-top: 100px;
+
+      &-content {
+        flex-direction: column;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+
+          p {
+            margin-bottom: 5px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .submitPage-right .menuPage-left-back {
+    left: unset;
+    transform: rotate(270deg);
+    bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+  }
+  .submitPage-left-body .title {
+    font-size: 36px;
+  }
+
 }
