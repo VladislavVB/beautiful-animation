@@ -1,3 +1,89 @@
 .casesPage {
-  color: antiquewhite;
+  width: 100%;
+  &-head {
+    margin-bottom: 55px;
+    h2 {
+      font-weight: 700;
+      font-size: 96px;
+      display: inline;
+    }
+  }
+  .swiper-container {
+    overflow: unset;
+    .swiper-scrollbar {
+      bottom: unset;
+      top: -100px;
+      width: 60%;
+      left: unset;
+      right: 158px;
+      height: 2px;
+      .swiper-scrollbar-drag {
+        background-color: $black;
+      }
+    }
+    .swiper-pagination {
+      width: 60px;
+      right: 0;
+      left: unset;
+      top: -113px;
+      span {
+        font-weight: 700;
+        font-size: 18px;
+        &:nth-child(-n+9) {
+          &::before {
+            content: '0';
+          }
+        }
+      }
+    }
+  }
+}
+
+.casesCard {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding: 40px;
+  overflow: hidden;
+  border: 1px solid red;
+  position: relative;
+  max-width: 442px;
+  &-circle {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 5;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(100% 100% at 100% 81.67%, #8F95FE 0%, #BFD3FF 100%);
+  }
+  &-descp {
+    z-index: 10;
+    position: absolute;
+  }
+  &-images {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+  &-title {
+    p {
+      font-weight: 300;
+      text-align: center;
+      font-size: 14px;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  visibility: hidden;
 }
