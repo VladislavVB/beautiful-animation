@@ -3,6 +3,7 @@
     :autoplay="true"
     :loop="true"
     :delay="4100"
+    :mousewheel="true"
     :slides-per-view="1"
     :space-between="0"
     @swiper="onSwiper"
@@ -24,9 +25,9 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Autoplay } from "swiper";
+import SwiperCore, { Autoplay, Mousewheel } from "swiper";
 
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Autoplay, Mousewheel]);
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -59,6 +60,42 @@ export default {
         },
         {
           id: 3,
+          // link: 1,
+          background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
+          // gif: "",
+          image: "phoneThree.png",
+          title: "KazakPay",
+          description: "Mobile application3",
+        },
+        {
+          id: 2,
+          // link: 1,
+          background: "linear-gradient(287.56deg, #8A8FFD 0%, #C1D6FF 100%)",
+          // gif: "",
+          image: "phoneTwo.png",
+          title: "CheckSkin",
+          description: "Mobile application2",
+        },
+        {
+          id: 3,
+          // link: 1,
+          background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
+          // gif: "",
+          image: "phoneThree.png",
+          title: "KazakPay",
+          description: "Mobile application3",
+        },
+        {
+          id: 4,
+          // link: 1,
+          background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
+          // gif: "",
+          image: "phoneTwo.png",
+          title: "CheckSkin",
+          description: "Mobile application2",
+        },
+        {
+          id: 5,
           // link: 1,
           background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
           // gif: "",

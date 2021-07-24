@@ -2,7 +2,9 @@
   <Logo />
   <Menu />
   <Contact />
-  <Case />
+  <div class="d-sm-flex d-none">
+    <Case />
+  </div>
   <Lang />
   <div
     class="container-axas d-flex align-items-center min-vh-100 overflow-hidden"

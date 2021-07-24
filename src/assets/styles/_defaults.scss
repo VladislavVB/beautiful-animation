@@ -80,7 +80,11 @@ section {
     }
 
     @include tablet {
-      max-width: 560px;
+      max-width: 760px;
+    }
+
+    @include ipad {
+      max-width: 566px;
     }
 
     @include mobile {
