@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <!-- <router-view v-slot="{ Component, route }">
-      <transition
-        :enter-active-class="route.meta.enterClass"
-        :leave-active-class="route.meta.leaveClass"
-        mode="out-in"
-      >
+    <router-link to="/">home</router-link>
+    <router-link to="/home-detail">home-detail</router-link>
+    <router-link to="/about">about</router-link>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
         <component :is="Component" />
       </transition>
-    </router-view> -->
-    <transition name="fade">
+    </router-view>
+
+    <!-- <transition :name="fade">
       <router-view></router-view>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -22,9 +22,6 @@ import "aos/dist/aos.css";
 export default {
   name: "App",
   components: {},
-  methods: {
-    test() {},
-  },
 };
 
 AOS.init({
@@ -37,6 +34,8 @@ AOS.init({
 </style>
 
 <style lang="scss">
+// routes transition animation
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
@@ -44,18 +43,8 @@ AOS.init({
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.8s;
 }
 
-.slide-fade-enter-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active до версии 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
+
 </style>

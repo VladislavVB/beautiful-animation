@@ -1,4 +1,13 @@
 <template>
+  <router-view v-slot="{ Component, route }">
+    <transition
+      :enter-active-class="route.meta.enterClass"
+      :leave-active-class="route.meta.leaveClass"
+      mode="out-in"
+    >
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <router-link to="/">
     <div
       v-if="
