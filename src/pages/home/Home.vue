@@ -1,4 +1,5 @@
 <template>
+  <!-- <div data-aos="fade-right"> -->
   <Logo />
   <Menu />
   <Contact />
@@ -24,6 +25,7 @@
       </div>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>

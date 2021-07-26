@@ -31,7 +31,7 @@
       width: 60px;
       right: 0;
       left: unset;
-      top: -113px;
+      top: -107px;
 
       span {
         font-weight: 700;
@@ -132,6 +132,19 @@
 .swiper-button-prev,
 .swiper-button-next {
   visibility: hidden;
+}
+
+@include bigDesctop {
+  .casesPage .swiper-container .swiper-scrollbar {
+    width: 50%;
+  }
+}
+
+@include desctop {
+  .casesPage .swiper-container .swiper-scrollbar {
+    width: 50%;
+    right: 85px;
+  }
 }
 
 @include mobile {

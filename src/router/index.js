@@ -18,6 +18,8 @@ const routes = [
     meta: {
       title: "Home page",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -27,6 +29,8 @@ const routes = [
     meta: {
       title: "EventList",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -36,6 +40,8 @@ const routes = [
     meta: {
       title: "Home detail",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -45,6 +51,8 @@ const routes = [
     meta: {
       title: "Menu",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -54,6 +62,8 @@ const routes = [
     meta: {
       title: "AboutPage",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -63,6 +73,8 @@ const routes = [
     meta: {
       title: "Contact",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -72,6 +84,8 @@ const routes = [
     meta: {
       title: "Submit",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -81,6 +95,8 @@ const routes = [
     meta: {
       title: "Cases page",
       layout: "",
+      // enterClass: "animate__animated animate__fadeInLeft",
+      // leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
 ];
