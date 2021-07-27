@@ -3,6 +3,7 @@
     :autoplay="true"
     :loop="true"
     :delay="4100"
+    :parallax="true"
     :mousewheel="true"
     :slides-per-view="1"
     :space-between="0"
@@ -12,7 +13,11 @@
     <swiper-slide v-for="item in casesList" :key="item.id">
       <router-link to="/home-detail">
         <div :style="{ background: item.background }" class="slideHome">
-          <div class="slideHome-images">
+          <div
+            data-swiper-parallax="-100"
+            data-swiper-parallax-opacity="0.5"
+            class="slideHome-images"
+          >
             <img :src="require(`@/assets/images/home/${item.image}`)" alt="" />
           </div>
           <p class="slideHome-description">{{ item.description }}</p>
@@ -25,9 +30,9 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Autoplay, Mousewheel } from "swiper";
+import SwiperCore, { Autoplay, Parallax, Mousewheel } from "swiper";
 
-SwiperCore.use([Autoplay, Mousewheel]);
+SwiperCore.use([Autoplay, Mousewheel, Parallax]);
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -124,8 +129,8 @@ export default {
         slideLine.classList.remove("active");
         setTimeout(() => {
           this.progressLine();
-        }, 100);
-      }, 4000);
+        }, 300);
+      }, 3100);
     },
   },
 };
