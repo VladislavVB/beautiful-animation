@@ -8,14 +8,16 @@
   <Lang />
   <div class="menuPage-wrapper">
     <div class="menuPage">
-      <div class="menuPage-left">
-        <!-- <router-link :to="-1"> -->
+      <div data-aos="fade-up" data-aos-duration="1500" class="menuPage-left">
         <div @click="goBack" class="menuPage-left-back">
           <img src="@/assets/images/icon/back.png" alt="" />
         </div>
-        <!-- </router-link> -->
       </div>
-      <div class="menuPage-body-wrapper">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        class="menuPage-body-wrapper"
+      >
         <div class="menuPage-body-menu">
           <ul>
             <router-link to="/about">

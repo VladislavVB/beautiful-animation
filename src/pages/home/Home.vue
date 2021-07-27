@@ -31,9 +31,33 @@
 <script>
 import slideHome from "@/pages/home/components/Slider";
 export default {
+  transition() {
+    return "slide";
+  },
   name: "Home",
   components: {
     slideHome,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.slide-enter-active {
+  transition: all 1.5s ease-in-out;
+}
+.slide-leave-active {
+  transition: all 1.5s ease-in-out;
+}
+.slide-enter {
+  transform: translateY(-100%);
+}
+.slide-enter-to {
+  transform: translateY(0%);
+}
+.slide-leave {
+  transform: translateY(0%);
+}
+.slide-leave-to {
+  transform: translateY(100%);
+}
+</style>

@@ -1,3 +1,12 @@
+.services {
+  &-blok {
+    &-active {
+      border: 1px solid #8B90FE !important;
+      transition: .5s;
+    }
+  }
+}
+
 .submitPage {
   display: flex;
   height: 100vh;
@@ -97,6 +106,7 @@
             border: 1px solid #EDEDED;
             height: 80px;
             cursor: pointer;
+            transition: .5s;
 
             p {
               font-weight: 300;
@@ -116,6 +126,14 @@
     }
   }
 }
+
+.choose {
+  &-textarea {
+    padding-top: 31px;
+    padding-right: 20px;
+  }
+}
+
 
 @include bigDesctop {
   .submitPage {
@@ -141,6 +159,10 @@
 }
 
 @include tablet {
+  .goWhiteSub {
+    color: #fff;
+  }
+
   .submitPage {
     &-left {
       padding-left: 120px;
@@ -232,6 +254,12 @@
 }
 
 @include mobile {
+  .choose {
+    &-textarea {
+      height: 200px;
+    }
+  }
+
   .submitPage {
     &-left {
       padding: 20px;
@@ -265,8 +293,32 @@
     opacity: 1;
     visibility: visible;
   }
+
   .submitPage-left-body .title {
     font-size: 36px;
   }
 
+  .choose {
+    &-textarea {
+      height: 200px !important;
+    }
+  }
+}
+
+.services {
+  &-blok {
+    &-active {
+      border: 1px solid #8B90FE;
+      transition: .5s;
+    }
+  }
+}
+
+.stonks {
+  &-blok {
+    &-active {
+      border: 1px solid #8B90FE !important;
+      transition: .5s;
+    }
+  }
 }

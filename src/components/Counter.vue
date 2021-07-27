@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ counter }}ddd</h2>
+  <h2>{{ counter }}AXAS</h2>
   <button @click="add">+1</button>
 </template>
 <script>

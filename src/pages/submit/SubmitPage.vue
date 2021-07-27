@@ -1,5 +1,5 @@
 <template>
-  <Logo class="goWhiteSub" />
+  <Logo class="goWhiteSub dfdffd" />
   <Menu />
   <Contact />
   <div class="d-sm-flex d-none">
@@ -7,40 +7,44 @@
   </div>
   <Lang class="goBlackSub" />
   <div class="submitPage">
-    <div class="submitPage-left">
+    <div data-aos="fade-right" data-aos-duration="1000" class="submitPage-left">
       <div class="submitPage-left-body">
         <p class="title gradient-text">Оставить заявку</p>
         <div class="block-choose">
           <h5 class="block-choose-title">Выберите услугу:</h5>
           <div class="row">
-            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
-              <div class="block-choose-card"><p>Мобильное приложение</p></div>
-            </div>
-            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
-              <div class="block-choose-card"><p>Web-платформа</p></div>
-            </div>
-            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
-              <div class="block-choose-card"><p>Нейросеть</p></div>
-            </div>
-            <div class="col-xxl-3 col-lg-6 col-sm-6 col-12">
-              <div class="block-choose-card"><p>Боты</p></div>
+            <div
+              v-for="itemServices in servicesBloсk"
+              :key="itemServices"
+              @click="selServices = itemServices"
+              class="col-xxl-3 col-lg-6 col-sm-6 col-12"
+            >
+              <div
+                :class="
+                  selServices === itemServices ? 'services-blok-active' : ''
+                "
+                class="block-choose-card services-blok"
+              >
+                <p>{{ itemServices }}</p>
+              </div>
             </div>
           </div>
         </div>
         <div class="block-choose">
           <h5 class="block-choose-title">Выберите бюджет проекта:</h5>
           <div class="row">
-            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
-              <div class="block-choose-card"><p>до 1 млн</p></div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
-              <div class="block-choose-card"><p>1-3 млн</p></div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
-              <div class="block-choose-card"><p>3-5 млн</p></div>
-            </div>
-            <div class="col-xxl-3 col-lg-4 col-sm-4 col-12">
-              <div class="block-choose-card"><p>Не знаю</p></div>
+            <div
+              v-for="itemBudget in budgetBlock"
+              :key="itemBudget"
+              @click="selBudget = itemBudget"
+              class="col-xxl-3 col-lg-4 col-sm-4 col-12"
+            >
+              <div
+                :class="selBudget === itemBudget ? 'stonks-blok-active' : ''"
+                class="block-choose-card stonks-block"
+              >
+                <p>{{ itemBudget }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -48,13 +52,17 @@
           <h5 class="block-choose-title">Описание проекта:</h5>
           <div class="row">
             <div class="col-xxl-9 col-lg-12">
-              <input
+              <textarea
+                name=""
+                id=""
                 placeholder="Опишите проект"
-                class="block-choose-card big"
-              />
+                class="block-choose-card big choose-textarea"
+              ></textarea>
             </div>
             <div class="col-xxl-3 col-lg-6 col-sm-6">
-              <div class="block-choose-card"><p>Не знаю</p></div>
+              <div class="block-choose-card">
+                <p>Не знаю</p>
+              </div>
             </div>
           </div>
         </div>
@@ -128,7 +136,7 @@
         </div>
       </div>
     </div>
-    <div class="submitPage-right">
+    <div data-aos="fade-up" data-aos-duration="1500" class="submitPage-right">
       <div @click="goBack" class="menuPage-left-back">
         <img src="@/assets/images/icon/back.png" alt="" />
       </div>
@@ -139,9 +147,26 @@
 <script>
 export default {
   name: "SubmitPage",
+  data() {
+    return {
+      servicesBloсk: [
+        "Мобильное приложение",
+        "Web-платформа",
+        "Нейросеть",
+        "Боты",
+      ],
+      selServices: null,
+      budgetBlock: ["до 1 млн", "1-3 млн", "3-5 млн", "Не знаю"],
+      selBudget: null,
+      notKnowD: null,
+    };
+  },
   methods: {
     goBack() {
       this.$router.go(-1);
+    },
+    notKnow(status) {
+      this.notKnowD = status;
     },
   },
 };
