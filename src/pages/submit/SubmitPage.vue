@@ -82,7 +82,10 @@
                   type="tell"
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
+                  v-model="FormData.phone"
+                  :class="{ 'is-invalid': v$.FormData.phone.$error }"
                 />
+                <span v-if="v$.FormData.phone.$error"> Введите телефон </span>
               </div>
               <div
                 class="
@@ -112,7 +115,13 @@
                   type="email"
                   placeholder="Email"
                   class="block-choose-card big"
+                  v-model="FormData.emal"
+                  :class="{ 'is-invalid': v$.FormData.email.$error }"
                 />
+                <span v-if="v$.FormData.email.$error"> Введите почту </span>
+                <!-- <span else="v$.FormData.email.$required">
+                  Введите почту11112
+                </span> -->
               </div>
               <div class="col-xxl-4 order-4 col-sm-6">
                 <div class="submit-cheack">
@@ -152,10 +161,13 @@
 </template>
 
 <script>
+import useVuelidate from "@vuelidate/core";
+import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "SubmitPage",
   data() {
     return {
+      v$: useVuelidate(),
       servicesBloсk: [
         "Мобильное приложение",
         "Web-платформа",
@@ -166,6 +178,20 @@ export default {
       budgetBlock: ["до 1 млн", "1-3 млн", "3-5 млн", "Не знаю"],
       selBudget: null,
       notKnowD: null,
+      FormData: {
+        name: "",
+        tel: "",
+        email: "",
+      },
+    };
+  },
+  validations() {
+    return {
+      FormData: {
+        name: { required },
+        email: { required, email },
+        phone: { required, minLengt: minLength(5) },
+      },
     };
   },
   methods: {
@@ -176,7 +202,20 @@ export default {
       this.notKnowD = status;
     },
     submitHandler() {
-      this.$router.push("/");
+      this.$store
+        .dispatch("submitHandler", {
+          name: this.FormData.name,
+          phone: this.FormData.phone,
+          email: this.FormData.email,
+        })
+        .then(() => {
+          console.log("Test1");
+        })
+        .catch((err) => {
+          console.log(111);
+          this.FormData.errors = err.response.data.message;
+        });
+      this.v$.$validate();
     },
   },
 };

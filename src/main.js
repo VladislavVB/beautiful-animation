@@ -15,6 +15,7 @@ import Lang from "./components/Lang";
 import PresentBtn from "./components/PresentationButton";
 import CallBtn from "./components/CallBtn";
 //Обращаемся к методу createApp для создания глобального компонента
+
 const app = createApp(App);
 //Пример регистрации глобального компонента
 app.component("BaseIcon", BaseIcon);
@@ -27,3 +28,4 @@ app.component("PresentBtn", PresentBtn);
 app.component("CallBtn", CallBtn);
 
 app.use(store).use(router).mount("#app");
+
