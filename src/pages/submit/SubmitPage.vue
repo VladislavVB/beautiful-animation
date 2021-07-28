@@ -10,114 +10,121 @@
     <div data-aos="fade-right" data-aos-duration="1000" class="submitPage-left">
       <div class="submitPage-left-body">
         <p class="title gradient-text">Оставить заявку</p>
-        <div class="block-choose">
-          <h5 class="block-choose-title">Выберите услугу:</h5>
-          <div class="row">
-            <div
-              v-for="itemServices in servicesBloсk"
-              :key="itemServices"
-              @click="selServices = itemServices"
-              class="col-xxl-3 col-lg-6 col-sm-6 col-12"
-            >
+        <form @submit.prevent="submitHandler">
+          <div class="block-choose">
+            <h5 class="block-choose-title">Выберите услугу:</h5>
+            <div class="row">
               <div
-                :class="
-                  selServices === itemServices ? 'services-blok-active' : ''
-                "
-                class="block-choose-card services-blok"
+                v-for="itemServices in servicesBloсk"
+                :key="itemServices"
+                @click="selServices = itemServices"
+                class="col-xxl-3 col-lg-6 col-sm-6 col-12"
               >
-                <p>{{ itemServices }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="block-choose">
-          <h5 class="block-choose-title">Выберите бюджет проекта:</h5>
-          <div class="row">
-            <div
-              v-for="itemBudget in budgetBlock"
-              :key="itemBudget"
-              @click="selBudget = itemBudget"
-              class="col-xxl-3 col-lg-4 col-sm-4 col-12"
-            >
-              <div
-                :class="selBudget === itemBudget ? 'stonks-blok-active' : ''"
-                class="block-choose-card stonks-block"
-              >
-                <p>{{ itemBudget }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="block-choose">
-          <h5 class="block-choose-title">Описание проекта:</h5>
-          <div class="row">
-            <div class="col-xxl-9 col-lg-12">
-              <textarea
-                name=""
-                id=""
-                placeholder="Опишите проект"
-                class="block-choose-card big choose-textarea"
-              ></textarea>
-            </div>
-            <div class="col-xxl-3 col-lg-6 col-sm-6">
-              <div class="block-choose-card">
-                <p>Не знаю</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="block-choose">
-          <h5 class="block-choose-title">Контактные данные:</h5>
-          <div class="row">
-            <div class="col-xxl-4 col-sm-6 order-1">
-              <input
-                type="text"
-                placeholder="Как Вас зовут?"
-                class="block-choose-card big"
-              />
-            </div>
-            <div class="col-xxl-4 col-sm-6 order-2">
-              <input
-                type="tell"
-                placeholder="Ваш телефон"
-                class="block-choose-card big"
-              />
-            </div>
-            <div
-              class="
-                col-xxl-4 col-lg-12
-                d-flex
-                justify-content-xl-end justify-content-start
-                align-items-center
-                order-5 order-md-5 order-lg-5 order-xl-5 order-xxl-3
-              "
-            >
-              <div class="presentation-buttom">
-                <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
-                <div class="presentation-buttom-img">
-                  <img
-                    src="@/assets/images/icon/presentationArrow.png"
-                    alt=""
-                  />
+                <div
+                  :class="
+                    selServices === itemServices ? 'services-blok-active' : ''
+                  "
+                  class="block-choose-card services-blok"
+                >
+                  <p>{{ itemServices }}</p>
                 </div>
               </div>
             </div>
-            <div class="col-xxl-4 order-4 col-sm-6">
-              <input
-                type="email"
-                placeholder="Email"
-                class="block-choose-card big"
-              />
-            </div>
-            <div class="col-xxl-4 order-4 col-sm-6">
-              <input
-                type="email"
-                placeholder="Email"
-                class="block-choose-card big"
-              />
+          </div>
+          <div class="block-choose">
+            <h5 class="block-choose-title">Выберите бюджет проекта:</h5>
+            <div class="row">
+              <div
+                v-for="itemBudget in budgetBlock"
+                :key="itemBudget"
+                @click="selBudget = itemBudget"
+                class="col-xxl-3 col-lg-4 col-sm-4 col-12"
+              >
+                <div
+                  :class="selBudget === itemBudget ? 'stonks-blok-active' : ''"
+                  class="block-choose-card stonks-block"
+                >
+                  <p>{{ itemBudget }}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="block-choose">
+            <h5 class="block-choose-title">Описание проекта:</h5>
+            <div class="row">
+              <div class="col-xxl-9 col-lg-12">
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Опишите проект"
+                  class="block-choose-card big choose-textarea"
+                ></textarea>
+              </div>
+              <div class="col-xxl-3 col-lg-6 col-sm-6">
+                <div class="block-choose-card">
+                  <p>Не знаю</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block-choose">
+            <h5 class="block-choose-title">Контактные данные:</h5>
+            <div class="row">
+              <div class="col-xxl-4 col-sm-6 order-1">
+                <input
+                  type="text"
+                  placeholder="Как Вас зовут?"
+                  class="block-choose-card big"
+                />
+              </div>
+              <div class="col-xxl-4 col-sm-6 order-2">
+                <input
+                  type="tell"
+                  placeholder="Ваш телефон"
+                  class="block-choose-card big"
+                />
+              </div>
+              <div
+                class="
+                  presentation-buttom-wrapper
+                  col-xxl-4 col-lg-12
+                  d-flex
+                  justify-content-xxl-end justify-content-start
+                  align-items-center
+                  order-5 order-md-5 order-lg-5 order-xl-5 order-xxl-3
+                "
+              >
+                <button
+                  class="presentation-buttom presentation-button"
+                  type="submit"
+                >
+                  <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
+                  <div class="presentation-buttom-img">
+                    <img
+                      src="@/assets/images/icon/presentationArrow.png"
+                      alt=""
+                    />
+                  </div>
+                </button>
+              </div>
+              <div class="col-xxl-4 order-4 col-sm-6">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="block-choose-card big"
+                />
+              </div>
+              <div class="col-xxl-4 order-4 col-sm-6">
+                <div class="submit-cheack">
+                  <input id="submitOerde" type="checkbox" checked />
+                  <label for="submitOerde"
+                    >Я согласен на обработку персональных данных</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
         <div class="submitPage-footer">
           <div class="submitPage-footer-content">
             <div class="item">
@@ -167,6 +174,9 @@ export default {
     },
     notKnow(status) {
       this.notKnowD = status;
+    },
+    submitHandler() {
+      this.$router.push("/");
     },
   },
 };

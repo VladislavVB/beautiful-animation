@@ -134,7 +134,49 @@
   }
 }
 
+.submit {
+  &-cheack {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    cursor: pointer;
 
+    label {
+      font-size: 14px;
+      line-height: 22.74px;
+      max-width: 190px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .5s;
+      appearance: none;
+      border: 1px solid #EDEDED;
+      padding: 10px;
+      background-size: 35% 35%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    input[type="checkbox"]:checked {
+      transition: .5s;
+      background-image: url("./assets/images/submit/cheack.png");
+      background-size: 35% 35%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.presentation-button {
+  background-color: unset;
+  border: unset;
+}
 @include bigDesctop {
   .submitPage {
     &-footer {
@@ -155,6 +197,9 @@
       padding-left: 150px;
       padding-right: 260px;
     }
+  }
+  .presentation-buttom-wrapper {
+    margin-top: 30px;
   }
 }
 
