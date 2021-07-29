@@ -1,4 +1,6 @@
 <template>
+  <!-- <router-link to="/">Home</router-link>
+  <router-link to="/about">about</router-link> -->
   <router-view v-slot="{ Component }">
     <transition name="slide">
       <component :is="Component" />
@@ -22,25 +24,4 @@ AOS.init({
 
 <style lang="scss">
 @import "./assets/styles/style.scss";
-</style>
-
-<style lang="scss">
-.slide-enter-active {
-  transition: all 1.5s ease-in-out;
-}
-.slide-leave-active {
-  transition: all 1.5s ease-in-out;
-}
-.slide-enter {
-  transform: translateY(-100%);
-}
-.slide-enter-to {
-  transform: translateY(0%);
-}
-.slide-leave {
-  transform: translateY(0%);
-}
-.slide-leave-to {
-  transform: translateY(100%);
-}
 </style>

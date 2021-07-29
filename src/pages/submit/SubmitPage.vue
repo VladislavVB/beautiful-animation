@@ -50,9 +50,7 @@
                     selServices === itemServices ? 'services-blok-active' : ''
                   "
                   class="block-choose-card services-blok"
-                >
-                  <p>{{ itemServices }}</p>
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -102,31 +100,7 @@
             </div>
           </div>
           <div class="block-choose">
-            <h5 class="block-choose-title">
-              Описание проекта:<span class="error error-text"
-                ><svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 21 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.5 0C4.69617 0 0 4.69658 0 10.5C0 16.3038 4.69658 21 10.5 21C16.3038 21 21 16.3034 21 10.5C21 4.69617 16.3034 0 10.5 0ZM10.5 19.3594C5.60302 19.3594 1.64062 15.3967 1.64062 10.5C1.64062 5.60302 5.60335 1.64062 10.5 1.64062C15.397 1.64062 19.3594 5.60335 19.3594 10.5C19.3594 15.397 15.3967 19.3594 10.5 19.3594Z"
-                    fill="#FF6161"
-                  />
-                  <path
-                    d="M10.5 5.28595C10.0469 5.28595 9.67969 5.6532 9.67969 6.10626V11.3888C9.67969 11.8418 10.0469 12.2091 10.5 12.2091C10.9531 12.2091 11.3203 11.8418 11.3203 11.3888V6.10626C11.3203 5.6532 10.9531 5.28595 10.5 5.28595Z"
-                    fill="#FF6161"
-                  />
-                  <path
-                    d="M10.5 15.4284C11.1116 15.4284 11.6074 14.9326 11.6074 14.321C11.6074 13.7094 11.1116 13.2136 10.5 13.2136C9.88839 13.2136 9.39258 13.7094 9.39258 14.321C9.39258 14.9326 9.88839 15.4284 10.5 15.4284Z"
-                    fill="#FF6161"
-                  />
-                </svg>
-                Пожалуйста, выберите один из вариантов</span
-              >
-            </h5>
+            <h5 class="block-choose-title">Описание проекта:</h5>
             <div class="row">
               <div class="col-xxl-9 col-lg-12">
                 <textarea
@@ -134,14 +108,16 @@
                   id=""
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
-                  v-model="state.formSubData.prodgect"
+                  @input="cheackTextarea()"
+                  v-model="textarea"
                 ></textarea>
+                <p>{{ textarea }}</p>
                 <span class="error" v-if="v$.formSubData.prodgect.$error">
                   опишите проект
                 </span>
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
-                <div class="block-choose-card">
+                <div v-if="!textarea" class="block-choose-card">
                   <p>Не знаю</p>
                 </div>
               </div>
@@ -292,6 +268,7 @@ export default {
   directives: { maska },
   data() {
     return {
+      activeServ: null,
       cheacked: false,
       servicesBloсk: [
         "Мобильное приложение",
@@ -303,7 +280,11 @@ export default {
       budgetBlock: ["до 1 млн", "1-3 млн", "3-5 млн", "Не знаю"],
       selBudget: null,
       notKnowD: null,
+      textarea: null,
     };
+  },
+  mounted: function () {
+    this.cheackTextarea();
   },
   methods: {
     goBack() {
@@ -320,6 +301,13 @@ export default {
         console.log("NOT submit");
       }
     },
+    cheackTextarea() {
+      console.log(this.textarea);
+      let activeServes = this.activeServ;
+      console.log(activeServes);
+      let a = document.querySelector(".services-blok-active");
+      console.log(a);
+    },
     checkedCheack() {
       let cheack = document.getElementById("submitOerder");
       if (cheack.checked == 1) {
@@ -328,14 +316,12 @@ export default {
         console.log("XER");
       }
     },
-    servicesValue() {
-      let servicesValue = document.querySelector(".services-blok-active");
-      servicesValue.value;
-      console.log(servicesValue.value);
-    },
-  },
-  mounted: function () {
-    this.servicesValue();
+
+    // servicesValue() {
+    //   let servicesValue = document.querySelector(".services-blok-active");
+    //   servicesValue.value;
+    //   console.log(servicesValue.value);
+    // },
   },
 };
 </script>

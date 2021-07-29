@@ -172,14 +172,4 @@ button {
   clear: both;
   content: "";
 }
-
-.fade-enter-active {
-  -webkit-transition: opacity 0.8s;
-  transition: opacity 0.8s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
 /*# sourceMappingURL=style.css.map */
