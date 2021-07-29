@@ -134,7 +134,11 @@
                   id=""
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
+                  v-model="state.formSubData.prodgect"
                 ></textarea>
+                <span class="error" v-if="v$.formSubData.prodgect.$error">
+                  опишите проект
+                </span>
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
                 <div class="block-choose-card">
@@ -151,11 +155,10 @@
                   type="text"
                   placeholder="Как Вас зовут?"
                   class="block-choose-card big"
-                  v-model="FormData.name"
-                  :class="{ 'is-invalid': v$.FormData.name.$error }"
+                  v-model="state.formSubData.name"
                 />
-                <span class="error" v-if="v$.FormData.name.$error">
-                  Введите Имя
+                <span class="error" v-if="v$.formSubData.name.$error">
+                  Введите имя
                 </span>
               </div>
               <div class="col-xxl-4 col-sm-6 order-2">
@@ -164,11 +167,10 @@
                   type="number"
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
-                  v-model="FormData.phone"
                   v-maska="'###########'"
-                  :class="{ 'is-invalid': v$.FormData.phone.$error }"
+                  v-model="state.formSubData.phone"
                 />
-                <span class="error" v-if="v$.FormData.phone.$error">
+                <span class="error" v-if="v$.formSubData.phone.$error">
                   Введите телефон
                 </span>
               </div>
@@ -184,7 +186,7 @@
               >
                 <button
                   class="presentation-buttom presentation-button"
-                  type="submit"
+                  @click="submitForm"
                 >
                   <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
                   <div class="presentation-buttom-img">
@@ -200,11 +202,10 @@
                   type="email"
                   placeholder="Email"
                   class="block-choose-card big"
-                  v-model="FormData.emal"
-                  :class="{ 'is-invalid': v$.FormData.email.$error }"
+                  v-model="state.formSubData.email"
                 />
-                <span class="error" v-if="v$.FormData.email.$error">
-                  Введите почту
+                <span class="error" v-if="v$.formSubData.email.$error">
+                  Email не корректный
                 </span>
                 <!-- <span else="v$.FormData.email.$required">
                   Введите почту11112
@@ -212,12 +213,18 @@
               </div>
               <div class="col-xxl-4 order-4 col-sm-6">
                 <div class="submit-cheack">
-                  <input id="submitOerde" type="checkbox" checked />
-                  <label for="submitOerde"
-                    >Я согласен на обработку персональных данных</label
-                  >
+                  <input
+                    @click="cheacked = !cheacked"
+                    id="submitOerder"
+                    type="checkbox"
+                    checked
+                  />
+                  <label>Я согласен на обработку персональных данных</label>
+                  <span v-if="cheacked" class="error"> Политика </span>
                 </div>
               </div>
+              <div class="hide-input"></div>
+              <div class="hide-input"></div>
             </div>
           </div>
         </form>
@@ -251,12 +258,41 @@
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "vuelidate/lib/validators";
 import { maska } from "maska";
+import { reactive, computed } from "vue";
 export default {
+  setup() {
+    const state = reactive({
+      formSubData: {
+        name: "",
+        phone: "",
+        email: "",
+        prodgect: "",
+      },
+    });
+
+    const rules = computed(() => {
+      return {
+        formSubData: {
+          name: { required, minLength: minLength(4) },
+          phone: { required, minLength: minLength(6) },
+          email: { required, email },
+          prodgect: { required, minLength: minLength(6) },
+        },
+      };
+    });
+
+    const v$ = useVuelidate(rules, state);
+
+    return {
+      state,
+      v$,
+    };
+  },
   name: "SubmitPage",
   directives: { maska },
   data() {
     return {
-      v$: useVuelidate(),
+      cheacked: false,
       servicesBloсk: [
         "Мобильное приложение",
         "Web-платформа",
@@ -267,20 +303,6 @@ export default {
       budgetBlock: ["до 1 млн", "1-3 млн", "3-5 млн", "Не знаю"],
       selBudget: null,
       notKnowD: null,
-      FormData: {
-        name: "",
-        phone: "",
-        email: "",
-      },
-    };
-  },
-  validations() {
-    return {
-      FormData: {
-        name: { required },
-        email: { required, email },
-        phone: { required, minLengt: minLength(11) },
-      },
     };
   },
   methods: {
@@ -290,22 +312,30 @@ export default {
     notKnow(status) {
       this.notKnowD = status;
     },
-    submitHandler() {
-      this.$store
-        .dispatch("submitHandler", {
-          name: this.FormData.name,
-          phone: this.FormData.phone,
-          email: this.FormData.email,
-        })
-        .then(() => {
-          console.log("Test1");
-        })
-        .catch((err) => {
-          console.log(111);
-          this.FormData.errors = err.response.data.message;
-        });
+    submitForm() {
       this.v$.$validate();
+      if (!this.v$.$error) {
+        console.log("Submit");
+      } else {
+        console.log("NOT submit");
+      }
     },
+    checkedCheack() {
+      let cheack = document.getElementById("submitOerder");
+      if (cheack.checked == 1) {
+        console.log("Nice");
+      } else {
+        console.log("XER");
+      }
+    },
+    servicesValue() {
+      let servicesValue = document.querySelector(".services-blok-active");
+      servicesValue.value;
+      console.log(servicesValue.value);
+    },
+  },
+  mounted: function () {
+    this.servicesValue();
   },
 };
 </script>
