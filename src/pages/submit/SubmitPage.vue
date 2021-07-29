@@ -12,7 +12,32 @@
         <p class="title gradient-text">Оставить заявку</p>
         <form @submit.prevent="submitHandler">
           <div class="block-choose">
-            <h5 class="block-choose-title">Выберите услугу:</h5>
+            <h5 class="block-choose-title">
+              Выберите услугу:
+              <span v-if="notKnowD" class="error error-text"
+                ><svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5 0C4.69617 0 0 4.69658 0 10.5C0 16.3038 4.69658 21 10.5 21C16.3038 21 21 16.3034 21 10.5C21 4.69617 16.3034 0 10.5 0ZM10.5 19.3594C5.60302 19.3594 1.64062 15.3967 1.64062 10.5C1.64062 5.60302 5.60335 1.64062 10.5 1.64062C15.397 1.64062 19.3594 5.60335 19.3594 10.5C19.3594 15.397 15.3967 19.3594 10.5 19.3594Z"
+                    fill="#FF6161"
+                  />
+                  <path
+                    d="M10.5 5.28595C10.0469 5.28595 9.67969 5.6532 9.67969 6.10626V11.3888C9.67969 11.8418 10.0469 12.2091 10.5 12.2091C10.9531 12.2091 11.3203 11.8418 11.3203 11.3888V6.10626C11.3203 5.6532 10.9531 5.28595 10.5 5.28595Z"
+                    fill="#FF6161"
+                  />
+                  <path
+                    d="M10.5 15.4284C11.1116 15.4284 11.6074 14.9326 11.6074 14.321C11.6074 13.7094 11.1116 13.2136 10.5 13.2136C9.88839 13.2136 9.39258 13.7094 9.39258 14.321C9.39258 14.9326 9.88839 15.4284 10.5 15.4284Z"
+                    fill="#FF6161"
+                  />
+                </svg>
+                Пожалуйста, выберите один из вариантов</span
+              >
+            </h5>
             <div class="row">
               <div
                 v-for="itemServices in servicesBloсk"
@@ -32,7 +57,34 @@
             </div>
           </div>
           <div class="block-choose">
-            <h5 class="block-choose-title">Выберите бюджет проекта:</h5>
+            <h5 class="block-choose-title">
+              Выберите бюджет проекта:
+              <span
+                v-if="selBudget === itemBudget ? 'stonks-blok-active' : ''"
+                class="error error-text"
+                ><svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5 0C4.69617 0 0 4.69658 0 10.5C0 16.3038 4.69658 21 10.5 21C16.3038 21 21 16.3034 21 10.5C21 4.69617 16.3034 0 10.5 0ZM10.5 19.3594C5.60302 19.3594 1.64062 15.3967 1.64062 10.5C1.64062 5.60302 5.60335 1.64062 10.5 1.64062C15.397 1.64062 19.3594 5.60335 19.3594 10.5C19.3594 15.397 15.3967 19.3594 10.5 19.3594Z"
+                    fill="#FF6161"
+                  />
+                  <path
+                    d="M10.5 5.28595C10.0469 5.28595 9.67969 5.6532 9.67969 6.10626V11.3888C9.67969 11.8418 10.0469 12.2091 10.5 12.2091C10.9531 12.2091 11.3203 11.8418 11.3203 11.3888V6.10626C11.3203 5.6532 10.9531 5.28595 10.5 5.28595Z"
+                    fill="#FF6161"
+                  />
+                  <path
+                    d="M10.5 15.4284C11.1116 15.4284 11.6074 14.9326 11.6074 14.321C11.6074 13.7094 11.1116 13.2136 10.5 13.2136C9.88839 13.2136 9.39258 13.7094 9.39258 14.321C9.39258 14.9326 9.88839 15.4284 10.5 15.4284Z"
+                    fill="#FF6161"
+                  />
+                </svg>
+                Пожалуйста, выберите один из вариантов</span
+              >
+            </h5>
             <div class="row">
               <div
                 v-for="itemBudget in budgetBlock"
@@ -50,7 +102,31 @@
             </div>
           </div>
           <div class="block-choose">
-            <h5 class="block-choose-title">Описание проекта:</h5>
+            <h5 class="block-choose-title">
+              Описание проекта:<span class="error error-text"
+                ><svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.5 0C4.69617 0 0 4.69658 0 10.5C0 16.3038 4.69658 21 10.5 21C16.3038 21 21 16.3034 21 10.5C21 4.69617 16.3034 0 10.5 0ZM10.5 19.3594C5.60302 19.3594 1.64062 15.3967 1.64062 10.5C1.64062 5.60302 5.60335 1.64062 10.5 1.64062C15.397 1.64062 19.3594 5.60335 19.3594 10.5C19.3594 15.397 15.3967 19.3594 10.5 19.3594Z"
+                    fill="#FF6161"
+                  />
+                  <path
+                    d="M10.5 5.28595C10.0469 5.28595 9.67969 5.6532 9.67969 6.10626V11.3888C9.67969 11.8418 10.0469 12.2091 10.5 12.2091C10.9531 12.2091 11.3203 11.8418 11.3203 11.3888V6.10626C11.3203 5.6532 10.9531 5.28595 10.5 5.28595Z"
+                    fill="#FF6161"
+                  />
+                  <path
+                    d="M10.5 15.4284C11.1116 15.4284 11.6074 14.9326 11.6074 14.321C11.6074 13.7094 11.1116 13.2136 10.5 13.2136C9.88839 13.2136 9.39258 13.7094 9.39258 14.321C9.39258 14.9326 9.88839 15.4284 10.5 15.4284Z"
+                    fill="#FF6161"
+                  />
+                </svg>
+                Пожалуйста, выберите один из вариантов</span
+              >
+            </h5>
             <div class="row">
               <div class="col-xxl-9 col-lg-12">
                 <textarea
@@ -75,17 +151,26 @@
                   type="text"
                   placeholder="Как Вас зовут?"
                   class="block-choose-card big"
+                  v-model="FormData.name"
+                  :class="{ 'is-invalid': v$.FormData.name.$error }"
                 />
+                <span class="error" v-if="v$.FormData.name.$error">
+                  Введите Имя
+                </span>
               </div>
               <div class="col-xxl-4 col-sm-6 order-2">
                 <input
-                  type="tell"
+                  id="phone"
+                  type="number"
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
                   v-model="FormData.phone"
+                  v-maska="'###########'"
                   :class="{ 'is-invalid': v$.FormData.phone.$error }"
                 />
-                <span v-if="v$.FormData.phone.$error"> Введите телефон </span>
+                <span class="error" v-if="v$.FormData.phone.$error">
+                  Введите телефон
+                </span>
               </div>
               <div
                 class="
@@ -118,7 +203,9 @@
                   v-model="FormData.emal"
                   :class="{ 'is-invalid': v$.FormData.email.$error }"
                 />
-                <span v-if="v$.FormData.email.$error"> Введите почту </span>
+                <span class="error" v-if="v$.FormData.email.$error">
+                  Введите почту
+                </span>
                 <!-- <span else="v$.FormData.email.$required">
                   Введите почту11112
                 </span> -->
@@ -162,9 +249,11 @@
 
 <script>
 import useVuelidate from "@vuelidate/core";
-import { email, required, minLength } from "vuelidate/lib/validators";
+import { required, email, minLength } from "vuelidate/lib/validators";
+import { maska } from "maska";
 export default {
   name: "SubmitPage",
+  directives: { maska },
   data() {
     return {
       v$: useVuelidate(),
@@ -180,7 +269,7 @@ export default {
       notKnowD: null,
       FormData: {
         name: "",
-        tel: "",
+        phone: "",
         email: "",
       },
     };
@@ -190,7 +279,7 @@ export default {
       FormData: {
         name: { required },
         email: { required, email },
-        phone: { required, minLengt: minLength(5) },
+        phone: { required, minLengt: minLength(11) },
       },
     };
   },

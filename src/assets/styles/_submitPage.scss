@@ -129,6 +129,7 @@
 
 .choose {
   &-textarea {
+    height: 80px;
     padding-top: 31px;
     padding-right: 20px;
   }
@@ -176,6 +177,21 @@
 .presentation-button {
   background-color: unset;
   border: unset;
+}
+.error {
+  display: inline-block;
+  margin-top: -9px;
+  color: #FF6161;
+  font-size: 12px;
+  font-weight: 300;
+  &-text {
+    display: inline;
+    margin-left: 30px;
+    svg {
+      margin-right: 12px;
+      margin-bottom: 5px;
+    }
+  }
 }
 @include bigDesctop {
   .submitPage {

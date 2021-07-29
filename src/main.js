@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import Maska from 'maska';
 // import AOS from "aos";
 // import
 
@@ -27,5 +28,5 @@ app.component("Lang", Lang);
 app.component("PresentBtn", PresentBtn);
 app.component("CallBtn", CallBtn);
 
-app.use(store).use(router).mount("#app");
+app.use(store).use(router).use(Maska).mount("#app");
 
