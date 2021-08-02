@@ -20,7 +20,7 @@
           <div class="contactPage-right-wrapper">
             <div class="contactPage-right-block">
               <h6>Найдите нас по адрессу</h6>
-              <p>г.Краснодар, ул. Монтажников 1/4, 12 эт., оф. 1205</p>
+              <a target="_blank" href="https://goo.gl/maps/G1HhpAF7uvyVz2Ck7">г.Краснодар, ул. Монтажников 1/4, 12 эт., оф. 1205</a>
             </div>
             <div class="contactPage-right-buttom">
               <div class="contactPage-right-block">

@@ -111,7 +111,7 @@
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
                   @input="cheackTextarea()"
-                  v-model="textarea"
+                  v-model="state.formSubData.prodgect"
                 ></textarea>
                 <span class="error" v-if="v$.formSubData.prodgect.$error">
                   опишите проект
