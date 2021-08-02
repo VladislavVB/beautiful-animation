@@ -50,7 +50,9 @@
                     selServices === itemServices ? 'services-blok-active' : ''
                   "
                   class="block-choose-card services-blok"
-                ></div>
+                >
+                  <p>{{ itemServices }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -111,7 +113,6 @@
                   @input="cheackTextarea()"
                   v-model="textarea"
                 ></textarea>
-                <p>{{ textarea }}</p>
                 <span class="error" v-if="v$.formSubData.prodgect.$error">
                   опишите проект
                 </span>

@@ -2,7 +2,7 @@
   <!-- <router-link to="/">Home</router-link>
   <router-link to="/about">about</router-link> -->
   <router-view v-slot="{ Component }">
-    <transition name="slide">
+    <transition name="slide" appear>
       <component :is="Component" />
     </transition>
   </router-view>

@@ -7,7 +7,7 @@
     <Lang class="goWhite" />
   </div>
   <transition name="slide">
-    <div class="homeDetail-wrapper">
+    <div @scroll="changeColors()" class="homeDetail-wrapper">
       <div class="homeDetail">
         <div class="homeDetail-left">
           <div class="homeDetail-up-title">
@@ -218,6 +218,8 @@
 </template>
 
 <script>
+import "@/assets/scriptsJS/app.js";
+
 export default {
   name: "homeDetail",
   // props: {
@@ -241,6 +243,15 @@ export default {
     },
     hendlResize() {
       this.width = window.innerWidth;
+    },
+    changeColors() {
+      let sidebarLogoColor = document.querySelector(".sidebar-logo");
+
+      const activeFunck = () => {
+        sidebarLogoColor.classList.add(".change-color");
+        console.log(111);
+      };
+      activeFunck();
     },
   },
   transition() {
@@ -282,5 +293,41 @@ export default {
 }
 .slide-leave-to {
   transform: translateY(100%);
+}
+.recolor {
+  color: #000 !important;
+
+  .sidebar-contact-item {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    color: #000 !important;
+    transition: 0.5;
+
+    svg {
+      path {
+        fill: #000;
+      }
+    }
+  }
+
+  .sidebar-menu {
+    &-one {
+      background: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    &-two {
+      background: #000 !important;
+    }
+
+    &-three {
+      background: rgba(0, 0, 0, 0.18) !important;
+    }
+
+    .sidebar-case-content {
+      p {
+        color: #000;
+      }
+    }
+  }
 }
 </style>

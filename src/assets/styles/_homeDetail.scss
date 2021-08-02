@@ -248,8 +248,15 @@
   }
 }
 
+
+.change {
+  &-color {
+    color: $black;
+  }
+}
+
 @include tablet {
-  
+
 
   .homeDetail {
     display: unset;
@@ -310,6 +317,7 @@
       }
     }
   }
+
   .goWhite {
     p {
       color: $white;
@@ -331,6 +339,7 @@
       color: $white !important;
     }
   }
+
 }
 
 @include ipad-mini {
@@ -482,3 +491,4 @@
     margin-bottom: 5px !important;
   }
 }
+
