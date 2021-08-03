@@ -7,7 +7,7 @@ import Maska from "maska";
 // import
 
 //Импорт компонента, который будем использовать как глобальный
-import BaseIcon from "./components/BaseIcon";
+
 import Logo from "./components/Logo";
 import Menu from "./components/Menu";
 import Contact from "./components/Contact";
@@ -19,7 +19,7 @@ import CallBtn from "./components/CallBtn";
 
 const app = createApp(App);
 //Пример регистрации глобального компонента
-app.component("BaseIcon", BaseIcon);
+
 app.component("Logo", Logo);
 app.component("Menu", Menu);
 app.component("Contact", Contact);

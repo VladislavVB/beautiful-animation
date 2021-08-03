@@ -17,16 +17,20 @@
         spaceBetween: 0,
       },
       '@1.00': {
-        slidesPerView: 2.0,
+        slidesPerView: 1.5,
         spaceBetween: 11,
       },
-      '@1.25': {
-        slidesPerView: 2.5,
+      '@1.45': {
+        slidesPerView: 2,
         spaceBetween: 11,
       },
       '@1.50': {
+        slidesPerView: 2.5,
+        spaceBetween: 10,
+      },
+      '@1.90': {
         slidesPerView: 3,
-        spaceBetween: 20,
+        spaceBetween: 15,
       },
     }"
     :scrollbar="{ draggable: true }"

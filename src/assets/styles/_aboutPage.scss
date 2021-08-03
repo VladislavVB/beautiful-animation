@@ -69,9 +69,18 @@
   }
 }
 
+@include bigDesctop {
+  .aboutPage {
+    &-logo {
+      width: 800px;
+    }
+  }
+}
+
 @include desctop {
   .aboutPage {
     &-logo {
+      width: 700px;
       font-size: 96px;
       margin-bottom: 29px;
     }
@@ -94,13 +103,16 @@
     &-wrapper {
       display: unset;
     }
+
     &-left {
       width: 100%;
       margin-top: 110px;
     }
+
     &-right {
       width: 100%;
       margin-bottom: 130px;
+
       &-text {
         p {
           margin-top: 50px;
@@ -113,8 +125,10 @@
 @include mobile {
   .aboutPage {
     &-logo {
+      width: auto;
       font-size: 55px;
     }
+
     &-block {
       margin-top: 20px;
     }

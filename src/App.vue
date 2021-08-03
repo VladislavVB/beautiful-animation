@@ -1,20 +1,18 @@
 <template>
-  <!-- <router-link to="/">Home</router-link>
-  <router-link to="/about">about</router-link> -->
-  <router-view v-slot="{ Component }">
-    <transition name="slide" appear>
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  <Layout />
 </template>
 
 <script>
+import Layout from "./layouts/Layout";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default {
   name: "App",
-  components: {},
+  components: {
+    Layout,
+  },
 };
 
 AOS.init({
@@ -24,4 +22,17 @@ AOS.init({
 
 <style lang="scss">
 @import "./assets/styles/style.scss";
+
+.slide-fade-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
 </style>

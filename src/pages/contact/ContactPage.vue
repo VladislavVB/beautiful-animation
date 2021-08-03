@@ -1,11 +1,11 @@
 <template>
-  <Logo />
+  <!-- <Logo />
   <Menu />
   <Contact />
   <div class="d-sm-flex d-none">
     <Case />
   </div>
-  <Lang />
+  <Lang /> -->
   <div class="contactPage-wrapper">
     <div class="container-axas">
       <div class="contactPage">
@@ -20,7 +20,9 @@
           <div class="contactPage-right-wrapper">
             <div class="contactPage-right-block">
               <h6>Найдите нас по адрессу</h6>
-              <a target="_blank" href="https://goo.gl/maps/G1HhpAF7uvyVz2Ck7">г.Краснодар, ул. Монтажников 1/4, 12 эт., оф. 1205</a>
+              <a target="_blank" href="https://goo.gl/maps/G1HhpAF7uvyVz2Ck7"
+                >г.Краснодар, ул. Монтажников 1/4, 12 эт., оф. 1205</a
+              >
             </div>
             <div class="contactPage-right-buttom">
               <div class="contactPage-right-block">

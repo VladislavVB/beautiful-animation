@@ -1,11 +1,11 @@
 <template>
-  <Logo class="notAcive" />
+  <!-- <Logo class="notAcive" />
   <Menu class="notAcive" />
   <Contact class="notAcive" />
   <div class="d-sm-flex d-none">
     <Case />
   </div>
-  <Lang />
+  <Lang /> -->
   <div class="menuPage-wrapper">
     <div class="menuPage">
       <div data-aos="fade-up" data-aos-duration="1500" class="menuPage-left">

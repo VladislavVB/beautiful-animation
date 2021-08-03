@@ -1,12 +1,13 @@
 <template>
+  <!-- <transition name="slide"> -->
   <!-- <div data-aos="fade-right"> -->
-  <Logo />
+  <!-- <Logo />
   <Menu />
   <Contact />
   <div class="d-sm-flex d-none">
     <Case />
   </div>
-  <Lang />
+  <Lang /> -->
   <div class="homePage-wrapper">
     <div class="container-fluid p-0 homePage">
       <div
@@ -26,6 +27,7 @@
     </div>
   </div>
   <!-- </div> -->
+  <!-- </transition> -->
 </template>
 
 <script>

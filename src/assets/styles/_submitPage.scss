@@ -141,7 +141,12 @@
     flex-wrap: wrap;
     padding-top: 15px;
     cursor: pointer;
-
+    position: relative;
+    .error {
+      position: absolute;
+      top: 9px;
+      left: 45px;
+    }
     label {
       font-size: 14px;
       line-height: 22.74px;

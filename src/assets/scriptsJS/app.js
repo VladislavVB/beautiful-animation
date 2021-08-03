@@ -30,6 +30,17 @@ setTimeout(() => {
     } else {
       console.log();
     }
+    if (window.innerWidth < 500) {
+      if (homeDetailLeft.getBoundingClientRect().top < -650) {
+        hdLogo.classList.add("recolor");
+        hdSidebarMenu.classList.add("recolor");
+      } else {
+        hdLogo.classList.remove("recolor");
+        hdSidebarMenu.classList.remove("recolor");
+      }
+    } else {
+      console.log();
+    }
     console.log(homeDetailLeft.getBoundingClientRect());
   };
 
@@ -37,4 +48,4 @@ setTimeout(() => {
     reColorHud();
     // console.log(111);
   });
-}, 500);
+}, 1000);

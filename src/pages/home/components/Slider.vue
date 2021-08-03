@@ -11,7 +11,7 @@
     @slideChange="onSlideChange"
   >
     <swiper-slide v-for="item in casesList" :key="item.id">
-      <router-link to="/home-detail">
+      <router-link :to="{ name: 'HomeDetail' }">
         <div :style="{ background: item.background }" class="slideHome">
           <div
             data-swiper-parallax="-100"

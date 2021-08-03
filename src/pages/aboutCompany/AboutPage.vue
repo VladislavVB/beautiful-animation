@@ -1,11 +1,11 @@
 <template>
-  <Logo />
+  <!-- <Logo />
   <Menu />
   <Contact />
   <div class="d-sm-flex d-none">
     <Case />
   </div>
-  <Lang />
+  <Lang /> -->
   <div style="margin: auto" class="container-axas h-100">
     <div class="aboutPage-wrapper">
       <div class="aboutPage-left">

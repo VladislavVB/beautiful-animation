@@ -1,11 +1,11 @@
 <template>
-  <Logo class="goWhiteSub dfdffd" />
+  <!-- <Logo class="goWhiteSub dfdffd" />
   <Menu />
   <Contact />
   <div class="d-sm-flex d-none">
     <Case class="goBlackSub" />
   </div>
-  <Lang class="goBlackSub" />
+  <Lang class="goBlackSub" /> -->
   <div class="submitPage">
     <div data-aos="fade-right" data-aos-duration="1000" class="submitPage-left">
       <div class="submitPage-left-body">
@@ -111,11 +111,11 @@
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
                   @input="cheackTextarea()"
-                  v-model="state.formSubData.prodgect"
+                  v-model="textarea"
                 ></textarea>
-                <span class="error" v-if="v$.formSubData.prodgect.$error">
+                <!-- <span class="error" v-if="v$.formSubData.prodgect.$error">
                   опишите проект
-                </span>
+                </span> -->
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
                 <div v-if="!textarea" class="block-choose-card">

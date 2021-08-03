@@ -17,7 +17,7 @@ const routes = [
     component: Home,
     meta: {
       title: "Home page",
-      layout: "",
+
       // enterClass: "animate__animated animate__fadeInLeft",
       // leaveClass: "animate__animated animate__fadeOutRight",
     },
@@ -28,7 +28,7 @@ const routes = [
     component: EventList,
     meta: {
       title: "EventList",
-      layout: "",
+
       // enterClass: "animate__animated animate__fadeInLeft",
       // leaveClass: "animate__animated animate__fadeOutRight",
     },
@@ -39,7 +39,7 @@ const routes = [
     component: HomeDetail,
     meta: {
       title: "Home detail",
-      layout: "",
+
       // enterClass: "animate__animated animate__fadeInLeft",
       // leaveClass: "animate__animated animate__fadeOutRight",
     },
@@ -50,7 +50,6 @@ const routes = [
     component: MenuPage,
     meta: {
       title: "Menu",
-      layout: "",
     },
   },
   {
@@ -59,7 +58,7 @@ const routes = [
     component: AboutPage,
     meta: {
       title: "AboutPage",
-      layout: "",
+
     },
   },
   {
@@ -68,7 +67,7 @@ const routes = [
     component: ContactPage,
     meta: {
       title: "Contact",
-      layout: "",
+
     },
   },
   {
@@ -77,7 +76,7 @@ const routes = [
     component: SubmitPage,
     meta: {
       title: "Submit",
-      layout: "",
+
     },
   },
   {
@@ -86,7 +85,7 @@ const routes = [
     component: CasesPage,
     meta: {
       title: "Cases page",
-      layout: "",
+
     },
   },
 ];
