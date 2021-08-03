@@ -353,6 +353,10 @@
 @include ipad-mini {}
 
 @include mobile {
+  .sidebar-case {
+    display: none;
+  }
+  
   .slideHome {
 
 

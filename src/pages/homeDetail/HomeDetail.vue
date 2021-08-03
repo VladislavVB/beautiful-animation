@@ -249,6 +249,11 @@ export default {
 </script>
 
 <style lang="scss">
+// .sidebar-contact,
+// .sidebar-lang,
+// .sidebar-case {
+//   display: none;
+// }
 .notActive {
   .sidebar {
     &-menu {
