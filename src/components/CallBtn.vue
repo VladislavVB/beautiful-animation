@@ -1,5 +1,4 @@
 <template>
-
   <router-link to="/submit">
     <div class="presentation-buttom">
       <p class="gradient-text">ЗАКАЗАТЬ ЗВОНОК</p>
@@ -15,3 +14,4 @@ export default {
   name: "CallBtn",
 };
 </script>
+А

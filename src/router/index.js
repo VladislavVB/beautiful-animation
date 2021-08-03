@@ -58,7 +58,6 @@ const routes = [
     component: AboutPage,
     meta: {
       title: "AboutPage",
-
     },
   },
   {
@@ -67,7 +66,6 @@ const routes = [
     component: ContactPage,
     meta: {
       title: "Contact",
-
     },
   },
   {
@@ -76,7 +74,6 @@ const routes = [
     component: SubmitPage,
     meta: {
       title: "Submit",
-
     },
   },
   {
@@ -85,7 +82,6 @@ const routes = [
     component: CasesPage,
     meta: {
       title: "Cases page",
-
     },
   },
 ];

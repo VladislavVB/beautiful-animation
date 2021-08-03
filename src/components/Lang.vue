@@ -12,7 +12,6 @@
   <div v-else class="sidebar-lang active">
     <div class="sidebar-contact-item">EN</div>
   </div>
- 
 </template>
 
 <script>
