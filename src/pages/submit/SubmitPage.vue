@@ -1,11 +1,4 @@
 <template>
-  <!-- <Logo class="goWhiteSub dfdffd" />
-  <Menu />
-  <Contact />
-  <div class="d-sm-flex d-none">
-    <Case class="goBlackSub" />
-  </div>
-  <Lang class="goBlackSub" /> -->
   <div class="submitPage">
     <div data-aos="fade-right" data-aos-duration="1000" class="submitPage-left">
       <div class="submitPage-left-body">
@@ -113,9 +106,6 @@
                   @input="cheackTextarea()"
                   v-model="textarea"
                 ></textarea>
-                <!-- <span class="error" v-if="v$.formSubData.prodgect.$error">
-                  опишите проект
-                </span> -->
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
                 <div v-if="!textarea" class="block-choose-card">
@@ -326,3 +316,27 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+// .slide-enter-active {
+//   transition: all 1.5s ease-in-out;
+// }
+// .slide-leave-active {
+//   transition: all 1.5s ease-in-out;
+// }
+// .slide-enter {
+//   transform: translateY(-100%);
+//   transform: 2s;
+// }
+// .slide-enter-to {
+//   transform: translateY(0%);
+//   transform: 2s;
+// }
+// .slide-leave {
+//   transform: translateY(0%);
+//   transform: 2s;
+// }
+// .slide-leave-to {
+//   transform: translateY(100%);
+//   transform: 2s;
+// }
+</style>

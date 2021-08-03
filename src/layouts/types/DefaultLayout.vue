@@ -4,8 +4,12 @@
   <Contact />
   <Case />
   <Lang />
-  <router-view v-slot="{ Component }">
-    <transition name="slide-fade" mode="out-in">
+  <router-view v-slot="{ Component, route }">
+    <transition
+      :enter-active-class="route.meta.enterClass"
+      :leave-active-class="route.meta.leaveClass"
+      mode="out-in"
+    >
       <component :is="Component" />
     </transition>
   </router-view>

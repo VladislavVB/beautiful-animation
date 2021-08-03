@@ -64,6 +64,28 @@ export default {
 };
 </script>
 <style lang="scss">
+.slide-enter-active {
+  transition: all 1.5s ease-in-out;
+}
+.slide-leave-active {
+  transition: all 1.5s ease-in-out;
+}
+.slide-enter {
+  transform: translateY(-100%);
+  transform: 2s;
+}
+.slide-enter-to {
+  transform: translateY(0%);
+  transform: 2s;
+}
+.slide-leave {
+  transform: translateY(0%);
+  transform: 2s;
+}
+.slide-leave-to {
+  transform: translateY(100%);
+  transform: 2s;
+}
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }

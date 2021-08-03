@@ -17,9 +17,8 @@ const routes = [
     component: Home,
     meta: {
       title: "Home page",
-
-      // enterClass: "animate__animated animate__fadeInLeft",
-      // leaveClass: "animate__animated animate__fadeOutRight",
+      enterClass: "animate__animated animate__fadeInLeft animate__fast",
+      leaveClass: "animate__animated animate__fadeOutLeft animate__fast",
     },
   },
   {
@@ -28,9 +27,8 @@ const routes = [
     component: EventList,
     meta: {
       title: "EventList",
-
-      // enterClass: "animate__animated animate__fadeInLeft",
-      // leaveClass: "animate__animated animate__fadeOutRight",
+      enterClass: "animate__animated animate__fadeInLeft animate__fast",
+      leaveClass: "animate__animated animate__fadeOutLeft animate__fast",
     },
   },
   {
@@ -39,9 +37,8 @@ const routes = [
     component: HomeDetail,
     meta: {
       title: "Home detail",
-
-      // enterClass: "animate__animated animate__fadeInLeft",
-      // leaveClass: "animate__animated animate__fadeOutRight",
+      enterClass: "animate__animated animate__fadeInRight animate__fast",
+      leaveClass: "animate__animated animate__fadeOutLeft animate__fast",
     },
   },
   {
@@ -50,6 +47,8 @@ const routes = [
     component: MenuPage,
     meta: {
       title: "Menu",
+      enterClass: "animate__animated animate__fadeInRight",
+      leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -58,6 +57,8 @@ const routes = [
     component: AboutPage,
     meta: {
       title: "AboutPage",
+      enterClass: "animate__animated animate__fadeInLeft",
+      leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -66,6 +67,8 @@ const routes = [
     component: ContactPage,
     meta: {
       title: "Contact",
+      enterClass: "animate__animated animate__fadeInLeft",
+      leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -74,6 +77,8 @@ const routes = [
     component: SubmitPage,
     meta: {
       title: "Submit",
+      enterClass: "animate__animated animate__fadeInLeft",
+      leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
   {
@@ -81,7 +86,9 @@ const routes = [
     name: "CasesPage",
     component: CasesPage,
     meta: {
-      title: "Cases page",
+      title: "Casespage",
+      enterClass: "animate__animated animate__fadeInUp",
+      leaveClass: "animate__animated animate__fadeOutRight",
     },
   },
 ];
