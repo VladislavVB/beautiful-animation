@@ -1,13 +1,4 @@
 <template>
-  <!-- <transition name="slide"> -->
-  <!-- <div data-aos="fade-right"> -->
-  <!-- <Logo />
-  <Menu />
-  <Contact />
-  <div class="d-sm-flex d-none">
-    <Case />
-  </div>
-  <Lang /> -->
   <div class="homePage-wrapper">
     <div class="container-fluid p-0 homePage">
       <div
@@ -26,8 +17,6 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
-  <!-- </transition> -->
 </template>
 
 <script>
@@ -52,14 +41,18 @@ export default {
 }
 .slide-enter {
   transform: translateY(-100%);
+  transform: 2s;
 }
 .slide-enter-to {
   transform: translateY(0%);
+  transform: 2s;
 }
 .slide-leave {
   transform: translateY(0%);
+  transform: 2s;
 }
 .slide-leave-to {
   transform: translateY(100%);
+  transform: 2s;
 }
 </style>

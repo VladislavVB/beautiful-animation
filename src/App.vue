@@ -29,7 +29,7 @@ AOS.init({
 }
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.5s ease;
+  transition: all 2.5s ease;
 }
 .slide-fade-leave-to {
   transform: translateX(-10px);
