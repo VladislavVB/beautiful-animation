@@ -15,5 +15,4 @@ setTimeout(() => {
   window.addEventListener("loader", () => {
     recolorMenuPage();
   });
-  console.log('dsdasdsadsadsdsa');
 }, 500);
