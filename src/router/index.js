@@ -27,8 +27,9 @@ const routes = [
     component: EventList,
     meta: {
       title: "EventList",
-      enterClass: "animate__animated animate__fadeInLeft animate__fast",
-      leaveClass: "animate__animated animate__fadeOutRight animate__fast",
+      enterClass: "animate__animated animate__fadeInBottomLeft animate__fast",
+      leaveClass: "animate__animated animate__fadeOutLeft animate__fast",
+      // a
     },
   },
   {
@@ -37,8 +38,9 @@ const routes = [
     component: HomeDetail,
     meta: {
       title: "Home detail",
-      enterClass: "animate__animated animate__fadeInRight animate__fast",
-      leaveClass: "animate__animated animate__fadeOutRight animate__fast",
+      enterClass: "animate__animated animate__fadeInDown animate__fast",
+      leaveClass: "animate__animated animate__fadeOutUp", /// то что нужно по идее
+      // a
     },
   },
   {
@@ -57,8 +59,8 @@ const routes = [
     component: AboutPage,
     meta: {
       title: "AboutPage",
-      enterClass: "animate__animated animate__fadeInLeft animate__fast",
-      leaveClass: "animate__animated animate__fadeOutRight animate__fast",
+      enterClass: "animate__animated animate__fadeInBottomLeft animate__fast",
+      leaveClass: "animate__animated animate__fadeInBottomLeft animate__fast",
     },
   },
   {

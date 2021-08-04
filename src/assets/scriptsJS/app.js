@@ -57,4 +57,5 @@ setTimeout(() => {
   window.addEventListener("scroll", () => {
     reColorHud();
   });
-}, 1100);
+  reColorHud();
+}, 2000);
