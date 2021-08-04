@@ -383,8 +383,5 @@ export default {
     color: #fff !important;
     background-color: brown;
   }
-  .homeDetail-up-title::before {
-    // background-color: brown;
-  }
 }
 </style>
