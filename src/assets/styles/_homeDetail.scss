@@ -410,9 +410,11 @@
       margin-top: 150px;
 
       .slideHome-images {
+        transition: 0.5s;
         .slideHome-description {
           margin-top: 10px;
         }
+        
       }
 
       &-down {

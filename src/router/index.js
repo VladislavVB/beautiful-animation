@@ -38,8 +38,8 @@ const routes = [
     component: HomeDetail,
     meta: {
       title: "Home detail",
-      enterClass: "animate__animated animate__fadeInDown animate__fast",
-      leaveClass: "animate__animated animate__fadeOutUp", /// то что нужно по идее
+      enterClass: "animate__animated animate__fadeInRight animate__fast",
+      leaveClass: "animate__animated animate__fadeOutLeft animate__delay-1s animate__fast	", /// то что нужно по идее
       // a
     },
   },

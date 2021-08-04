@@ -51,7 +51,7 @@ setTimeout(() => {
     } else {
       console.log();
     }
-    console.log(homeDetailLeft.getBoundingClientRect());
+    // console.log(homeDetailLeft.getBoundingClientRect());
   };
 
   window.addEventListener("scroll", () => {

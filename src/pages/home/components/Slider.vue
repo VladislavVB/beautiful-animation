@@ -1,4 +1,16 @@
 <template>
+  <div class="homePage-title homePage-title-main">
+    <div
+      class=""
+      data-aos="fade-down"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="1500"
+    >
+      <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+      <p class="text-center">We have developed:</p>
+    </div>
+  </div>
   <swiper
     :autoplay="true"
     :loop="true"
@@ -11,7 +23,7 @@
     @slideChange="onSlideChange"
   >
     <swiper-slide v-for="item in casesList" :key="item.id">
-      <router-link :to="{ name: 'HomeDetail' }">
+      <router-link @click="goAnimation()" :to="{ name: 'HomeDetail' }">
         <div :style="{ background: item.background }" class="slideHome">
           <div
             data-swiper-parallax="-100"
@@ -26,6 +38,9 @@
       </router-link>
     </swiper-slide>
   </swiper>
+  <div class="slideHome-progres">
+    <div class="slideHome-progres-bar"></div>
+  </div>
 </template>
 <script>
 // Import Swiper Vue.js components
@@ -115,6 +130,14 @@ export default {
     this.progressLine();
   },
   methods: {
+    sendMethod() {},
+    // stopNext() {
+    //   setTimeout(() => {
+    //     this.$router.push({ name: "HomeDetail" });
+    //     console.log(1111111111);
+    //   }, 1000);
+    // },
+
     onSwiper(swiper) {
       console.log(swiper);
     },
@@ -131,6 +154,32 @@ export default {
           this.progressLine();
         }, 300);
       }, 3100);
+    },
+    goAnimation() {
+      const HomePageTitle = document.querySelector(".homePage-title-main");
+      const SlideHomeProgres = document.querySelector(".slideHome-progres");
+      const SlideHomeDescription = document.querySelectorAll(
+        ".slideHome-description"
+      );
+      const SlideHomeTitle = document.querySelectorAll(".slideHome-title");
+      const SlideHomeImages = document.querySelectorAll(
+        ".slideHome-images img"
+      );
+
+      SlideHomeTitle.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutUp");
+      });
+      SlideHomeDescription.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutUp");
+      });
+      SlideHomeImages.forEach((elem) => {
+        elem.classList.add("active");
+      });
+      SlideHomeProgres.classList.add("animate__animated", "animate__fadeOutUp");
+      HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
+    },
+    test() {
+      this.$emit("gogogo");
     },
   },
 };
