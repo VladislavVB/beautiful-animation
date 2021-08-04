@@ -1,11 +1,4 @@
 <template>
-  <!-- <Logo />
-  <Menu />
-  <Contact />
-  <div class="d-sm-flex d-none">
-    <Case />
-  </div>
-  <Lang /> -->
   <div class="contactPage-wrapper">
     <div class="container-axas">
       <div class="contactPage">
@@ -124,27 +117,4 @@ export default {
   name: "ContactPage",
 };
 </script>
-<style lang="scss" scoped>
-// .slide-enter-active {
-//   transition: all 1.5s ease-in-out;
-// }
-// .slide-leave-active {
-//   transition: all 1.5s ease-in-out;
-// }
-// .slide-enter {
-//   transform: translateY(-100%);
-//   transform: 2s;
-// }
-// .slide-enter-to {
-//   transform: translateY(0%);
-//   transform: 2s;
-// }
-// .slide-leave {
-//   transform: translateY(0%);
-//   transform: 2s;
-// }
-// .slide-leave-to {
-//   transform: translateY(100%);
-//   transform: 2s;
-// }
-</style>
+<style lang="scss" scoped></style>

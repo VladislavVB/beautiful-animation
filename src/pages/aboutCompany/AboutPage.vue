@@ -1,11 +1,4 @@
 <template>
-  <!-- <Logo />
-  <Menu />
-  <Contact />
-  <div class="d-sm-flex d-none">
-    <Case />
-  </div>
-  <Lang /> -->
   <div style="margin: auto" class="container-axas h-100">
     <div class="aboutPage-wrapper">
       <div class="aboutPage-left">
@@ -64,28 +57,28 @@ export default {
 };
 </script>
 <style lang="scss">
-.slide-enter-active {
-  transition: all 1.5s ease-in-out;
-}
-.slide-leave-active {
-  transition: all 1.5s ease-in-out;
-}
-.slide-enter {
-  transform: translateY(-100%);
-  transform: 2s;
-}
-.slide-enter-to {
-  transform: translateY(0%);
-  transform: 2s;
-}
-.slide-leave {
-  transform: translateY(0%);
-  transform: 2s;
-}
-.slide-leave-to {
-  transform: translateY(100%);
-  transform: 2s;
-}
+// .slide-enter-active {
+//   transition: all 1.5s ease-in-out;
+// }
+// .slide-leave-active {
+//   transition: all 1.5s ease-in-out;
+// }
+// .slide-enter {
+//   transform: translateY(-100%);
+//   transform: 2s;
+// }
+// .slide-enter-to {
+//   transform: translateY(0%);
+//   transform: 2s;
+// }
+// .slide-leave {
+//   transform: translateY(0%);
+//   transform: 2s;
+// }
+// .slide-leave-to {
+//   transform: translateY(100%);
+//   transform: 2s;
+// }
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }

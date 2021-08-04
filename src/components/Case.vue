@@ -6,6 +6,9 @@
         this.$route.name === 'Contact' ||
         this.$route.name === 'SubmitPage'
       "
+      :class="
+        width < 1200 && this.$route.name === 'HomeDetail' ? 'recolorWhite' : ''
+      "
       class="sidebar-case"
     >
       <div class="sidebar-case-content">
@@ -42,7 +45,13 @@
         </div>
       </div>
     </div>
-    <div v-else class="sidebar-case active">
+    <div
+      :class="
+        width < 1200 && this.$route.name === 'HomeDetail' ? 'recolorWhite' : ''
+      "
+      v-else
+      class="sidebar-case active"
+    >
       <div class="sidebar-case-content">
         <p>КЕЙСЫ</p>
         <div class="sidebar-case-arrow">
@@ -83,5 +92,22 @@
 <script>
 export default {
   name: "case",
+  data() {
+    return {
+      width: "0",
+    };
+  },
+  mounted() {
+    window.addEventListener("resize", this.handlresize);
+    this.handlresize();
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handlresize);
+  },
+  methods: {
+    handlresize() {
+      this.width = window.innerWidth;
+    },
+  },
 };
 </script>

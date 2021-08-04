@@ -57,6 +57,8 @@
   </div>
 </template>
 <script>
+import "@/assets/scriptsJS/menuPage.js";
+
 export default {
   name: "menuPage",
   methods: {

@@ -7,15 +7,43 @@
         this.$route.name === 'MenuPage'
       "
       class="sidebar-logo"
+      :class="
+        width < 1200 && this.$route.name === 'SubmitPage' ? 'recolorWhite' : ''
+      "
     >
       CROUP 44
     </div>
-    <div v-else class="sidebar-logo active">CROUP 44</div>
+    <div
+      v-else
+      :class="
+        width < 1200 && this.$route.name === 'SubmitPage' ? 'recolorWhite' : ''
+      "
+      class="sidebar-logo active"
+    >
+      CROUP 44
+    </div>
   </router-link>
 </template>
 
 <script>
 export default {
   name: "logo",
+  data() {
+    return {
+      width: "0",
+    };
+  },
+  mounted() {
+    window.addEventListener("resize", this.handlresize);
+    this.handlresize();
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handlresize);
+  },
+  methods: {
+    handlresize() {
+      this.width = window.innerWidth;
+    },
+  },
 };
 </script>

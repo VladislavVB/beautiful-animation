@@ -5,6 +5,13 @@
       this.$route.name === 'MenuPage' ||
       this.$route.name === 'HomeDetail'
     "
+    :class="
+      width < 1200 && this.$route.name === 'HomeDetail'
+        ? ''
+        : '' || (width < 1200 && this.$route.name === 'MenuPage')
+        ? 'active'
+        : ''
+    "
     class="sidebar-contact"
   >
     <div class="sidebar-contact-item">
@@ -51,7 +58,17 @@
       </svg>
     </div>
   </div>
-  <div v-else class="sidebar-contact active">
+  <div
+    :class="
+      width < 1200 && this.$route.name === 'HomeDetail'
+        ? ''
+        : '' || (width < 1200 && this.$route.name === 'MenuPage')
+        ? 'active'
+        : ''
+    "
+    v-else
+    class="sidebar-contact active"
+  >
     <div class="sidebar-contact-item">
       <svg
         width="30"
@@ -101,5 +118,22 @@
 <script>
 export default {
   name: "contact",
+  data() {
+    return {
+      width: "0",
+    };
+  },
+  mounted() {
+    window.addEventListener("resize", this.handlresize);
+    this.handlresize();
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handlresize);
+  },
+  methods: {
+    handlresize() {
+      this.width = window.innerWidth;
+    },
+  },
 };
 </script>

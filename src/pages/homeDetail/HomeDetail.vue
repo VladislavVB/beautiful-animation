@@ -99,7 +99,7 @@
           </div>
           <div class="like-prodgect">
             <h3>Понравился проект?</h3>
-            <router-link to="/">
+            <router-link to="/submit">
               <div class="like-prodgect-item">
                 <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
                 <div class="arrow">
@@ -287,6 +287,30 @@ export default {
 .slide-leave-to {
   transform: translateY(100%);
 }
+.recolorWhite {
+  color: #fff !important;
+  .sidebar-menu {
+    &-one {
+      background-color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    &-two {
+      background-color: #fff !important;
+    }
+
+    &-three {
+      background-color: rgba(255, 255, 255, 0.18) !important;
+    }
+  }
+  .sidebar-contact-item {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+  .sidebar-case p {
+    color: #fff !important;
+  }
+}
 .recolor {
   color: #000 !important;
 
@@ -302,7 +326,6 @@ export default {
       }
     }
   }
-
   .sidebar-menu {
     &-one {
       background: rgba(0, 0, 0, 0.5) !important;
@@ -321,6 +344,47 @@ export default {
         color: #000;
       }
     }
+  }
+  .sidebar-case-content {
+    .sidebar-case-arrow {
+      svg {
+        g {
+          path {
+            fill: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}
+</style>
+<style lang="scss" scoped>
+@media screen and (max-width: 576px) {
+  .pHomeDetail {
+    .sidebar-menu-one {
+      background-color: rgba(255, 255, 255, 0.5) !important;
+    }
+    &.sidebar-contact-item {
+      background-color: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #fff !important;
+    }
+  }
+  .sidebar-menu {
+    &.active {
+      .sidebar-menu {
+        &-one {
+          background-color: rgba(255, 255, 255, 0.5) !important;
+        }
+      }
+    }
+  }
+  .sidebar-lang.active {
+    color: #fff !important;
+    background-color: brown;
+  }
+  .homeDetail-up-title::before {
+    // background-color: brown;
   }
 }
 </style>
