@@ -165,6 +165,7 @@ export default {
       const SlideHomeImages = document.querySelectorAll(
         ".slideHome-images img"
       );
+      const SidebarMenu = document.querySelector(".sidebar-menu");
 
       SlideHomeTitle.forEach((elem) => {
         elem.classList.add("animate__animated", "animate__fadeOutDown");
@@ -177,6 +178,7 @@ export default {
       });
       SlideHomeProgres.classList.add("animate__animated", "animate__fadeOutUp");
       HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
+      SidebarMenu.classList.add("animate__animated animate__fadeOutTopRight")
     },
     test() {
       this.$emit("gogogo");

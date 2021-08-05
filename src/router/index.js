@@ -38,8 +38,8 @@ const routes = [
     component: HomeDetail,
     meta: {
       title: "Home detail",
-      enterClass: "animate__animated animate__delay-1s",
-      leaveClass: "animate__animated animate__delay-1s", // то что нужно по идее
+      enterClass: "animate__animated animate__delay-5s",
+      leaveClass: "animate__animated animate__delay-5s", // то что нужно по идее
     },
   },
   {

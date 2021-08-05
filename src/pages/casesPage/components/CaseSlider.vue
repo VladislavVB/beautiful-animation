@@ -39,7 +39,11 @@
   >
     <swiper-slide v-for="item in casesList" :key="item.id">
       <router-link to="/home-detail">
-        <div class="casesCard">
+        <div
+          @click="toggleFaq(item.id)"
+          class="casesCard"
+          :class="isActive === item.id ? 'active' : null"
+        >
           <div class="casesCard-descp">
             <div class="casesCard-images">
               <img
@@ -81,6 +85,7 @@ export default {
   },
   data() {
     return {
+      isActive: false,
       casesList: [
         {
           id: 1,
@@ -149,7 +154,9 @@ export default {
     };
   },
   methods: {
-    onSlideChange() {},
+    toggleFaq(ddd) {
+      this.isActive = ddd;
+    },
   },
 };
 </script>

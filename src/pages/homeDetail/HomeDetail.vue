@@ -7,7 +7,7 @@
           <p>We have developed:</p>
         </div>
         <!-- <router-link class="" to="/"> -->
-        <div @click="goBack" class="homeDetail-left-back">
+        <div @click="goBack" class="homeDetail-left-back hide">
           <img src="@/assets/images/icon/back.png" alt="" />
         </div>
         <!-- </router-link> -->
@@ -217,9 +217,6 @@ import "@/assets/scriptsJS/app.js";
 
 export default {
   name: "homeDetail",
-  // props: {
-
-  // },
   data() {
     return {
       width: "0",
@@ -263,13 +260,6 @@ export default {
       const HomeDetailBodyDown = document.querySelector(
         ".homeDetail-body-down"
       );
-      setTimeout(() => {
-        HomeDetailLeft.classList.remove("active");
-        HomeDetailRight.classList.remove("active");
-        SlideHomeImagesImg.classList.remove("active");
-        SlideHomeDescription.classList.remove("hide");
-        SlideHomeTitle.classList.remove("hide");
-      }, 1000);
       HomeDetailUpTitle.classList.add(
         "animate__animated",
         "animate__fadeInDown"
@@ -278,6 +268,13 @@ export default {
         "animate__animated",
         "animate__fadeInDown"
       );
+      setTimeout(() => {
+        HomeDetailLeft.classList.remove("active");
+        HomeDetailRight.classList.remove("active");
+        SlideHomeImagesImg.classList.remove("active");
+        SlideHomeDescription.classList.remove("hide");
+        SlideHomeTitle.classList.remove("hide");
+      }, 1000);
     },
   },
 };
