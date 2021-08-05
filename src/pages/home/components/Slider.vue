@@ -88,27 +88,9 @@ export default {
           description: "Mobile application3",
         },
         {
-          id: 2,
-          // link: 1,
-          background: "linear-gradient(287.56deg, #8A8FFD 0%, #C1D6FF 100%)",
-          // gif: "",
-          image: "phoneTwo.png",
-          title: "CheckSkin",
-          description: "Mobile application2",
-        },
-        {
-          id: 3,
-          // link: 1,
-          background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
-          // gif: "",
-          image: "phoneThree.png",
-          title: "KazakPay",
-          description: "Mobile application3",
-        },
-        {
           id: 4,
           // link: 1,
-          background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
+          background: "linear-gradient(287.56deg, #7965FF 0%, #DBD6FF 100%)",
           // gif: "",
           image: "phoneTwo.png",
           title: "CheckSkin",
@@ -117,7 +99,25 @@ export default {
         {
           id: 5,
           // link: 1,
-          background: "linear-gradient(287.56deg, #CC000D 0%, #FF7780 100%)",
+          background: "linear-gradient(287.56deg, #31313A 0%, #6B6B75 100%)",
+          // gif: "",
+          image: "phoneThree.png",
+          title: "KazakPay",
+          description: "Mobile application3",
+        },
+        {
+          id: 6,
+          // link: 1,
+          background: "linear-gradient(287.56deg, #21B7E7 0%, #7EE3EA 100%)",
+          // gif: "",
+          image: "phoneTwo.png",
+          title: "CheckSkin",
+          description: "Mobile application2",
+        },
+        {
+          id: 7,
+          // link: 1,
+          background: "linear-gradient(287.56deg, #A21A63 0%, #FF6AA8 100%)",
           // gif: "",
           image: "phoneThree.png",
           title: "KazakPay",
@@ -167,10 +167,10 @@ export default {
       );
 
       SlideHomeTitle.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutUp");
+        elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
       SlideHomeDescription.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutUp");
+        elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
       SlideHomeImages.forEach((elem) => {
         elem.classList.add("active");

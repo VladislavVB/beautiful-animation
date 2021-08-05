@@ -1,7 +1,7 @@
 <template>
   <div @scroll="changeColors()" class="homeDetail-wrapper">
     <div class="homeDetail">
-      <div class="homeDetail-left">
+      <div class="homeDetail-left active">
         <div class="homeDetail-up-title">
           <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
           <p>We have developed:</p>
@@ -13,9 +13,13 @@
         <!-- </router-link> -->
         <div class="homeDetail-body">
           <div class="slideHome-images">
-            <img src="@/assets/images/home/phoneOne.png" alt="" />
-            <p class="slideHome-description">Mobile application</p>
-            <h3 class="slideHome-title">AVATARS</h3>
+            <img
+              class="active"
+              src="@/assets/images/home/phoneOne.png"
+              alt=""
+            />
+            <p class="hide slideHome-description">Mobile application</p>
+            <h3 class="hide slideHome-title">AVATARS</h3>
           </div>
           <a :href="`#downDetail`" class="homeDetail-body-down">
             <p>Листайте вниз, чтобы увидеть описание проекта</p>
@@ -34,7 +38,7 @@
           </a>
         </div>
       </div>
-      <div :id="`downDetail`" class="homeDetail-right">
+      <div :id="`downDetail`" class="homeDetail-right active">
         <div class="homeDetail-right-body">
           <h2>AVATARS</h2>
           <p class="mb-5 sm-mb-1">
@@ -224,6 +228,7 @@ export default {
   mounted() {
     this.hendlResize();
     window.addEventListener("resize", this.hendlResize);
+    this.homeDetailAnimation();
   },
   beforeUnmount() {
     window.addEventListener("resize", this.hendlResize);
@@ -243,6 +248,36 @@ export default {
         console.log(111);
       };
       activeFunck();
+    },
+    homeDetailAnimation() {
+      const HomeDetailLeft = document.querySelector(".homeDetail-left");
+      const HomeDetailRight = document.querySelector(".homeDetail-right");
+      const SlideHomeImagesImg = document.querySelector(
+        ".slideHome-images img"
+      );
+      const SlideHomeDescription = document.querySelector(
+        ".slideHome-description"
+      );
+      const SlideHomeTitle = document.querySelector(".slideHome-title");
+      const HomeDetailUpTitle = document.querySelector(".homeDetail-up-title");
+      const HomeDetailBodyDown = document.querySelector(
+        ".homeDetail-body-down"
+      );
+      setTimeout(() => {
+        HomeDetailLeft.classList.remove("active");
+        HomeDetailRight.classList.remove("active");
+        SlideHomeImagesImg.classList.remove("active");
+        SlideHomeDescription.classList.remove("hide");
+        SlideHomeTitle.classList.remove("hide");
+      }, 1000);
+      HomeDetailUpTitle.classList.add(
+        "animate__animated",
+        "animate__fadeInDown"
+      );
+      HomeDetailBodyDown.classList.add(
+        "animate__animated",
+        "animate__fadeInDown"
+      );
     },
   },
 };
