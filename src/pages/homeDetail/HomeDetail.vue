@@ -18,24 +18,26 @@
               src="@/assets/images/home/phoneOne.png"
               alt=""
             />
+          </div>
+          <div>
             <p class="hide slideHome-description">Mobile application</p>
             <h3 class="hide slideHome-title">AVATARS</h3>
+            <a :href="`#downDetail`" class="homeDetail-body-down">
+              <p>Листайте вниз, чтобы увидеть описание проекта</p>
+              <div
+                class="
+                  arrow
+                  animate__animated
+                  animate__pulse
+                  animate__delay-2s
+                  animate__infinite
+                  infinite
+                "
+              >
+                <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
+              </div>
+            </a>
           </div>
-          <a :href="`#downDetail`" class="homeDetail-body-down">
-            <p>Листайте вниз, чтобы увидеть описание проекта</p>
-            <div
-              class="
-                arrow
-                animate__animated
-                animate__pulse
-                animate__delay-2s
-                animate__infinite
-                infinite
-              "
-            >
-              <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
-            </div>
-          </a>
         </div>
       </div>
       <div :id="`downDetail`" class="homeDetail-right active">
@@ -226,6 +228,8 @@ export default {
     this.hendlResize();
     window.addEventListener("resize", this.hendlResize);
     this.homeDetailAnimation();
+    this.recolorHudScroll();
+    window.addEventListener("scroll", this.recolorHudScroll);
   },
   beforeUnmount() {
     window.addEventListener("resize", this.hendlResize);
@@ -260,6 +264,9 @@ export default {
       const HomeDetailBodyDown = document.querySelector(
         ".homeDetail-body-down"
       );
+      const HomeDetailLeftBack = document.querySelector(
+        ".homeDetail-left-back"
+      );
       HomeDetailUpTitle.classList.add(
         "animate__animated",
         "animate__fadeInDown"
@@ -275,6 +282,61 @@ export default {
         SlideHomeDescription.classList.remove("hide");
         SlideHomeTitle.classList.remove("hide");
       }, 1000);
+      setTimeout(() => {
+        HomeDetailLeftBack.classList.remove("hide");
+      }, 2000);
+    },
+    recolorHudScroll() {
+      const homeDetailLeft = document.querySelector(".homeDetail-left");
+      const hdSidebarLang = document.querySelector(".sidebar-lang");
+      const hdSidebarContact = document.querySelector(".sidebar-contact");
+      const hdSidebarCase = document.querySelector(".sidebar-case");
+      const hdLogo = document.querySelector(".sidebar-logo");
+      const hdSidebarMenu = document.querySelector(".sidebar-menu");
+      if (window.innerWidth < 1200) {
+        // let xer = homeDetailLeft.getBoundingClientRect()
+        if (homeDetailLeft.getBoundingClientRect().top < -100) {
+          hdSidebarLang.classList.add("recolor");
+          hdSidebarContact.classList.add("recolor");
+          hdSidebarCase.classList.add("recolor");
+          hdSidebarLang.classList.remove("active");
+          hdSidebarMenu.classList.remove("active");
+        } else {
+          hdSidebarLang.classList.remove("recolor");
+          hdSidebarContact.classList.remove("recolor");
+          hdSidebarCase.classList.remove("recolor");
+          hdSidebarLang.classList.remove("active");
+          hdSidebarMenu.classList.remove("active");
+        }
+        if (homeDetailLeft.getBoundingClientRect().top < -850) {
+          hdLogo.classList.add("recolor");
+          hdSidebarMenu.classList.add("recolor");
+          hdSidebarLang.classList.remove("active");
+          hdSidebarMenu.classList.remove("active");
+        } else {
+          hdLogo.classList.remove("recolor");
+          hdSidebarMenu.classList.remove("recolor");
+          hdSidebarLang.classList.remove("active");
+          hdSidebarMenu.classList.remove("active");
+        }
+      } else {
+        console.log();
+      }
+      if (window.innerWidth < 500) {
+        if (homeDetailLeft.getBoundingClientRect().top < -650) {
+          hdLogo.classList.add("recolor");
+          hdSidebarMenu.classList.add("recolor");
+          hdSidebarMenu.classList.remove("active");
+          hdSidebarLang.classList.remove("active");
+        } else {
+          hdLogo.classList.remove("recolor");
+          hdSidebarLang.classList.remove("active");
+          hdSidebarMenu.classList.remove("active");
+          hdSidebarMenu.classList.remove("recolor");
+        }
+      } else {
+        console.log();
+      }
     },
   },
 };

@@ -1,69 +1,78 @@
 <template>
-  <swiper
-    :slides-per-view="3"
-    :spaceBetween="10"
-    navigation
-    :mousewheel="true"
-    :pagination="{
-      type: 'fraction',
-    }"
-    :breakpoints="{
-      '@0.00': {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      '@0.75': {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      },
-      '@1.00': {
-        slidesPerView: 1.5,
-        spaceBetween: 11,
-      },
-      '@1.45': {
-        slidesPerView: 2,
-        spaceBetween: 11,
-      },
-      '@1.50': {
-        slidesPerView: 2.5,
-        spaceBetween: 10,
-      },
-      '@1.90': {
-        slidesPerView: 3,
-        spaceBetween: 15,
-      },
-    }"
-    :scrollbar="{ draggable: true }"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide v-for="item in casesList" :key="item.id">
-      <router-link to="/home-detail">
-        <div
-          @click="toggleFaq(item.id)"
-          class="casesCard"
-          :class="isActive === item.id ? 'active' : null"
-        >
-          <div class="casesCard-descp">
-            <div class="casesCard-images">
-              <img
-                :src="require(`@/assets/images/home/${item.image}`)"
-                alt=""
-              />
-            </div>
-            <div class="casesCard-title">
-              <p>{{ item.description }}</p>
-              <h3>{{ item.title }}</h3>
-            </div>
-          </div>
+  <div class="casesPage">
+    <div class="casesPage-head">
+      <h2>Кейсы</h2>
+    </div>
+    <swiper
+      :slides-per-view="3"
+      :spaceBetween="10"
+      navigation
+      :mousewheel="true"
+      :pagination="{
+        type: 'fraction',
+      }"
+      :breakpoints="{
+        '@0.00': {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        '@0.75': {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        '@1.00': {
+          slidesPerView: 1.5,
+          spaceBetween: 11,
+        },
+        '@1.45': {
+          slidesPerView: 2,
+          spaceBetween: 11,
+        },
+        '@1.50': {
+          slidesPerView: 2.5,
+          spaceBetween: 10,
+        },
+        '@1.90': {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+      }"
+      :scrollbar="{ draggable: true }"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+    >
+      <swiper-slide v-for="item in casesList" :key="item.id">
+        <router-link to="/home-detail">
           <div
-            :style="{ background: item.background }"
-            class="casesCard-circle"
-          ></div>
-        </div>
-      </router-link>
-    </swiper-slide>
-  </swiper>
+            @click="toggleFaq(item.id)"
+            class="casesCard"
+            :class="isActive === item.id ? 'active' : null"
+          >
+            <div class="casesCard-descp">
+              <div class="casesCard-images">
+                <img
+                  class=""
+                  :src="require(`@/assets/images/home/${item.image}`)"
+                  alt=""
+                />
+              </div>
+              <div class="casesCard-title">
+                <p>{{ item.description }}</p>
+                <h3>{{ item.title }}</h3>
+              </div>
+            </div>
+            <div
+              :style="{ background: item.background }"
+              class="casesCard-circle"
+            ></div>
+          </div>
+        </router-link>
+      </swiper-slide>
+    </swiper>
+  </div>
+  <div class="casesCard-goImage">
+    <img class="" src="@/assets/images/home/phoneOne.png" alt="" />
+  </div>
 </template>
 
 <script>
@@ -99,9 +108,9 @@ export default {
         {
           id: 2,
           // link: 1,
-          background: "linear-gradient(287.56deg, #8A8FFD 0%, #C1D6FF 100%)",
+          background: "linear-gradient(287.56deg, #3B3B3B 0%, #848484 100%)",
           // gif: "",
-          image: "phoneTwo.png",
+          image: "phoneOne.png",
           title: "CheckSkin",
           description: "Mobile application2",
         },
@@ -156,6 +165,42 @@ export default {
   methods: {
     toggleFaq(ddd) {
       this.isActive = ddd;
+      const casesPage = document.querySelector(".casesPage");
+      casesPage.classList.add("active");
+
+      const SwiperScrollbar = document.querySelector(".swiper-scrollbar");
+      const SwiperNumber = document.querySelector(
+        ".casesPage .swiper-container .swiper-pagination"
+      );
+      const CasesCardTitle = document.querySelectorAll(".casesCard-title p");
+      const CaseTitlte = document.querySelectorAll(
+        ".casesCard-title h3, .casesCard-title .h3"
+      );
+      const CasesCardImagesImg = document.querySelectorAll(
+        ".casesCard-images img"
+      );
+      const CasesCardGoImageImg = document.querySelector(
+        ".casesCard-goImage img"
+      );
+
+      SwiperScrollbar.classList.add("animate__animated", "animate__fadeOutUp");
+      SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
+      CaseTitlte.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutUp");
+      });
+      CasesCardTitle.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutUp");
+      });
+      CasesCardImagesImg.forEach((elem) => {
+        elem.classList.add("active");
+      });
+      setTimeout(() => {
+        CasesCardGoImageImg.classList.add(
+          "animate__animated",
+          "animate__backInUp",
+          "active"
+        );
+      }, 100);
     },
   },
 };

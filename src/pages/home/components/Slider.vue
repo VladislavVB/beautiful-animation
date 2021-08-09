@@ -28,7 +28,7 @@
           <div
             data-swiper-parallax="-100"
             data-swiper-parallax-opacity="0.5"
-            class="slideHome-images"
+            class="slideHome-images d-flex"
           >
             <img :src="require(`@/assets/images/home/${item.image}`)" alt="" />
           </div>

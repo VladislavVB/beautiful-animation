@@ -2,7 +2,7 @@
   <div class="menuPage-wrapper">
     <div class="menuPage">
       <div
-        data-aos="fade-up"
+        data-aos=""
         data-aos-duration="1500"
         data-aos-offset="800"
         class="menuPage-left"
