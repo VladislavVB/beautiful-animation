@@ -30,7 +30,10 @@
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
-            <img :src="`http://axas.api.sector.show/storage/${item.main_image}`" alt="" />
+            <img
+              :src="`http://axas.api.sector.show/storage/${item.main_image}`"
+              alt=""
+            />
           </div>
           <p class="slideHome-description">{{ item.description }}</p>
           <h3 class="slideHome-title">{{ item.title }}</h3>
@@ -130,13 +133,13 @@ export default {
     };
   },
   created() {
-    getCases() 
+    getCases()
       .then(({ data }) => {
         this.cases = data;
       })
       .catch((error) => {
         console.log("There was an error:", error.response);
-      })
+      });
   },
   computed: {},
   mounted() {
