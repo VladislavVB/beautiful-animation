@@ -41,8 +41,8 @@
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <swiper-slide v-for="item in casesList" :key="item.id">
-        <router-link to="/home-detail">
+      <swiper-slide v-for="item in cases" :key="item.id">
+        <router-link :to="{ name: 'HomeDetail' }">
           <div
             @click="toggleFaq(item.id)"
             class="casesCard"
@@ -51,8 +51,7 @@
             <div class="casesCard-descp">
               <div class="casesCard-images">
                 <img
-                  class=""
-                  :src="require(`@/assets/images/home/${item.image}`)"
+                  :src="`http://axas.api.sector.show/storage/${item.main_image}`"
                   alt=""
                 />
               </div>
@@ -62,7 +61,7 @@
               </div>
             </div>
             <div
-              :style="{ background: item.background }"
+              :style="{ background: item.color }"
               class="casesCard-circle"
             ></div>
           </div>
@@ -85,6 +84,7 @@ SwiperCore.use([Scrollbar, Mousewheel, Pagination, A11y]);
 import "swiper/swiper.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import "swiper/components/pagination/pagination.scss";
+import { getCases } from "@/api/casesList/index.js";
 
 export default {
   name: "caseSlider",
@@ -94,6 +94,7 @@ export default {
   },
   data() {
     return {
+      cases: {},
       isActive: false,
       casesList: [
         {
@@ -162,6 +163,16 @@ export default {
       ],
     };
   },
+  created() {
+    getCases()
+      .then(({ data }) => {
+        this.cases = data;
+      })
+      .catch((error) => {
+        console.log("There was an error:", error.response);
+      });
+  },
+  computed: {},
   methods: {
     toggleFaq(ddd) {
       this.isActive = ddd;

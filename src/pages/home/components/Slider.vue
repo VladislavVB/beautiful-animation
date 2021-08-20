@@ -22,15 +22,15 @@
     @swiper="onSwiper"
     @slideChange="onSlideChange"
   >
-    <swiper-slide v-for="item in casesList" :key="item.id">
+    <swiper-slide v-for="item in cases" :key="item.id">
       <router-link @click="goAnimation()" :to="{ name: 'HomeDetail' }">
-        <div :style="{ background: item.background }" class="slideHome">
+        <div :style="{ background: item.color }" class="slideHome">
           <div
             data-swiper-parallax="-100"
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
-            <img :src="require(`@/assets/images/home/${item.image}`)" alt="" />
+            <img :src="`http://axas.api.sector.show/storage/${item.main_image}`" alt="" />
           </div>
           <p class="slideHome-description">{{ item.description }}</p>
           <h3 class="slideHome-title">{{ item.title }}</h3>
