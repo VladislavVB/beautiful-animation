@@ -46,6 +46,8 @@
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import SwiperCore, { Autoplay, Parallax, Mousewheel } from "swiper";
+import { getCases } from "@/api/casesList/index.js";
+// import {mapActions} from 'vuex';
 
 SwiperCore.use([Autoplay, Mousewheel, Parallax]);
 
@@ -59,6 +61,7 @@ export default {
   },
   data() {
     return {
+      cases: {},
       casesList: [
         {
           id: 1,
@@ -126,10 +129,24 @@ export default {
       ],
     };
   },
+  created() {
+    getCases() 
+      .then(({ data }) => {
+        this.cases = data;
+      })
+      .catch((error) => {
+        console.log("There was an error:", error.response);
+      })
+  },
+  computed: {},
   mounted() {
     this.progressLine();
+    // this.SET_CASESLIST_TO_STATE();
   },
   methods: {
+    // ...mapActions([
+    //   'SET_CASESLIST_TO_STATE'
+    // ]),
     sendMethod() {},
     // stopNext() {
     //   setTimeout(() => {
@@ -178,7 +195,7 @@ export default {
       });
       SlideHomeProgres.classList.add("animate__animated", "animate__fadeOutUp");
       HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
-      SidebarMenu.classList.add("animate__animated animate__fadeOutTopRight")
+      SidebarMenu.classList.add("animate__animated animate__fadeOutTopRight");
     },
     test() {
       this.$emit("gogogo");

@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 
 //pages
 const Home = () => import("@/pages/home/Home.vue");
-const EventList = () => import("@/pages/EventList.vue");
 const HomeDetail = () => import("@/pages/homeDetail/HomeDetail.vue");
 const MenuPage = () => import("@/pages/menuPage/MenuPage.vue");
 const AboutPage = () => import("@/pages/aboutCompany/AboutPage.vue");
@@ -24,7 +23,6 @@ const routes = [
   {
     path: "/home",
     name: "event-list",
-    component: EventList,
     meta: {
       title: "EventList",
       enterClass: "animate__animated animate__fadeInBottomLeft animate__fast",
