@@ -119,6 +119,7 @@
             <div class="row">
               <div class="col-xxl-4 col-sm-6 order-1">
                 <input
+                  id="formName"
                   type="text"
                   placeholder="Как Вас зовут?"
                   class="block-choose-card big"
@@ -130,7 +131,7 @@
               </div>
               <div class="col-xxl-4 col-sm-6 order-2">
                 <input
-                  id="phone"
+                  id="formPhone"
                   type="number"
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
@@ -154,6 +155,7 @@
                 <button
                   class="presentation-buttom presentation-button"
                   @click="submitForm"
+                  id="formSubmit"
                 >
                   <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
                   <div class="presentation-buttom-img">
@@ -166,6 +168,7 @@
               </div>
               <div class="col-xxl-4 order-4 col-sm-6">
                 <input
+                  id="formEmail"
                   type="email"
                   placeholder="Email"
                   class="block-choose-card big"
@@ -259,6 +262,7 @@ export default {
   directives: { maska },
   data() {
     return {
+      formName: null,
       activeServ: null,
       cheacked: false,
       servicesBloсk: [
@@ -275,7 +279,10 @@ export default {
     };
   },
   mounted: function () {
-    this.cheackTextarea();
+    // this.cheackTextarea();
+    // formSubmit.addEventListener("keypress", () => {
+    // this.formSubmit();
+    // });
   },
   methods: {
     goBack() {
@@ -291,6 +298,33 @@ export default {
       } else {
         console.log("NOT submit");
       }
+
+      const formServicesActive = document.querySelector(
+        ".services-blok-active"
+      );
+      const formstonksAlokActive = document.querySelector(
+        ".stonks-blok-active"
+      );
+      const formChooseTextarea = document.querySelector(".choose-textarea");
+
+      // const formName = document.getElementById("formName");
+      // const formPhone = document.getElementById("formPhone");
+      // const formEmail = document.getElementById("formEmail");
+      // const formSubmit = document.getElementById("formSubmit");
+
+      const formRead = () => {
+        // formName.value();
+        // formPhone.value();
+        // formEmail.value();
+
+        formServicesActive.value();
+        formstonksAlokActive.value();
+        formChooseTextarea.value();
+      };
+      formRead();
+      // formSubmit.addEventListener("keypress", () => {
+      //   formRead();
+      // });
     },
     cheackTextarea() {
       console.log(this.textarea);
@@ -307,36 +341,32 @@ export default {
         console.log("XER");
       }
     },
+    // formSubmit() {
+    //   // хуйня полная
+    //   const formServicesActive = document.querySelector(".services-blok-active");
+    //   const formstonksAlokActive = document.querySelector(".stonks-blok-active");
+    //   const formChooseTextarea = document.querySelector(".choose-textarea");
 
-    // servicesValue() {
-    //   let servicesValue = document.querySelector(".services-blok-active");
-    //   servicesValue.value;
-    //   console.log(servicesValue.value);
+    //   const formName = document.getElementById("formName");
+    //   const formPhone = document.getElementById("formPhone");
+    //   const formEmail = document.getElementById("formEmail");
+    //   const formSubmit = document.getElementById("formSubmit");
+
+    //   const formRead = () => {
+    //     formName.value();
+    //     formPhone.value();
+    //     formEmail.value();
+
+    //     formServicesActive.value();
+    //     formstonksAlokActive.value();
+    //     formChooseTextarea.value();
+    //   };
+
+    //   formSubmit.addEventListener("keypress", () => {
+    //     formRead();
+    //   });
     // },
   },
 };
 </script>
-<style lang="scss" scoped>
-// .slide-enter-active {
-//   transition: all 1.5s ease-in-out;
-// }
-// .slide-leave-active {
-//   transition: all 1.5s ease-in-out;
-// }
-// .slide-enter {
-//   transform: translateY(-100%);
-//   transform: 2s;
-// }
-// .slide-enter-to {
-//   transform: translateY(0%);
-//   transform: 2s;
-// }
-// .slide-leave {
-//   transform: translateY(0%);
-//   transform: 2s;
-// }
-// .slide-leave-to {
-//   transform: translateY(100%);
-//   transform: 2s;
-// }
-</style>
+<style lang="scss" scoped></style>
