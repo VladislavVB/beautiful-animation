@@ -166,12 +166,13 @@ export default {
   created() {
     getCases()
       .then(({ data }) => {
-        this.cases = data;
+        this.cases = data.data;
       })
       .catch((error) => {
         console.log("There was an error:", error.response);
       });
   },
+
   computed: {},
   methods: {
     toggleFaq(ddd) {

@@ -135,7 +135,7 @@ export default {
   created() {
     getCases()
       .then(({ data }) => {
-        this.cases = data;
+        this.cases = data.data;
       })
       .catch((error) => {
         console.log("There was an error:", error.response);
@@ -162,7 +162,7 @@ export default {
       console.log(swiper);
     },
     onSlideChange() {
-      console.log("slide change");
+      
     },
     progressLine() {
       let slideLine = document.querySelector(".slideHome-progres-bar");

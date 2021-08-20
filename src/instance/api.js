@@ -1,7 +1,7 @@
 
 import axios from "axios";
 //1|MYoPCIo1VZESfSADf5GhkQE7Hnm1BxUcywdSw8q1
-const API_URL = 'http://axas.api.sector.show/api';
+const API_URL = 'http://axas.api.sector.show/api/';
 const API_TOKEN = '1|MYoPCIo1VZESfSADf5GhkQE7Hnm1BxUcywdSw8q1';
 
 const api = axios.create({
