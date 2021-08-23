@@ -224,10 +224,10 @@ export default {
   data() {
     return {
       width: "0",
-      event: {}
+      event: {},
     };
   },
- created() {
+  created() {
     getPostsId(this.id)
       .then(({ data }) => {
         this.event = data.data;

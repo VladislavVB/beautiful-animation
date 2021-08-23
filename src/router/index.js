@@ -34,6 +34,7 @@ const routes = [
     path: "/home-detail/:id",
     name: "HomeDetail",
     component: HomeDetail,
+    props: true,
     meta: {
       title: "Home detail",
       enterClass: "animate__animated animate__delay-0s",
