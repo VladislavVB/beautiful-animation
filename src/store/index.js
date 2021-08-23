@@ -1,16 +1,19 @@
 // import axios from "axios";
 import { createStore } from "vuex";
 import api from "../instance/api";
-import {SENDCONTACTFORM_URL} from "../api/apiSend";
+import { SENDCONTACTFORM_URL } from "../api/apiSend";
 
 export default createStore({
   state: {
-    // casesList: []
+    successWindow: false,
   },
   mutations: {
-    // SET_CASESLIST_TO_STATE: (state, casesList) => {
-    //   state.casesList = casesList;
-    // }
+    showSuccess(state) {
+      state.successWindow = true;
+    },
+    closeSuccess(state) {
+      state.successWindow = false;
+    },
   },
   actions: {
     // GET_CASESLIST_FROM_API({commit}) {
@@ -32,7 +35,10 @@ export default createStore({
           ...payload,
         })
         .then(() => {
-          console.log("NIce");
+          this.state.App.showSuccess = true;
+          setTimeout(() => {
+            this.state.App.showSuccess = false;
+          }, 2000);
         })
         .catch((err) => {
           console.log(err);

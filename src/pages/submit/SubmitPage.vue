@@ -126,9 +126,7 @@
                   class="block-choose-card big"
                   v-model="name"
                 />
-                <span class="error" v-if="v$.name.$error">
-                  Введите имя
-                </span>
+                <span class="error" v-if="v$.name.$error"> Введите имя </span>
               </div>
               <div class="col-xxl-4 col-sm-6 order-2">
                 <input
@@ -225,6 +223,9 @@
         <img src="@/assets/images/icon/back.png" alt="" />
       </div>
     </div>
+    <div class="form-close">
+      <p>Ваше сообщение отпралено</p>
+    </div>
   </div>
 </template>
 
@@ -259,12 +260,17 @@ export default {
       error: null,
     };
   },
+  computed: {
+    successWindow() {
+      return this.$store.state.App.successWindow;
+    }
+  },
   validations() {
     return {
-        name: { required, minLength: minLength(4) },
-        phone: { required, minLength: minLength(6) },
-        email: { required, email },
-        // prodgect: { required, minLength: minLength(6) },
+      name: { required, minLength: minLength(4) },
+      phone: { required, minLength: minLength(6) },
+      email: { required, email },
+      // prodgect: { required, minLength: minLength(6) },
     };
   },
   mounted: function () {
@@ -273,6 +279,12 @@ export default {
     // console.log(this.state.formSubData);
   },
   methods: {
+    showFormClose() {
+      this.$store.commit("showSuccess");
+    },
+    hideFormClose() {
+      this.$store.commit("closeSuccess");
+    },
     goBack() {
       this.$router.go(-1);
     },
@@ -289,9 +301,9 @@ export default {
       // console.log("ok");
     },
     cheackTextarea() {
-      console.log(this.selServices);
-      console.log(this.selBudget);
-      console.log(this.textarea);
+      // console.log(this.selServices);
+      // console.log(this.selBudget);
+      // console.log(this.textarea);
       // let activeServes = this.activeServ;
       // console.log(activeServes);
       let a = document.querySelector(".services-blok-active");
@@ -306,14 +318,12 @@ export default {
       }
     },
     sendRequest() {
-      // let accId = this.accountActive.id;
-      // let currId = this.currencyActive.id;
       this.$store
         .dispatch("sendRequest", {
           formName: this.name,
           formPhone: this.phone,
           formEmail: this.email,
-          formProdgect: this.prodgect,
+          formProdgect: this.textarea,
           formServ: this.selServices,
           formBudget: this.selBudget,
         })
@@ -324,35 +334,37 @@ export default {
           console.log(err);
           this.error = err.response.data.message;
         });
-      // this.v$.$validate();
     },
-
-    // formSubmit() {
-    //   // хуйня полная
-    //   const formServicesActive = document.querySelector(".services-blok-active");
-    //   const formstonksAlokActive = document.querySelector(".stonks-blok-active");
-    //   const formChooseTextarea = document.querySelector(".choose-textarea");
-
-    //   const formName = document.getElementById("formName");
-    //   const formPhone = document.getElementById("formPhone");
-    //   const formEmail = document.getElementById("formEmail");
-    //   const formSubmit = document.getElementById("formSubmit");
-
-    //   const formRead = () => {
-    //     formName.value();
-    //     formPhone.value();
-    //     formEmail.value();
-
-    //     formServicesActive.value();
-    //     formstonksAlokActive.value();
-    //     formChooseTextarea.value();
-    //   };
-
-    //   formSubmit.addEventListener("keypress", () => {
-    //     formRead();
-    //   });
-    // },
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.form {
+  &-close {
+    position: fixed;
+    transition: 0.5s;
+    // z-index: -10;
+    opacity: 0;
+    visibility: hidden;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    p {
+      font-size: 26px;
+    }
+    &.active {
+      z-index: 100;
+      visibility: visible;
+      opacity: 1;
+      transition: 0.5s;
+      color: #000;
+    }
+  }
+}
+</style>
