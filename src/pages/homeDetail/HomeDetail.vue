@@ -216,13 +216,25 @@
 
 <script>
 import "@/assets/scriptsJS/app.js";
+import { getPostsId } from "@/api/casesList/index.js";
 
 export default {
   name: "homeDetail",
+  props: ["id"],
   data() {
     return {
       width: "0",
+      event: {}
     };
+  },
+ created() {
+    getPostsId(this.id)
+      .then(({ data }) => {
+        this.event = data.data;
+      })
+      .catch((error) => {
+        console.log("There was an error:", error.response);
+      });
   },
   mounted() {
     this.hendlResize();

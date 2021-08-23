@@ -22,21 +22,21 @@
     @swiper="onSwiper"
     @slideChange="onSlideChange"
   >
-    <swiper-slide v-for="item in cases" :key="item.id">
-      <router-link @click="goAnimation()" :to="{ name: 'HomeDetail' }">
-        <div :style="{ background: item.color }" class="slideHome">
+    <swiper-slide v-for="casr in cases" :key="casr.id">
+      <router-link @click="goAnimation()" :to="{ name: 'HomeDetail', params: { id: casr.id }}">
+        <div :style="{ background: casr.color }" class="slideHome">
           <div
             data-swiper-parallax="-100"
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
             <img
-              :src="`http://axas.api.sector.show/storage/${item.main_image}`"
+              :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
               alt=""
             />
           </div>
-          <p class="slideHome-description">{{ item.description }}</p>
-          <h3 class="slideHome-title">{{ item.title }}</h3>
+          <p class="slideHome-description">{{ casr.description }}</p>
+          <h3 class="slideHome-title">{{ casr.title }}</h3>
         </div>
       </router-link>
     </swiper-slide>
@@ -61,6 +61,9 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  props: {
+    casr: Object
   },
   data() {
     return {
