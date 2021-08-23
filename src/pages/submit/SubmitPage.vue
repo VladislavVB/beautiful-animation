@@ -124,9 +124,9 @@
                   type="text"
                   placeholder="Как Вас зовут?"
                   class="block-choose-card big"
-                  v-model="state.formSubData.name"
+                  v-model="name"
                 />
-                <span class="error" v-if="v$.formSubData.name.$error">
+                <span class="error" v-if="v$.name.$error">
                   Введите имя
                 </span>
               </div>
@@ -138,9 +138,9 @@
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
                   v-maska="'###########'"
-                  v-model="state.formSubData.phone"
+                  v-model="phone"
                 />
-                <span class="error" v-if="v$.formSubData.phone.$error">
+                <span class="error" v-if="v$.phone.$error">
                   Введите телефон
                 </span>
               </div>
@@ -175,11 +175,12 @@
                   type="email"
                   placeholder="Email"
                   class="block-choose-card big"
-                  v-model="state.formSubData.email"
+                  v-model="email"
                 />
-                <span class="error" v-if="v$.formSubData.email.$error">
+                <span class="error" v-if="v$.email.$error">
                   Email не корректный
                 </span>
+
                 <!-- <span else="v$.FormData.email.$required">
                   Введите почту11112
                 </span> -->
@@ -231,40 +232,16 @@
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "vuelidate/lib/validators";
 import { maska } from "maska";
-import { reactive, computed } from "vue";
+// import { reactive, computed } from "vue";
 export default {
-  setup() {
-    const state = reactive({
-      formSubData: {
-        name: "",
-        phone: "",
-        email: "",
-        prodgect: "",
-      },
-    });
-
-    const rules = computed(() => {
-      return {
-        formSubData: {
-          name: { required, minLength: minLength(4) },
-          phone: { required, minLength: minLength(6) },
-          email: { required, email },
-          prodgect: { required, minLength: minLength(6) },
-        },
-      };
-    });
-
-    const v$ = useVuelidate(rules, state);
-
-    return {
-      state,
-      v$,
-    };
-  },
   name: "SubmitPage",
   directives: { maska },
   data() {
     return {
+      v$: useVuelidate(),
+      name: "",
+      phone: "",
+      email: "",
       formName: null,
       activeServ: null,
       cheacked: false,
@@ -279,6 +256,15 @@ export default {
       selBudget: null,
       notKnowD: null,
       textarea: null,
+      error: null,
+    };
+  },
+  validations() {
+    return {
+        name: { required, minLength: minLength(4) },
+        phone: { required, minLength: minLength(6) },
+        email: { required, email },
+        // prodgect: { required, minLength: minLength(6) },
     };
   },
   mounted: function () {
@@ -300,6 +286,7 @@ export default {
       } else {
         console.log("NOT submit");
       }
+      // console.log("ok");
     },
     cheackTextarea() {
       console.log(this.selServices);
@@ -323,19 +310,12 @@ export default {
       // let currId = this.currencyActive.id;
       this.$store
         .dispatch("sendRequest", {
-          formName: this.rules.formSubData.name,
-          formPhone: this.rules.formSubData.phone,
-          formEmail: this.rules.formSubData.email,
-          formProdgect: this.rules.formSubData.prodgect,
+          formName: this.name,
+          formPhone: this.phone,
+          formEmail: this.email,
+          formProdgect: this.prodgect,
           formServ: this.selServices,
           formBudget: this.selBudget,
-
-          // account_id: accId,
-          // target_currency_id: currId,
-          // amount: this.quantity,
-          // email: this.email,
-          // email_confirmation: this.email_confirmation,
-          // uuid: this.getUuid,
         })
         .then(function (res) {
           console.log(res);
@@ -344,7 +324,7 @@ export default {
           console.log(err);
           this.error = err.response.data.message;
         });
-      this.v$.$validate();
+      // this.v$.$validate();
     },
 
     // formSubmit() {
