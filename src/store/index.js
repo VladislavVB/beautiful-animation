@@ -1,5 +1,7 @@
 // import axios from "axios";
 import { createStore } from "vuex";
+import api from "../instance/api";
+import {SENDCONTACTFORM_URL} from "../api/apiSend";
 
 export default createStore({
   state: {
@@ -24,6 +26,19 @@ export default createStore({
     //     return error;
     //   })
     // }
+    sendRequest(context, payload) {
+      api
+        .post(`${SENDCONTACTFORM_URL}`, {
+          ...payload,
+        })
+        .then(() => {
+          console.log("NIce");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      context;
+    },
   },
   getters: {
     // CASESLIST(state) {

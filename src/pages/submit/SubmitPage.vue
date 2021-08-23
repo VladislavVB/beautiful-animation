@@ -3,7 +3,7 @@
     <div data-aos="fade-right" data-aos-duration="1000" class="submitPage-left">
       <div class="submitPage-left-body">
         <p class="title gradient-text">Оставить заявку</p>
-        <form @submit.prevent="submitHandler">
+        <form @submit.prevent="sendRequest">
           <div class="block-choose">
             <h5 class="block-choose-title">
               Выберите услугу:
@@ -99,7 +99,7 @@
             <div class="row">
               <div class="col-xxl-9 col-lg-12">
                 <textarea
-                  name=""
+                  name="prodgectName"
                   id=""
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
@@ -119,6 +119,7 @@
             <div class="row">
               <div class="col-xxl-4 col-sm-6 order-1">
                 <input
+                  name="name"
                   id="formName"
                   type="text"
                   placeholder="Как Вас зовут?"
@@ -131,6 +132,7 @@
               </div>
               <div class="col-xxl-4 col-sm-6 order-2">
                 <input
+                  name="phone"
                   id="formPhone"
                   type="number"
                   placeholder="Ваш телефон"
@@ -168,6 +170,7 @@
               </div>
               <div class="col-xxl-4 order-4 col-sm-6">
                 <input
+                  name="email"
                   id="formEmail"
                   type="email"
                   placeholder="Email"
@@ -279,10 +282,9 @@ export default {
     };
   },
   mounted: function () {
-    // this.cheackTextarea();
-    // formSubmit.addEventListener("keypress", () => {
-    // this.formSubmit();
-    // });
+    this.checkedCheack();
+    this.cheackTextarea();
+    // console.log(this.state.formSubData);
   },
   methods: {
     goBack() {
@@ -298,38 +300,13 @@ export default {
       } else {
         console.log("NOT submit");
       }
-
-      const formServicesActive = document.querySelector(
-        ".services-blok-active"
-      );
-      const formstonksAlokActive = document.querySelector(
-        ".stonks-blok-active"
-      );
-      const formChooseTextarea = document.querySelector(".choose-textarea");
-
-      // const formName = document.getElementById("formName");
-      // const formPhone = document.getElementById("formPhone");
-      // const formEmail = document.getElementById("formEmail");
-      // const formSubmit = document.getElementById("formSubmit");
-
-      const formRead = () => {
-        // formName.value();
-        // formPhone.value();
-        // formEmail.value();
-
-        formServicesActive.value();
-        formstonksAlokActive.value();
-        formChooseTextarea.value();
-      };
-      formRead();
-      // formSubmit.addEventListener("keypress", () => {
-      //   formRead();
-      // });
     },
     cheackTextarea() {
+      console.log(this.selServices);
+      console.log(this.selBudget);
       console.log(this.textarea);
-      let activeServes = this.activeServ;
-      console.log(activeServes);
+      // let activeServes = this.activeServ;
+      // console.log(activeServes);
       let a = document.querySelector(".services-blok-active");
       console.log(a);
     },
@@ -341,6 +318,35 @@ export default {
         console.log("XER");
       }
     },
+    sendRequest() {
+      // let accId = this.accountActive.id;
+      // let currId = this.currencyActive.id;
+      this.$store
+        .dispatch("sendRequest", {
+          formName: this.rules.formSubData.name,
+          formPhone: this.rules.formSubData.phone,
+          formEmail: this.rules.formSubData.email,
+          formProdgect: this.rules.formSubData.prodgect,
+          formServ: this.selServices,
+          formBudget: this.selBudget,
+
+          // account_id: accId,
+          // target_currency_id: currId,
+          // amount: this.quantity,
+          // email: this.email,
+          // email_confirmation: this.email_confirmation,
+          // uuid: this.getUuid,
+        })
+        .then(function (res) {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          this.error = err.response.data.message;
+        });
+      this.v$.$validate();
+    },
+
     // formSubmit() {
     //   // хуйня полная
     //   const formServicesActive = document.querySelector(".services-blok-active");
