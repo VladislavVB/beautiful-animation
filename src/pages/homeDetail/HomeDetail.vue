@@ -42,7 +42,7 @@
       </div>
       <div :id="`downDetail`" class="homeDetail-right active">
         <div class="homeDetail-right-body">
-          <h2>{{event.title}}</h2>
+          <h2>{{ event.title }}</h2>
           <p class="mb-5 sm-mb-1">
             Разработка современного мобильного приложения
           </p>
@@ -250,8 +250,8 @@ export default {
   },
   computed: {
     prev() {
-      return this.event.id
-    }
+      return this.event.id;
+    },
   },
   methods: {
     goBack() {
@@ -270,7 +270,10 @@ export default {
       activeFunck();
     },
     ddd() {
-      this.$router.replace({ name: 'HomeDetail', params: { id: this.prev -1 }});
+      this.$router.replace({
+        name: "HomeDetail",
+        params: { id: this.prev - 1 },
+      });
       console.log(this.event.id);
     },
     homeDetailAnimation() {
