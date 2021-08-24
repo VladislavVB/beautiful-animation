@@ -41,27 +41,30 @@
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <swiper-slide v-for="item in cases" :key="item.id">
-        <router-link :to="{ name: 'HomeDetail' }">
+      <swiper-slide v-for="casr in cases" :key="casr.id">
+        <router-link
+          @click="goAnimation()"
+          :to="{ name: 'HomeDetail', params: { id: casr.id } }"
+        >
           <div
-            @click="toggleFaq(item.id)"
+            @click="toggleFaq(casr.id)"
             class="casesCard"
-            :class="isActive === item.id ? 'active' : null"
+            :class="isActive === casr.id ? 'active' : null"
           >
             <div class="casesCard-descp">
               <div class="casesCard-images">
                 <img
-                  :src="`http://axas.api.sector.show/storage/${item.main_image}`"
+                  :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
                   alt=""
                 />
               </div>
               <div class="casesCard-title">
-                <p>{{ item.description }}</p>
-                <h3>{{ item.title }}</h3>
+                <p>{{ casr.description }}</p>
+                <h3>{{ casr.title }}</h3>
               </div>
             </div>
             <div
-              :style="{ background: item.color }"
+              :style="{ background: casr.color }"
               class="casesCard-circle"
             ></div>
           </div>
@@ -69,9 +72,9 @@
       </swiper-slide>
     </swiper>
   </div>
-  <div class="casesCard-goImage">
+  <!-- <div class="casesCard-goImage">
     <img class="" src="@/assets/images/home/phoneOne.png" alt="" />
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -91,6 +94,9 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  props: {
+    casr: Object,
   },
   data() {
     return {
