@@ -8,6 +8,11 @@
 
   &-head {
     margin-bottom: 55px;
+    &.active {
+      transition: 0.5;
+      opacity: 0;
+      display: none;
+    }
 
     h2 {
       font-weight: 700;
@@ -87,6 +92,7 @@
   }
 
   &.active {
+    position: fixed;
     transition: 1s;
     overflow: unset;
     top: 50%;
@@ -165,12 +171,13 @@
       // transform: translate(-50%, -50%);
 
       &.active {
-        opacity: 0;
+        // opacity: 0;
         transition: 0.5;
         // position: static;
-        // left: 50%;
-        // top: 50%;
-        // transform: translate(-50%, -50%);
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 689px;
         // transition: 0.5s;
       }

@@ -183,6 +183,7 @@ export default {
   methods: {
     toggleFaq(ddd) {
       this.isActive = ddd;
+      const casesPageHead = document.querySelector(".casesPage-head");
       const casesPage = document.querySelector(".casesPage");
       casesPage.classList.add("active");
 
@@ -200,7 +201,7 @@ export default {
       const CasesCardGoImageImg = document.querySelector(
         ".casesCard-goImage img"
       );
-
+      casesPageHead.classList.add("active");
       SwiperScrollbar.classList.add("animate__animated", "animate__fadeOutUp");
       SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
       CaseTitlte.forEach((elem) => {
