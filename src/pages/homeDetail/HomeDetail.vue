@@ -1,7 +1,7 @@
 <template>
   <div @scroll="changeColors()" class="homeDetail-wrapper">
     <div class="homeDetail">
-      <div class="homeDetail-left active">
+      <div :style="{background: event.color}" class="homeDetail-left active">
         <div class="homeDetail-up-title">
           <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
           <p>We have developed:</p>
@@ -15,13 +15,13 @@
           <div class="slideHome-images">
             <img
               class="active"
-              src="@/assets/images/home/phoneOne.png"
+              :src="`http://axas.api.sector.show/storage/${event.main_image}`"
               alt=""
             />
           </div>
           <div>
-            <p class="hide slideHome-description">Mobile application</p>
-            <h3 class="hide slideHome-title">AVATARS</h3>
+            <p class="hide slideHome-description">{{event.description}}</p>
+            <h3 class="hide slideHome-title">{{event.title}}</h3>
             <a :href="`#downDetail`" class="homeDetail-body-down">
               <p>Листайте вниз, чтобы увидеть описание проекта</p>
               <div
