@@ -57,8 +57,8 @@ const routes = [
     component: AboutPage,
     meta: {
       title: "AboutPage",
-      enterClass: "animate__animated animate__fadeInBottomLeft animate__fast",
-      leaveClass: "animate__animated animate__fadeInBottomLeft animate__fast",
+      enterClass: "animate__animated animate__fadeInRight animate__fast",
+      leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
   },
   {
