@@ -47,7 +47,7 @@
             Разработка современного мобильного приложения
           </p>
 
-          <p class="paragraph-title">Задача</p>
+          <p class="paragraph-title">lorem</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
             massa sollicitudin sed. Sapien in pellentesque nascetur purus

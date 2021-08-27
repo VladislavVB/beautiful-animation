@@ -23,7 +23,10 @@
     @slideChange="onSlideChange"
   >
     <swiper-slide v-for="casr in cases" :key="casr.id">
-      <router-link @click="goAnimation()" :to="{ name: 'HomeDetail', params: { id: casr.id }}">
+      <router-link
+        @click="goAnimation()"
+        :to="{ name: 'HomeDetail', params: { id: casr.id } }"
+      >
         <div :style="{ background: casr.color }" class="slideHome">
           <div
             data-swiper-parallax="-100"
@@ -63,7 +66,7 @@ export default {
     SwiperSlide,
   },
   props: {
-    casr: Object
+    casr: Object,
   },
   data() {
     return {
@@ -164,9 +167,7 @@ export default {
     onSwiper(swiper) {
       console.log(swiper);
     },
-    onSlideChange() {
-      
-    },
+    onSlideChange() {},
     progressLine() {
       let slideLine = document.querySelector(".slideHome-progres-bar");
       if (!slideLine) return;
