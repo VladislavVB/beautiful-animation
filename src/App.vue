@@ -61,7 +61,7 @@ setTimeout(() => {
       input.addEventListener("keydown", mask, false);
     }
   );
-}, 2000);
+}, 3000);
 </script>
 
 <style lang="scss">

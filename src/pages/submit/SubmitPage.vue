@@ -139,7 +139,6 @@
                   type="tel"
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
-                 
                   v-model="phone"
                 />
                 <span class="error" v-if="v$.phone.$error">
@@ -283,9 +282,14 @@ export default {
   mounted: function () {
     this.checkedCheack();
     this.cheackTextarea();
+    // this.sendButton();
     // console.log(this.state.formSubData);
   },
   methods: {
+    sendButton() {
+      const presentationButtom = document.querySelector(".presentation-buttom");
+      presentationButtom.disabled = true;
+    },
     activeClassSe() {
       const btnNotKnow = document.querySelector(".btnNotKnow");
 
@@ -346,6 +350,7 @@ export default {
           console.log(err);
           this.error = err.response.data.message;
         });
+      this.v$.$validate();
     },
   },
 };

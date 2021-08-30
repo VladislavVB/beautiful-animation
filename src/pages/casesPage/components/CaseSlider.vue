@@ -41,30 +41,30 @@
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <swiper-slide v-for="casr in cases" :key="casr.id">
+      <swiper-slide v-for="item in cases" :key="item.id">
         <router-link
           @click="goAnimation()"
-          :to="{ name: 'HomeDetail', params: { id: casr.id } }"
+          :to="{ name: 'HomeDetail', params: { id: item.id } }"
         >
           <div
-            @click="toggleFaq(casr.id)"
+            @click="toggleFaq(item.id)"
             class="casesCard"
-            :class="isActive === casr.id ? 'active' : null"
+            :class="isActive === item.id ? 'active' : null"
           >
             <div class="casesCard-descp">
               <div class="casesCard-images">
                 <img
-                  :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
+                  :src="`http://axas.api.sector.show/storage/${item.main_image}`"
                   alt=""
                 />
               </div>
               <div class="casesCard-title">
-                <p>{{ casr.description }}</p>
-                <h3>{{ casr.title }}</h3>
+                <p>{{ item.description }}</p>
+                <h3>{{ item.title }}</h3>
               </div>
             </div>
             <div
-              :style="{ background: casr.color }"
+              :style="{ background: item.color }"
               class="casesCard-circle"
             ></div>
           </div>
@@ -96,7 +96,7 @@ export default {
     SwiperSlide,
   },
   props: {
-    casr: Object,
+    item: Object,
   },
   data() {
     return {

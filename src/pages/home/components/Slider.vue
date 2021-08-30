@@ -202,8 +202,14 @@ export default {
       });
       SlideHomeProgres.classList.add("animate__animated", "animate__fadeOutUp");
       HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
-      SidebarMenu.classList.add("animate__animated animate__fadeOutTopRight");
+      SidebarMenu.classList.add("animate__animated", "animate__fadeOutTopRight");
+      setTimeout(() => {
+        SlideHomeProgres.classList.remove("animate__animated", "animate__fadeOutUp");
+        console.log('dsadsafsdfkhdsfhjhfjksdhkjfhdjk');
+      }, 10);
+
     },
+
     test() {
       this.$emit("gogogo");
     },
