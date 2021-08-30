@@ -83,7 +83,7 @@
                 v-for="itemBudget in budgetBlock"
                 :key="itemBudget"
                 @click="selBudget = itemBudget"
-                class="col-xxl-3 col-lg-4 col-sm-4 col-12"
+                class="col-xxl-3 col-lg-4 col-sm-4 col-6"
               >
                 <div
                   :class="selBudget === itemBudget ? 'stonks-blok-active' : ''"
@@ -108,7 +108,11 @@
                 ></textarea>
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
-                <div v-if="!textarea" class="block-choose-card">
+                <div
+                  v-if="!textarea"
+                  @click="activeClassSe"
+                  class="block-choose-card btnNotKnow"
+                >
                   <p>Не знаю</p>
                 </div>
               </div>
@@ -132,10 +136,10 @@
                 <input
                   name="phone"
                   id="formPhone"
-                  type="number"
+                  type="tel"
                   placeholder="Ваш телефон"
                   class="block-choose-card big"
-                  v-maska="'###########'"
+                 
                   v-model="phone"
                 />
                 <span class="error" v-if="v$.phone.$error">
@@ -192,7 +196,9 @@
                     checked
                   />
                   <label>Я согласен на обработку персональных данных</label>
-                  <span v-if="cheacked" class="error"> Политика </span>
+                  <span v-if="cheacked" class="error">
+                    Политика конфиденциальности
+                  </span>
                 </div>
               </div>
               <div class="hide-input"></div>
@@ -239,6 +245,7 @@ export default {
   directives: { maska },
   data() {
     return {
+      isActive: false,
       v$: useVuelidate(),
       name: "",
       phone: "",
@@ -263,7 +270,7 @@ export default {
   computed: {
     successWindow() {
       return this.$store.state.App.successWindow;
-    }
+    },
   },
   validations() {
     return {
@@ -279,6 +286,11 @@ export default {
     // console.log(this.state.formSubData);
   },
   methods: {
+    activeClassSe() {
+      const btnNotKnow = document.querySelector(".btnNotKnow");
+
+      btnNotKnow.classList.toggle("active");
+    },
     showFormClose() {
       this.$store.commit("showSuccess");
     },
@@ -304,7 +316,7 @@ export default {
       // console.log(this.selServices);
       // console.log(this.selBudget);
       // console.log(this.textarea);
-      // let activeServes = this.activeServ;
+      // let activeServes = this.activeServ;Не
       // console.log(activeServes);
       let a = document.querySelector(".services-blok-active");
       console.log(a);
@@ -365,6 +377,11 @@ export default {
       transition: 0.5s;
       color: #000;
     }
+  }
+}
+.btnNotKnow {
+  &.active {
+    border-color: #8b90fe;
   }
 }
 </style>

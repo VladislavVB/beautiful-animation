@@ -286,6 +286,7 @@
 
   &-case {
     position: fixed;
+    
     z-index: 10;
     height: 30px;
     width: 140px;
@@ -297,6 +298,9 @@
     font-size: 30px;
     cursor: pointer;
     transition: 0.5s;
+    p {
+      font-weight: 400 !important;
+    }
 
     &:hover {
       transition: 0.5s;

@@ -71,6 +71,7 @@
       font-size: 144px;
       font-weight: 700;
       line-height: 105px;
+      margin-left: -8px;
     }
 
     &-buttons {
@@ -250,15 +251,25 @@
 }
 
 @include mobile {
+  .presentation {
+    &-buttom {
+      &-img {
+        width: 39px !important;
+        height: 39px !important;
+      }
+    }
+  }
   .contactPage {
     &-left {
       margin-bottom: 80px;
       h2 {
         font-size: 64px;
         line-height: 78px;
+        margin-left: 0;
       }
 
       &-buttons {
+        margin-top: 0;
         .presentation-buttom p {
           font-size: 24px;
         }

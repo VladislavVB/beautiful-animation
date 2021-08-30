@@ -57,12 +57,12 @@
           </p>
           <div class="paragraph-section">
             <div class="paragraph-item">
-              <p class="paragraph-title">Задача</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="paragraph-title"> <br> Задача</p>
+              <p class="paragraph-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="paragraph-item">
-              <p class="paragraph-title">Задача</p>
-              <p>до 800 000 рублей</p>
+              <p class="paragraph-title"><br>Задача</p>
+              <p class="paragraph-sm">до 800 000 рублей</p>
             </div>
           </div>
           <div class="homeDetail-right-body-img">
@@ -96,11 +96,11 @@
           <div class="paragraph-section">
             <div class="paragraph-item">
               <p class="paragraph-title">Сферы:</p>
-              <p>Социальные сети/ Реферальная система</p>
+              <p class="paragraph-sm">Социальные сети/ Реферальная система</p>
             </div>
             <div class="paragraph-item">
               <p class="paragraph-title">Сроки:</p>
-              <p>Проект выполнен за 4 месяца</p>
+              <p class="paragraph-sm">Проект выполнен за 4 месяца</p>
             </div>
           </div>
           <div class="like-prodgect">

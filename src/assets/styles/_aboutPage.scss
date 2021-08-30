@@ -115,7 +115,7 @@
 
       &-text {
         p {
-          margin-top: 50px;
+          margin-top: 35px;
         }
       }
     }
@@ -126,11 +126,20 @@
   .aboutPage {
     &-logo {
       width: auto;
-      font-size: 55px;
+      font-size: 59px;
     }
 
     &-block {
       margin-top: 20px;
+    }
+  }
+}
+
+@include iphone {
+  .aboutPage {
+    &-logo {
+      width: auto;
+      font-size: 55px;
     }
   }
 }
