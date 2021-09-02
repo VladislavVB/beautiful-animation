@@ -18,8 +18,6 @@ export default {
 AOS.init({
   once: true,
 });
-
-
 </script>
 
 <style lang="scss">

@@ -8,7 +8,7 @@ const AboutPage = () => import("@/pages/aboutCompany/AboutPage.vue");
 const ContactPage = () => import("@/pages/contact/ContactPage.vue");
 const SubmitPage = () => import("@/pages/submit/SubmitPage.vue");
 const CasesPage = () => import("@/pages/casesPage/CasesPage.vue");
-
+const ThanksPage = () => import("@/pages/thanks/ThanksPage.vue");
 const routes = [
   {
     path: "/",
@@ -88,6 +88,16 @@ const routes = [
     meta: {
       title: "Casespage",
       enterClass: "animate__animated animate__fadeInUp animate__fast",
+      leaveClass: "animate__animated animate__fadeOutRight animate__fast",
+    },
+  },
+  {
+    path: "/thanks",
+    name: "thanksPage",
+    component: ThanksPage,
+    meta: {
+      title: "ThanksPage",
+      enterClass: "animate__animated animate__fadeInRight animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
   },

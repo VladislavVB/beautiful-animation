@@ -156,9 +156,18 @@
                 "
               >
                 <button
-                  class="presentation-buttom presentation-button"
+                  class="presentation-buttom presentation-button sell-btn"
                   @click="submitForm"
                   id="formSubmit"
+                  :class="
+                    name != '' &&
+                    phone != '' &&
+                    email &&
+                    selServices != null &&
+                    (selBudget != null) != ''
+                      ? ''
+                      : 'disabled'
+                  "
                 >
                   <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
                   <div class="presentation-buttom-img">
@@ -389,6 +398,7 @@ export default {
         })
         .then(function (res) {
           console.log(res);
+          console.log(res.status);
         })
         .catch((err) => {
           console.log(err);

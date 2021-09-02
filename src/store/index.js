@@ -1,6 +1,7 @@
 // import axios from "axios";
 import { createStore } from "vuex";
 import api from "../instance/api";
+import router from "../router";
 import { SENDCONTACTFORM_URL } from "../api/apiSend";
 
 export default createStore({
@@ -21,7 +22,7 @@ export default createStore({
     //     method: "GET"
     //   })
     //   .then((casesList) => {
-    //     commit('SET_CASESLIST_TO_STATE', casesList.data)
+    //     commit('SET_CASESLIST_TO_STAthis.$router.push("/");E', casesList.data)
     //     return casesList;
     //   })
     //   .catch((error ) => {
@@ -34,11 +35,9 @@ export default createStore({
         .post(`${SENDCONTACTFORM_URL}`, {
           ...payload,
         })
-        .then(() => {
-          this.state.App.showSuccess = true;
-          setTimeout(() => {
-            this.state.App.showSuccess = false;
-          }, 2000);
+        .then((res) => {
+          router.push("/thanks");
+          console.log(res);
         })
         .catch((err) => {
           console.log(err);

@@ -1,3 +1,9 @@
 //CSS переменные проекта
 $black: #000000;
 $white: #ffffff;
+body {
+  &::selection {
+    background: #8b90fe;
+    color: #fff;
+  }
+}

@@ -57,11 +57,16 @@
           </p>
           <div class="paragraph-section">
             <div class="paragraph-item">
-              <p class="paragraph-title"> <br> Задача</p>
-              <p class="paragraph-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="paragraph-title">
+                <br />
+                Задача
+              </p>
+              <p class="paragraph-sm">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
             </div>
             <div class="paragraph-item">
-              <p class="paragraph-title"><br>Задача</p>
+              <p class="paragraph-title"><br />Задача</p>
               <p class="paragraph-sm">до 800 000 рублей</p>
             </div>
           </div>
@@ -229,6 +234,7 @@ export default {
       event: {},
     };
   },
+
   created() {
     getPostsId(this.id)
       .then(({ data }) => {
