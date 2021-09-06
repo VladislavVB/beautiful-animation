@@ -9,6 +9,8 @@ const ContactPage = () => import("@/pages/contact/ContactPage.vue");
 const SubmitPage = () => import("@/pages/submit/SubmitPage.vue");
 const CasesPage = () => import("@/pages/casesPage/CasesPage.vue");
 const ThanksPage = () => import("@/pages/thanks/ThanksPage.vue");
+const NotFound = () =>
+  import(/* webpackChunkName: "view-[request]" */ "@/pages/404.vue");
 const routes = [
   {
     path: "/",
@@ -97,6 +99,15 @@ const routes = [
     component: ThanksPage,
     meta: {
       title: "ThanksPage",
+      enterClass: "animate__animated animate__fadeInRight animate__fast",
+      leaveClass: "animate__animated animate__fadeOutRight animate__fast",
+    },
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component: NotFound,
+    meta: {
+      title: "404",
       enterClass: "animate__animated animate__fadeInRight animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },

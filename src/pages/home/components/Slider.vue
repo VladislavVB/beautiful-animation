@@ -205,7 +205,6 @@ export default {
       SidebarMenu.classList.add("animate__animated", "animate__fadeOutTopRight");
       setTimeout(() => {
         SlideHomeProgres.classList.remove("animate__animated", "animate__fadeOutUp");
-        console.log('dsadsafsdfkhdsfhjhfjksdhkjfhdjk');
       }, 10);
 
     },

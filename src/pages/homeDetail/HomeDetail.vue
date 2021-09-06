@@ -109,7 +109,7 @@
             </div>
           </div>
           <div class="like-prodgect">
-            <h3 @click="ddd()">Понравился проект?</h3>
+            <h3>Понравился проект?</h3>
             <router-link to="/submit">
               <div class="like-prodgect-item">
                 <p class="gradient-text">ОСТАВИТЬ ЗАЯВКУ</p>
@@ -120,7 +120,7 @@
             </router-link>
           </div>
           <div class="homeDetail-right-bottom">
-            <div @click="ddd()" class="homeDetail-right-bottom-item">
+            <div @click="prevPage()" class="homeDetail-right-bottom-item">
               <div class="item-arrow prev">
                 <svg
                   width="33"
@@ -164,11 +164,11 @@
                   </defs>
                 </svg>
               </div>
-              <p>Проект CheckSkin</p>
+              <p>Предидущий проект</p>
             </div>
             <router-link to="">
-              <div class="homeDetail-right-bottom-item">
-                <p>Проект CheckSkin</p>
+              <div @click="nextPage()" class="homeDetail-right-bottom-item">
+                <p>Следующий проект</p>
                 <div class="item-arrow next">
                   <svg
                     width="33"
@@ -239,8 +239,12 @@ export default {
     getPostsId(this.id)
       .then(({ data }) => {
         this.event = data.data;
+        console.log(data.status);
       })
       .catch((error) => {
+        if (error.response.status === 404) {
+          this.$router.go(-1);
+        }
         console.log("There was an error:", error.response);
       });
   },
@@ -275,12 +279,25 @@ export default {
       };
       activeFunck();
     },
-    ddd() {
-      this.$router.replace({
+    prevPage() {
+      this.$router.push({
         name: "HomeDetail",
         params: { id: this.prev - 1 },
       });
-      console.log(this.event.id);
+      setTimeout(() => {
+        window.location.reload();
+      }, 300);
+      console.log("prev");
+    },
+    nextPage() {
+      this.$router.push({
+        name: "HomeDetail",
+        params: { id: this.prev + 1 },
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 300);
+      console.log("next");
     },
     homeDetailAnimation() {
       const HomeDetailLeft = document.querySelector(".homeDetail-left");
