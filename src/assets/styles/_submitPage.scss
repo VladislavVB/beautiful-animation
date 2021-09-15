@@ -1,8 +1,8 @@
 .services {
   &-blok {
     &-active {
-      border: 1px solid #8B90FE !important;
-      transition: .5s;
+      border: 1px solid #8b90fe !important;
+      transition: 0.5s;
     }
   }
 }
@@ -43,10 +43,10 @@
   &-right {
     width: 17.5%;
     height: 100%;
-    background: linear-gradient(180deg, #D0A3FD 0%, #8A8FFD 100%);
+    background: linear-gradient(180deg, #d0a3fd 0%, #8a8ffd 100%);
     -webkit-animation: backgroundG 3s ease-in-out infinite;
     animation: backgroundG 3s ease-in-out infinite;
-    transition: .5s;
+    transition: 0.5s;
     position: relative;
 
     .menuPage-left-back {
@@ -54,7 +54,6 @@
       left: -40px;
       transform: rotate(-0deg);
       cursor: pointer;
-
     }
 
     &:hover {
@@ -79,17 +78,16 @@
     }
 
     &-body {
-
       // overflow-y: scroll;
       .title {
         font-weight: 700;
         font-size: 72px;
-        margin-bottom: 70px;
+        margin-bottom: 90px;
       }
 
       .block {
         &-choose {
-          margin-top: 55px;
+          margin-top: 44px;
 
           &-title {
             font-weight: 600;
@@ -102,11 +100,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #FFFFFF;
-            border: 1px solid #EDEDED;
+            background: #ffffff;
+            border: 1px solid #ededed;
             height: 80px;
             cursor: pointer;
-            transition: .5s;
+            transition: 0.5s;
 
             p {
               font-weight: 300;
@@ -130,7 +128,7 @@
 .choose {
   &-textarea {
     height: 80px;
-    padding-top: 31px;
+    // padding-top: 31px;
     padding-right: 20px;
   }
 }
@@ -161,9 +159,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: .5s;
+      transition: 0.5s;
       appearance: none;
-      border: 1px solid #EDEDED;
+      border: 1px solid #ededed;
       padding: 10px;
       background-size: 35% 35%;
       background-position: center;
@@ -171,7 +169,7 @@
     }
 
     input[type="checkbox"]:checked {
-      transition: .5s;
+      transition: 0.5s;
       background-image: url("./assets/images/submit/cheack.png");
       background-size: 35% 35%;
       background-position: center;
@@ -194,7 +192,7 @@
 .error {
   display: block;
   margin-top: -9px;
-  color: #FF6161;
+  color: #ff6161;
   font-size: 12px;
   font-weight: 300;
   &-text {
@@ -206,6 +204,30 @@
     }
   }
 }
+
+.btnNotKnow {
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  &::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    // display: none;
+  }
+  &::before {
+    content: "Прикрепить файл";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @include bigDesctop {
   .submitPage {
     &-footer {
@@ -224,7 +246,12 @@
   .submitPage {
     &-left {
       padding-left: 150px;
-      padding-right: 260px;
+      padding-right: 220px;
+      &-body {
+        .title {
+          margin-bottom: 72px;
+        }
+      }
     }
   }
   .presentation-buttom-wrapper {
@@ -250,17 +277,11 @@
 
     &-right {
       .menuPage-left-back {
-        left: unset;
-        right: 20px;
-        transform: rotate(-90deg);
-      }
-
-      &:hover {
-        .menuPage-left-back {
-          left: unset;
-          transform: rotate(90deg);
-          bottom: 10px;
-        }
+        top: 48%;
+        bottom: unset;
+        // left: unset;
+        // right: 20px;
+        // transform: rotate(-90deg);
       }
     }
 
@@ -274,7 +295,6 @@
       }
     }
   }
-
 }
 
 @include ipad {
@@ -304,7 +324,6 @@
             }
           }
         }
-
       }
     }
   }
@@ -327,6 +346,37 @@
   }
 }
 
+@include ipad-mini {
+  .submitPage {
+    &-right {
+      height: 193px;
+      &:hover {
+        .menuPage {
+          &-left {
+            &-back {
+              left: unset;
+              bottom: -34px;
+              right: -4px;
+              transform: rotate(-90deg);
+            }
+          }
+        }
+      }
+      .menuPage {
+        &-left {
+          &-back {
+            left: unset;
+            bottom: -34px;
+            right: -4px;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+  
+}
+
 @include mobile {
   .choose {
     &-textarea {
@@ -335,6 +385,16 @@
   }
 
   .submitPage {
+    &-right {
+      height: 216px;
+      .menuPage {
+        &-left {
+          &-back {
+            top: unset;
+          }
+        }
+      }
+    }
     &-left {
       padding: 20px;
     }
@@ -382,8 +442,8 @@
 .services {
   &-blok {
     &-active {
-      border: 1px solid #8B90FE;
-      transition: .5s;
+      border: 1px solid #8b90fe;
+      transition: 0.5s;
     }
   }
 }
@@ -391,8 +451,8 @@
 .stonks {
   &-blok {
     &-active {
-      border: 1px solid #8B90FE !important;
-      transition: .5s;
+      border: 1px solid #8b90fe !important;
+      transition: 0.5s;
     }
   }
 }

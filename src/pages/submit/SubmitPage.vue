@@ -98,23 +98,19 @@
             <h5 class="block-choose-title">Описание проекта:</h5>
             <div class="row">
               <div class="col-xxl-9 col-lg-12">
-                <textarea
+                <input
                   name="prodgectName"
                   id=""
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
                   @input="cheackTextarea()"
-                  v-model="textarea"
-                ></textarea>
+                >
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
-                <div
-                  v-if="!textarea"
-                  @click="activeClassSe"
-                  class="block-choose-card btnNotKnow"
-                >
-                  <p>Не знаю</p>
-                </div>
+                <input type="file" class="block-choose-card btnNotKnow">
+                  
+                  <!-- <p>Прикрепить файл</p> -->
+                
               </div>
             </div>
           </div>

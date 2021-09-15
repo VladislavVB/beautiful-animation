@@ -201,18 +201,23 @@ export default {
       const CasesCardGoImageImg = document.querySelector(
         ".casesCard-goImage img"
       );
-      casesPageHead.classList.add("active");
-      SwiperScrollbar.classList.add("animate__animated", "animate__fadeOutUp");
-      SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
-      CaseTitlte.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutUp");
-      });
-      CasesCardTitle.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutUp");
-      });
-      CasesCardImagesImg.forEach((elem) => {
-        elem.classList.add("active");
-      });
+      setTimeout(() => {
+        casesPageHead.classList.add("active");
+        SwiperScrollbar.classList.add(
+          "animate__animated",
+          "animate__fadeOutUp"
+        );
+        SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
+        CaseTitlte.forEach((elem) => {
+          elem.classList.add("animate__animated", "animate__fadeOutUp");
+        });
+        CasesCardTitle.forEach((elem) => {
+          elem.classList.add("animate__animated", "animate__fadeOutUp");
+        });
+        CasesCardImagesImg.forEach((elem) => {
+          elem.classList.add("active");
+        });
+      }, 1000);
       setTimeout(() => {
         CasesCardGoImageImg.classList.add(
           "animate__animated",
