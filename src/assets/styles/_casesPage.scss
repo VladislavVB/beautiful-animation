@@ -47,9 +47,9 @@
         font-weight: 700;
         font-size: 18px;
 
-        &:nth-child(-n+9) {
+        &:nth-child(-n + 9) {
           &::before {
-            content: '0';
+            content: "0";
           }
         }
       }
@@ -70,7 +70,6 @@
   &:hover {
     .casesCard {
       &-circle {
-
         transform: translate(-50%) scale(3);
 
         // border-radius: 0%;
@@ -115,7 +114,7 @@
     transform: translate(-50%, -50%);
     z-index: 100;
     transition: 1s;
-    
+
     img {
       width: 671px;
       transition: 1s;
@@ -140,7 +139,11 @@
     border-radius: 50%;
     width: 350px;
     height: 350px;
-    background: radial-gradient(100% 100% at 100% 81.67%, #8F95FE 0%, #BFD3FF 100%);
+    background: radial-gradient(
+      100% 100% at 100% 81.67%,
+      #8f95fe 0%,
+      #bfd3ff 100%
+    );
     transition: 0.3s;
   }
 
@@ -224,6 +227,35 @@
   }
 }
 
+@include ipad {
+  .casesCard {
+    height: 677px;
+    max-width: unset;
+  }
+  .casesPage {
+    &-head h2 {
+      font-size: 48px;
+    }
+    .swiper-container {
+      .swiper-scrollbar {
+        top: -75px;
+      }
+      .swiper-pagination {
+        top: -85px;
+      }
+    } 
+  }
+}
+
+@include ipad-mini {
+  .casesCard {
+    &-circle {
+      width: 472px;
+      height: 472px;
+    }
+  }
+}
+
 @include mobile {
   .casesCard {
     max-width: auto;
@@ -237,6 +269,7 @@
   }
 
   .casesPage {
+    max-height: 490px;
     &-head {
       // margin-top: 20px;/
       margin-bottom: 30px;

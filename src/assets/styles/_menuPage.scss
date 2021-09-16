@@ -113,7 +113,7 @@
           margin-right: 50px;
 
           p {
-            font-size: 20px;
+            font-size: 30px;
           }
         }
       }
@@ -268,11 +268,24 @@
 
 @include mobile {
   .menuPage {
+    
+    .fade-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     &-body {
+      &-buttom  {
+        margin-top: 75px;
+        .buttom-item p {
+          font-size: 24px;
+        }
+      }
       &-wrapper {
         margin-top: 20px;
+        margin-bottom: 60px;
         padding-left: 20px;
-        justify-content: flex-start;
+        // justify-content: flex-start;
         // overflow-y: scroll;
         // margin-bottom: 40px;
       }
