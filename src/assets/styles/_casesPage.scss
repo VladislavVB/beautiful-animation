@@ -213,6 +213,18 @@
 .swiper-button-next {
   visibility: hidden;
 }
+.swiper-pagination-current {
+  position: relative;
+  margin-right: 10px;
+  &::after {
+    content: '-';
+    right: -22px;
+    position: absolute;
+    background-color: white;
+    width: 20px;
+    height: 30px;
+  }
+}
 
 @include bigDesctop {
   .casesPage .swiper-container .swiper-scrollbar {
@@ -248,11 +260,21 @@
 }
 
 @include ipad-mini {
+  .casesPage-head h2 {
+    margin-left: 40px;
+  }
   .casesCard {
     &-circle {
       width: 472px;
       height: 472px;
     }
+  }
+  .casesPage .swiper-container .swiper-scrollbar {
+    right: 140px;
+  }
+  .casesPage .swiper-container .swiper-pagination {
+    top: -83px;
+    right: 55px;
   }
 }
 
