@@ -158,12 +158,13 @@
   }
 
   &-images {
-    max-width: 530px;
+    max-width: 380px;
     margin: auto;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
     &.active {
       position: static;
     }
@@ -217,7 +218,7 @@
   position: relative;
   margin-right: 10px;
   &::after {
-    content: '-';
+    content: "-";
     right: -22px;
     position: absolute;
     background-color: white;
@@ -239,6 +240,22 @@
   }
 }
 
+@media only screen and (max-height: 812px) and (max-width: 1440px) {
+  .casesPage-head {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .casesCard-images {
+    max-width: 335px;
+  }
+  .casesPage .swiper-container .swiper-scrollbar {
+    top: -66px;
+  }
+  .casesPage .swiper-container .swiper-pagination {
+    top: -75px;
+  }
+}
+
 @include ipad {
   .casesCard {
     height: 677px;
@@ -255,7 +272,7 @@
       .swiper-pagination {
         top: -85px;
       }
-    } 
+    }
   }
 }
 
@@ -279,6 +296,10 @@
 }
 
 @include mobile {
+  .casesPage-head h2 {
+    margin-left: 0;
+  }
+  
   .casesCard {
     max-width: auto;
     width: 100%;
@@ -288,6 +309,14 @@
       width: 300px;
       height: 300px;
     }
+    &-images {
+      max-width: 260px;
+      margin-top: 50px;
+    }
+    &-descp {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .casesPage {
@@ -295,6 +324,7 @@
     &-head {
       // margin-top: 20px;/
       margin-bottom: 30px;
+      margin-top: 0;
 
       h2 {
         font-size: 36px;
@@ -316,8 +346,9 @@
   }
 }
 
-@include iphone {
+@media only screen and (max-height: 700px) and (max-width: 375px) {
   .casesCard {
-    height: 410px;
+    padding: 0;
+    height: 430px;
   }
 }

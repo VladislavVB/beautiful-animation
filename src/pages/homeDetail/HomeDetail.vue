@@ -22,23 +22,23 @@
           <div>
             <p class="hide slideHome-description">{{ event.description }}</p>
             <h3 class="hide slideHome-title">{{ event.title }}</h3>
-            <a :href="`#downDetail`" class="homeDetail-body-down">
-              <p>Листайте вниз, чтобы увидеть описание проекта</p>
-              <div
-                class="
-                  arrow
-                  animate__animated
-                  animate__pulse
-                  animate__delay-2s
-                  animate__infinite
-                  infinite
-                "
-              >
-                <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
-              </div>
-            </a>
           </div>
         </div>
+        <a :href="`#downDetail`" class="homeDetail-body-down">
+          <p>Листайте вниз, чтобы увидеть описание проекта</p>
+          <div
+            class="
+              arrow
+              animate__animated
+              animate__pulse
+              animate__delay-2s
+              animate__infinite
+              infinite
+            "
+          >
+            <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
+          </div>
+        </a>
       </div>
       <div :id="`downDetail`" class="homeDetail-right active">
         <div class="homeDetail-right-body">

@@ -6,13 +6,12 @@
   &-wrapper {
     height: 100%;
     width: 100%;
-
   }
 
   &-left {
     width: 17.5%;
     height: 100%;
-    background: linear-gradient(180deg, #D0A3FD 0%, #8A8FFD 100%);
+    background: linear-gradient(180deg, #d0a3fd 0%, #8a8ffd 100%);
     animation: backgroundG 3s ease-in-out infinite;
     // transition: .5s;
     position: relative;
@@ -57,7 +56,7 @@
             font-weight: 700;
             font-size: 96px;
 
-            transition: .5s;
+            transition: 0.5s;
             display: inline-block;
           }
 
@@ -65,17 +64,16 @@
 
           &:hover {
             span {
-              transition: .5s;
+              transition: 0.5s;
               background-clip: text;
               -webkit-text-fill-color: transparent;
               animation: textG 2s ease-in-out infinite;
-
             }
 
             .textHover {
               width: 30%;
               opacity: 1;
-              transition: .5s;
+              transition: 0.5s;
               margin-left: 50px;
               // animation: showText 1s ;
             }
@@ -136,8 +134,14 @@
 }
 
 @include desctop {
+  .menuPage-left-back {
+    transform: rotate(0deg);
+    right: 9px;
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+  }
   .menuPage {
-
     // &-left {
     //   width: 19%;
     // }
@@ -218,7 +222,6 @@
         }
       }
 
-
       &-menu {
         margin-bottom: 70px;
 
@@ -232,7 +235,7 @@
                 top: 50px;
                 margin-left: 0;
                 width: 77%;
-                transition: .5s;
+                transition: 0.5s;
               }
 
               span {
@@ -241,13 +244,13 @@
 
               .menuPage-body-menu ul li span {
                 margin-bottom: 50px;
-                transition: .5s;
+                transition: 0.5s;
               }
             }
 
             span {
               font-size: 72px;
-              transition: .5s;
+              transition: 0.5s;
               background-color: $white;
               z-index: 10;
             }
@@ -261,21 +264,24 @@
     position: absolute;
     width: 77%;
     margin-left: 0px;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 0;
   }
 }
 
+@include ipad {
+  
+}
+
 @include mobile {
   .menuPage {
-    
     .fade-left {
       display: flex;
       align-items: center;
       justify-content: center;
     }
     &-body {
-      &-buttom  {
+      &-buttom {
         margin-top: 75px;
         .buttom-item p {
           font-size: 24px;
