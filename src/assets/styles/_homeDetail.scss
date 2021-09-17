@@ -388,6 +388,13 @@
       &-body {
         padding: 33px 20px;
       }
+      &-bottom {
+        &-item {
+          p {
+            display: none;
+          }
+        }
+      }
     }
     &-left {
       min-height: 100vh;

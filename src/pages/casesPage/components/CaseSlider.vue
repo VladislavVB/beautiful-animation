@@ -1,12 +1,17 @@
 <template>
+  <!-- <div v-if="!loading && !error">
+    <Loader />
+  </div> -->
+  <!-- <div v-else-if="error">Data loading error</div> -->
   <div class="casesPage">
     <div class="casesPage-head">
       <h2>Кейсы</h2>
     </div>
     <swiper
+      v-if="swiperSlideCastom"
       :slides-per-view="3"
       :spaceBetween="10"
-      navigation
+      :navigation="true"
       :mousewheel="true"
       :pagination="{
         type: 'fraction',
@@ -34,8 +39,6 @@
         },
       }"
       :scrollbar="{ draggable: true }"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
     >
       <swiper-slide v-for="item in cases" :key="item.id">
         <router-link
@@ -74,11 +77,17 @@
 </template>
 
 <script>
-import SwiperCore, { Scrollbar, Mousewheel, Pagination, A11y } from "swiper";
+import SwiperCore, {
+  Scrollbar,
+  Mousewheel,
+  Pagination,
+  A11y,
+  Navigation,
+} from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-SwiperCore.use([Scrollbar, Mousewheel, Pagination, A11y]);
+SwiperCore.use([Scrollbar, Mousewheel, Pagination, A11y, Navigation]);
 
 import "swiper/swiper.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
@@ -96,6 +105,7 @@ export default {
   },
   data() {
     return {
+      swiperSlideCastom: false,
       cases: {},
       isActive: false,
       casesList: [
@@ -169,14 +179,60 @@ export default {
     getCases()
       .then(({ data }) => {
         this.cases = data.data;
+        this.swiperSlideCastom = true;
       })
       .catch((error) => {
         console.log("There was an error:", error.response);
       });
   },
-
+  mounted() {
+    setTimeout(() => {
+      this.roundLine();
+    }, 1000);
+  },
   computed: {},
   methods: {
+    roundLine() {
+      const dragLine = document.querySelector(
+        ".casesPage .swiper-container .swiper-scrollbar .swiper-scrollbar-drag"
+      );
+
+      let circle = document.createElement("div");
+
+      circle.classList.add("circle-active");
+
+      let swiperScrollbar = document.querySelector(".swiper-scrollbar");
+      let wrapper = document.createElement("div");
+      wrapper.classList.add("wrapper-scroll");
+      wrapper.append(circle);
+      swiperScrollbar.append(wrapper);
+      wrapper.append(dragLine);
+      const calculateCircle = (event) => {
+        let p = dragLine.getBoundingClientRect();
+        let position = +event.clientX - +p.x;
+        position = String(position);
+
+        let s = wrapper.getBoundingClientRect().x;
+        let dragWidth = p.x;
+        let n = dragWidth - s;
+        // console.log(+event.clientX - +p.x);
+        console.log(position);
+        circle.style.left = position - 20 + n + "px";
+        circle.classList.add("active");
+      };
+      dragLine.addEventListener("mousemove", (event) => {
+        calculateCircle(event)
+      });
+      dragLine.addEventListener("mousedown", (event) => {
+        calculateCircle(event)
+      });
+
+      dragLine.addEventListener("mouseout", () => {
+        setTimeout(() => {
+          circle.classList.remove("active");
+        }, 1000);
+      });
+    },
     toggleFaq(ddd) {
       this.isActive = ddd;
       const casesPageHead = document.querySelector(".casesPage-head");
@@ -226,6 +282,21 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+.circle-active {
+  height: 2px;
+  width: 40px;
+  background-color: #000;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: 0.5s;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  &.active {
+    height: 20px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+}
 </style>

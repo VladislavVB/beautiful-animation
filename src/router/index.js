@@ -9,8 +9,7 @@ const ContactPage = () => import("@/pages/contact/ContactPage.vue");
 const SubmitPage = () => import("@/pages/submit/SubmitPage.vue");
 const CasesPage = () => import("@/pages/casesPage/CasesPage.vue");
 const ThanksPage = () => import("@/pages/thanks/ThanksPage.vue");
-const NotFound = () =>
-  import(/* webpackChunkName: "view-[request]" */ "@/pages/404.vue");
+const NotFound = () => import(/* webpackChunkName: "view-[request]" */ "@/pages/404.vue");
 const routes = [
   {
     path: "/",

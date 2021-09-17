@@ -1,3 +1,7 @@
+.wrapper-scroll {
+  height: 100%;
+}
+
 .casesPage {
   width: 100%;
   overflow: hidden;
@@ -30,10 +34,12 @@
       width: 60%;
       left: unset;
       right: 158px;
-      height: 2px;
+      height: 4px;
 
       .swiper-scrollbar-drag {
         background-color: $black;
+        z-index: 10;
+        position: relative;
       }
     }
 
