@@ -250,9 +250,9 @@ export default {
   },
   mounted() {
     this.hendlResize();
-    window.addEventListener("resize", this.hendlResize);
     this.homeDetailAnimation();
     this.recolorHudScroll();
+    window.addEventListener("resize", this.hendlResize);
     window.addEventListener("scroll", this.recolorHudScroll);
   },
   beforeUnmount() {
