@@ -33,6 +33,12 @@
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
+            <div class="slideHome-gif">
+              <img
+              :src="`http://axas.api.sector.show/storage/${casr.gif}`"
+              alt=""
+            />
+            </div>
             <img
               :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
               alt=""

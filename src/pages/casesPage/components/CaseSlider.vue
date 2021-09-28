@@ -40,7 +40,7 @@
       }"
       :scrollbar="{ draggable: true }"
     >
-      <swiper-slide v-for="item in cases" :key="item.id">
+      <swiper-slide  v-for="item in cases" :key="item.id">
         <router-link
           @click="goAnimation()"
           :to="{ name: 'HomeDetail', params: { id: item.id } }"
@@ -52,10 +52,17 @@
           >
             <div class="casesCard-descp">
               <div class="casesCard-images">
-                <img
-                  :src="`http://axas.api.sector.show/storage/${item.main_image}`"
-                  alt=""
-                />
+                   <img
+                    class="casesCard-gif"
+                    :src="`http://axas.api.sector.show/storage/${item.gif}`"
+                    alt=""
+                  />
+                  <img
+                    class="a"
+                    :src="`http://axas.api.sector.show/storage/${item.main_image}`"
+                    alt=""
+                  />
+                
               </div>
               <div class="casesCard-title">
                 <p>{{ item.description }}</p>
@@ -71,9 +78,11 @@
       </swiper-slide>
     </swiper>
   </div>
-  <!-- <div class="casesCard-goImage">
-    <img class="" src="@/assets/images/home/phoneOne.png" alt="" />
-  </div> -->
+  
+  <div  class="casesCard-goImage active">
+    <!-- <img  class="active" src="@/assets/images/home/phoneOne.png" alt="" /> -->
+  </div>
+  
 </template>
 
 <script>
@@ -188,7 +197,9 @@ export default {
   mounted() {
     setTimeout(() => {
       this.roundLine();
+      // this.teleportImage()
     }, 1000);
+    
   },
   computed: {},
   methods: {
@@ -221,10 +232,10 @@ export default {
         circle.classList.add("active");
       };
       dragLine.addEventListener("mousemove", (event) => {
-        calculateCircle(event)
+        calculateCircle(event);
       });
       dragLine.addEventListener("mousedown", (event) => {
-        calculateCircle(event)
+        calculateCircle(event);
       });
 
       dragLine.addEventListener("mouseout", () => {
@@ -234,6 +245,15 @@ export default {
       });
     },
     toggleFaq(ddd) {
+      const casesCardGoImage = document.querySelector('.casesCard-goImage');
+      const casesCardImages = document.querySelectorAll('.casesCard-images');
+      casesCardImages.forEach((elem, index) => {
+        console.log(elem, index);
+        // elem.oncklick =function() {
+          let img = elem.querySelector('img')
+          casesCardGoImage.append(img)
+        // }
+      })
       this.isActive = ddd;
       const casesPageHead = document.querySelector(".casesPage-head");
       const casesPage = document.querySelector(".casesPage");
@@ -253,31 +273,34 @@ export default {
       const CasesCardGoImageImg = document.querySelector(
         ".casesCard-goImage img"
       );
-      setTimeout(() => {
-        casesPageHead.classList.add("active");
-        SwiperScrollbar.classList.add(
-          "animate__animated",
-          "animate__fadeOutUp"
-        );
-        SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
-        CaseTitlte.forEach((elem) => {
-          elem.classList.add("animate__animated", "animate__fadeOutUp");
-        });
-        CasesCardTitle.forEach((elem) => {
-          elem.classList.add("animate__animated", "animate__fadeOutUp");
-        });
-        CasesCardImagesImg.forEach((elem) => {
-          elem.classList.add("active");
-        });
-      }, 1000);
-      setTimeout(() => {
-        CasesCardGoImageImg.classList.add(
-          "animate__animated",
-          "animate__backInUp",
-          "active"
-        );
-      }, 100);
+      // setTimeout(() => {
+      casesPageHead.classList.add("active");
+      SwiperScrollbar.classList.add("animate__animated", "animate__fadeOutUp");
+      SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
+      CaseTitlte.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutUp");
+      });
+      CasesCardTitle.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutUp");
+      });
+      CasesCardImagesImg.forEach((elem) => {
+        elem.classList.add("active");
+      });
+      // }, 1000);
+      // setTimeout(() => {
+      CasesCardGoImageImg.classList.add(
+        "animate__animated",
+        "animate__backInUp",
+        "active"
+      );
+      // }, 100);
+      
+
     },
+    teleportImage() {
+      
+
+    }
   },
 };
 </script>
