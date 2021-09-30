@@ -252,6 +252,7 @@ export default {
         next((vm) => {
           vm.event = data.data;
         });
+        console.log(to);
       })
       .catch((error) => {
         if (error.response.status === 404) {
