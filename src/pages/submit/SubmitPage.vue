@@ -44,6 +44,7 @@
                   "
                   class="block-choose-card services-blok"
                 >
+                  <img src="@/assets/images/icon/cheak.png" alt="" />
                   <p>{{ itemServices }}</p>
                 </div>
               </div>
@@ -89,6 +90,7 @@
                   :class="selBudget === itemBudget ? 'stonks-blok-active' : ''"
                   class="block-choose-card stonks-block"
                 >
+                  <img src="@/assets/images/icon/cheak.png" alt="" />
                   <p>{{ itemBudget }}</p>
                 </div>
               </div>
@@ -99,18 +101,28 @@
             <div class="row">
               <div class="col-xxl-9 col-lg-12">
                 <input
-                  name="prodgectName"
+                  name="textarea"
                   id=""
+                  v-model="textarea"
                   placeholder="Опишите проект"
                   class="block-choose-card big choose-textarea"
                   @input="cheackTextarea()"
-                >
+                />
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
-                <input type="file" class="block-choose-card btnNotKnow">
-                  
-                  <!-- <p>Прикрепить файл</p> -->
-                
+                <input
+                  type="file"
+                  @change="uploadFile"
+                  class="block-choose-card btnNotKnow"
+                />
+                <div v-for="file in selectedFile" :key="file" class="file-list">
+                  <p>{{file.name}}</p>
+                    <!-- {{ selectedFile.name }} -->
+                    <!-- {{selectedFile}} -->
+                    
+                 
+                </div>
+                <!-- <p>Прикрепить файл</p> -->
               </div>
             </div>
           </div>
@@ -199,7 +211,13 @@
                     type="checkbox"
                     checked
                   />
-                  <label>Я согласен на обработку персональных данных</label>
+                  <label
+                    ><a
+                      target="_blank"
+                      href="@/assets/ПолитикаКонфиденциальностиКомпании“Axas”.pdf"
+                      >Я согласен на обработку персональных данных</a
+                    ></label
+                  >
                   <span v-if="cheacked" class="error">
                     Политика конфиденциальности
                   </span>
@@ -240,6 +258,7 @@
 </template>
 
 <script>
+// import axios from "axios";
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "vuelidate/lib/validators";
 import { maska } from "maska";
@@ -249,6 +268,7 @@ export default {
   directives: { maska },
   data() {
     return {
+      selectedFile: null,
       isActive: false,
       v$: useVuelidate(),
       name: "",
@@ -267,7 +287,7 @@ export default {
       budgetBlock: ["до 1 млн", "1-3 млн", "3-5 млн", "Не знаю"],
       selBudget: null,
       notKnowD: null,
-      textarea: null,
+      textarea: "",
       error: null,
     };
   },
@@ -292,6 +312,12 @@ export default {
     // console.log(this.state.formSubData);
   },
   methods: {
+    uploadFile(event) {
+      console.log(event.target.files[0].name);
+      this.selectedFile = event.target.files[0];
+      console.log(this.selectedFile.name);
+    },
+
     maskBtn() {
       [].forEach.call(
         document.querySelectorAll("input[type=tel]"),
@@ -377,23 +403,27 @@ export default {
     checkedCheack() {
       let cheack = document.getElementById("submitOerder");
       if (cheack.checked == 1) {
-        console.log("Nice");
+        // console.log("Nice");
       } else {
-        console.log("XER");
+        // console.log("XER");
       }
     },
     sendRequest() {
+      const fd = new FormData();
+      fd.append("files", this.selectedFile);
       this.$store
         .dispatch("sendRequest", {
           formName: this.name,
           formPhone: this.phone,
           formEmail: this.email,
-          formProdgect: this.textarea,
+          formProject: this.textarea,
           formServ: this.selServices,
           formBudget: this.selBudget,
+          selectedFile: this.selectedFile,
         })
         .then(function (res) {
           console.log(res);
+          console.log(res.success);
           console.log(res.status);
         })
         .catch((err) => {

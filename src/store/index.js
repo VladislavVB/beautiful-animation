@@ -36,8 +36,9 @@ export default createStore({
           ...payload,
         })
         .then((res) => {
-          router.push("/thanks");
           console.log(res);
+          this.commit('setApi', res.data);
+          router.push("/thanks");
         })
         .catch((err) => {
           console.log(err);

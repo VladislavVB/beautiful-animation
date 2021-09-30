@@ -274,10 +274,13 @@
   }
 }
 
-@include ipad {
+@include tablet {
   .casesCard {
     height: 677px;
     max-width: unset;
+    &-title {
+      margin-top: 10px;
+    }
   }
   .casesPage {
     &-head h2 {
@@ -294,7 +297,7 @@
   }
 }
 
-@include ipad-mini {
+@include tablet {
   .casesPage-head h2 {
     margin-left: 40px;
   }

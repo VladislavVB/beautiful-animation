@@ -12,9 +12,14 @@
     </div>
   </div>
   <swiper
+    :pagination="{
+      type: 'progressbar',
+    }"
+    :navigation="true"
     :autoplay="true"
     :loop="true"
     :delay="4100"
+    :speed="1000"
     :parallax="true"
     :mousewheel="true"
     :slides-per-view="1"
@@ -35,9 +40,9 @@
           >
             <div class="slideHome-gif">
               <img
-              :src="`http://axas.api.sector.show/storage/${casr.gif}`"
-              alt=""
-            />
+                :src="`http://axas.api.sector.show/storage/${casr.gif}`"
+                alt=""
+              />
             </div>
             <img
               :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
@@ -50,18 +55,19 @@
       </router-link>
     </swiper-slide>
   </swiper>
-  <div class="slideHome-progres">
+  <!-- <div class="slideHome-progres">
     <div class="slideHome-progres-bar"></div>
-  </div>
+  </div> -->
 </template>
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Autoplay, Parallax, Mousewheel } from "swiper";
+import SwiperCore, { Autoplay, Parallax, Mousewheel, Pagination, Navigation } from "swiper";
 import { getCases } from "@/api/casesList/index.js";
+// import { getPostsId } from "@/api/casesList/index.js";
 // import {mapActions} from 'vuex';
 
-SwiperCore.use([Autoplay, Mousewheel, Parallax]);
+SwiperCore.use([Autoplay, Mousewheel, Parallax, Pagination, Navigation]);
 
 // Import Swiper styles
 import "swiper/swiper.scss";
@@ -159,6 +165,7 @@ export default {
     // this.SET_CASESLIST_TO_STATE();
   },
   methods: {
+    sfa: 'asdf',
     // ...mapActions([
     //   'SET_CASESLIST_TO_STATE'
     // ]),
@@ -186,6 +193,21 @@ export default {
       }, 3100);
     },
     goAnimation() {
+      // getPostsId(this.id)
+      // .then(({ data }) => {
+      //   console.log(this.sfa);
+      //   this.event = data.data;
+      //   console.log(data.status);
+      // })
+      // .catch((error) => {
+      //   if (error.response.status === 404) {
+      //     console.log(this.sfa);
+      //     this.$router.go(-1);
+      //   }
+      //   // console.log(this.sfa);
+      //   console.log("There was an error:", error.response);
+      // });
+
       const HomePageTitle = document.querySelector(".homePage-title-main");
       const SlideHomeProgres = document.querySelector(".slideHome-progres");
       const SlideHomeDescription = document.querySelectorAll(
@@ -208,11 +230,16 @@ export default {
       });
       SlideHomeProgres.classList.add("animate__animated", "animate__fadeOutUp");
       HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
-      SidebarMenu.classList.add("animate__animated", "animate__fadeOutTopRight");
+      SidebarMenu.classList.add(
+        "animate__animated",
+        "animate__fadeOutTopRight"
+      );
       setTimeout(() => {
-        SlideHomeProgres.classList.remove("animate__animated", "animate__fadeOutUp");
+        SlideHomeProgres.classList.remove(
+          "animate__animated",
+          "animate__fadeOutUp"
+        );
       }, 10);
-
     },
 
     test() {

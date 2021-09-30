@@ -44,10 +44,10 @@
         <div class="homeDetail-right-body">
           <h2>{{ event.title }}</h2>
           <p class="mb-5 sm-mb-1">
-            Разработка современного мобильного приложения
+            {{ event.description }}
           </p>
 
-          <p class="paragraph-title">lorem</p>
+          <p class="paragraph-title">{{ event.detail.task }}</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
             massa sollicitudin sed. Sapien in pellentesque nascetur purus
@@ -71,7 +71,7 @@
             </div>
           </div>
           <div class="homeDetail-right-body-img">
-            <img src="@/assets/images/homeDetail/one.jpg" alt="" />
+            <img :src="`http://axas.api.sector.show/storage/${event.main_image}`" alt="" />
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
