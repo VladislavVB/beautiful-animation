@@ -207,7 +207,7 @@ export default {
       //   // console.log(this.sfa);
       //   console.log("There was an error:", error.response);
       // });
-
+      
       const HomePageTitle = document.querySelector(".homePage-title-main");
       const SlideHomeProgres = document.querySelector(".slideHome-progres");
       const SlideHomeDescription = document.querySelectorAll(

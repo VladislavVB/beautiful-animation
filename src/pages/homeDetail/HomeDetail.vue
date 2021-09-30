@@ -47,7 +47,7 @@
             {{ event.description }}
           </p>
 
-          <p class="paragraph-title">{{ event.detail.task }}</p>
+          <p class="paragraph-title">{{ event.detail?.task }}</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
             massa sollicitudin sed. Sapien in pellentesque nascetur purus
@@ -71,7 +71,11 @@
             </div>
           </div>
           <div class="homeDetail-right-body-img">
-            <img :src="`http://axas.api.sector.show/storage/${event.main_image}`" alt="" />
+            <img
+              v-if="event.detail_images?.length"
+              :src="`http://axas.api.sector.show/storage/${event.detail_images[0]}`"
+              alt=""
+            />
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
@@ -81,7 +85,11 @@
             ullamcorper scelerisque.
           </p>
           <div class="homeDetail-right-body-img">
-            <img src="@/assets/images/homeDetail/two.jpg" alt="" />
+            <img
+              v-if="event.detail_images?.length"
+              :src="`http://axas.api.sector.show/storage/${event.detail_images[1]}`"
+              alt=""
+            />
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
@@ -96,7 +104,11 @@
             ullamcorper scelerisque.
           </p>
           <div class="homeDetail-right-body-img">
-            <img src="@/assets/images/homeDetail/three.jpg" alt="" />
+            <img
+              v-if="event.detail_images?.length"
+              :src="`http://axas.api.sector.show/storage/${event.detail_images[0]}`"
+              alt=""
+            />
           </div>
           <div class="paragraph-section">
             <div class="paragraph-item">
@@ -234,16 +246,18 @@ export default {
       event: {},
     };
   },
-
-  created() {
-    getPostsId(this.id)
+  beforeRouteEnter(to, from, next) {
+    getPostsId(to.params.id)
       .then(({ data }) => {
-        this.event = data.data;
-        console.log(data.status);
+        next(vm => {
+          vm.event = data.data
+        });
       })
       .catch((error) => {
         if (error.response.status === 404) {
-          this.$router.go(-1);
+          next(vm => {
+            vm.$router.go(-1);
+        });
         }
         console.log("There was an error:", error.response);
       });
