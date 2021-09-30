@@ -249,15 +249,15 @@ export default {
   beforeRouteEnter(to, from, next) {
     getPostsId(to.params.id)
       .then(({ data }) => {
-        next(vm => {
-          vm.event = data.data
+        next((vm) => {
+          vm.event = data.data;
         });
       })
       .catch((error) => {
         if (error.response.status === 404) {
-          next(vm => {
+          next((vm) => {
             vm.$router.go(-1);
-        });
+          });
         }
         console.log("There was an error:", error.response);
       });
