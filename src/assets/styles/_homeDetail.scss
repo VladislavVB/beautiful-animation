@@ -16,6 +16,7 @@
     transition: 1s;
     &.active {
       width: 100%;
+      
       transition: 1s;
       min-height: 100vh;
     }
@@ -297,6 +298,7 @@
       width: 100%;
       // min-height: 100vh;
       flex-direction: row;
+      height: auto;
       // justify-content: space-around;
 
       &-back {
@@ -396,6 +398,7 @@
 }
 
 @include mobile {
+  
   .homeDetail {
     &-right {
       &-body {
