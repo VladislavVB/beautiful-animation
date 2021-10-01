@@ -40,11 +40,8 @@
       }"
       :scrollbar="{ draggable: true }"
     >
-      <swiper-slide  v-for="item in cases" :key="item.id">
-        <router-link
-          @click="goAnimation()"
-          :to="{ name: 'HomeDetail', params: { id: item.id } }"
-        >
+      <swiper-slide v-for="item in cases" :key="item.id">
+        <router-link :to="{ name: 'HomeDetail', params: { id: item.id } }">
           <div
             @click="toggleFaq(item.id)"
             class="casesCard"
@@ -52,17 +49,16 @@
           >
             <div class="casesCard-descp">
               <div class="casesCard-images">
-                   <img
-                    class="casesCard-gif"
-                    :src="`http://axas.api.sector.show/storage/${item.gif}`"
-                    alt=""
-                  />
-                  <img
-                    class="a"
-                    :src="`http://axas.api.sector.show/storage/${item.main_image}`"
-                    alt=""
-                  />
-                
+                <img
+                  class="casesCard-gif"
+                  :src="`http://axas.api.sector.show/storage/${item.gif}`"
+                  alt=""
+                />
+                <img
+                  class="casesCard-img-img"
+                  :src="`http://axas.api.sector.show/storage/${item.main_image}`"
+                  alt=""
+                />
               </div>
               <div class="casesCard-title">
                 <p>{{ item.description }}</p>
@@ -78,11 +74,10 @@
       </swiper-slide>
     </swiper>
   </div>
-  
-  <div  class="casesCard-goImage active">
+
+  <div class="casesCard-goImage active">
     <!-- <img  class="active" src="@/assets/images/home/phoneOne.png" alt="" /> -->
   </div>
-  
 </template>
 
 <script>
@@ -199,7 +194,6 @@ export default {
       this.roundLine();
       // this.teleportImage()
     }, 1000);
-    
   },
   computed: {},
   methods: {
@@ -226,8 +220,7 @@ export default {
         let s = wrapper.getBoundingClientRect().x;
         let dragWidth = p.x;
         let n = dragWidth - s;
-        // console.log(+event.clientX - +p.x);
-        console.log(position);
+        // console.log(position);
         circle.style.left = position - 20 + n + "px";
         circle.classList.add("active");
       };
@@ -241,19 +234,16 @@ export default {
       dragLine.addEventListener("mouseout", () => {
         setTimeout(() => {
           circle.classList.remove("active");
-        }, 1000);
+        }, 1500);
       });
     },
     toggleFaq(ddd) {
-      const casesCardGoImage = document.querySelector('.casesCard-goImage');
-      const casesCardImages = document.querySelectorAll('.casesCard-images');
-      casesCardImages.forEach((elem, index) => {
-        console.log(elem, index);
-        // elem.oncklick =function() {
-          let img = elem.querySelector('img')
-          casesCardGoImage.append(img)
-        // }
-      })
+      const casesCardGoImage = document.querySelector(".casesCard-goImage");
+      const casesCardImages = document.querySelectorAll(".casesCard-images");
+      casesCardImages.forEach((elem) => {
+        let img = elem.querySelector(".casesCard-img-img");
+        casesCardGoImage.append(img);
+      });
       this.isActive = ddd;
       const casesPageHead = document.querySelector(".casesPage-head");
       const casesPage = document.querySelector(".casesPage");
@@ -273,7 +263,6 @@ export default {
       const CasesCardGoImageImg = document.querySelector(
         ".casesCard-goImage img"
       );
-      // setTimeout(() => {
       casesPageHead.classList.add("active");
       SwiperScrollbar.classList.add("animate__animated", "animate__fadeOutUp");
       SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
@@ -286,26 +275,22 @@ export default {
       CasesCardImagesImg.forEach((elem) => {
         elem.classList.add("active");
       });
-      // }, 1000);
-      // setTimeout(() => {
       CasesCardGoImageImg.classList.add(
         "animate__animated",
         "animate__backInUp",
         "active"
       );
-      // }, 100);
-      
-
     },
-    teleportImage() {
-      
-
-    }
   },
 };
 </script>
 
 <style lang="scss">
+.casesCard-goImage {
+  max-width: 530px;
+  display: flex;
+  justify-content: center;
+}
 .circle-active {
   height: 2px;
   width: 40px;

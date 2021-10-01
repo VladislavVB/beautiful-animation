@@ -62,7 +62,13 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-import SwiperCore, { Autoplay, Parallax, Mousewheel, Pagination, Navigation } from "swiper";
+import SwiperCore, {
+  Autoplay,
+  Parallax,
+  Mousewheel,
+  Pagination,
+  Navigation,
+} from "swiper";
 import { getCases } from "@/api/casesList/index.js";
 // import { getPostsId } from "@/api/casesList/index.js";
 // import {mapActions} from 'vuex';
@@ -165,7 +171,7 @@ export default {
     // this.SET_CASESLIST_TO_STATE();
   },
   methods: {
-    sfa: 'asdf',
+    sfa: "asdf",
     // ...mapActions([
     //   'SET_CASESLIST_TO_STATE'
     // ]),
@@ -193,27 +199,15 @@ export default {
       }, 3100);
     },
     goAnimation() {
-      // getPostsId(this.id)
-      // .then(({ data }) => {
-      //   console.log(this.sfa);
-      //   this.event = data.data;
-      //   console.log(data.status);
-      // })
-      // .catch((error) => {
-      //   if (error.response.status === 404) {
-      //     console.log(this.sfa);
-      //     this.$router.go(-1);
-      //   }
-      //   // console.log(this.sfa);
-      //   console.log("There was an error:", error.response);
-      // });
-      
       const HomePageTitle = document.querySelector(".homePage-title-main");
-      const SlideHomeProgres = document.querySelector(".slideHome-progres");
-      const SlideHomeDescription = document.querySelectorAll(
+      // const SlideHomeProgres = document.querySelector(".slideHome-progres");
+      // const SlideHomeDescription = document.querySelectorAll(
+      //   ".slideHome-description"
+      // );
+      const SlideHomeTitle = document.querySelectorAll(".slideHome-title");
+      const slideHomeSescription = document.querySelectorAll(
         ".slideHome-description"
       );
-      const SlideHomeTitle = document.querySelectorAll(".slideHome-title");
       const SlideHomeImages = document.querySelectorAll(
         ".slideHome-images img"
       );
@@ -222,24 +216,17 @@ export default {
       SlideHomeTitle.forEach((elem) => {
         elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
-      SlideHomeDescription.forEach((elem) => {
+      slideHomeSescription.forEach((elem) => {
         elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
       SlideHomeImages.forEach((elem) => {
         elem.classList.add("active");
       });
-      SlideHomeProgres.classList.add("animate__animated", "animate__fadeOutUp");
       HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
       SidebarMenu.classList.add(
         "animate__animated",
         "animate__fadeOutTopRight"
       );
-      setTimeout(() => {
-        SlideHomeProgres.classList.remove(
-          "animate__animated",
-          "animate__fadeOutUp"
-        );
-      }, 10);
     },
 
     test() {

@@ -1,30 +1,53 @@
 <template>
   <div @scroll="changeColors()" class="homeDetail-wrapper">
     <div class="homeDetail">
-      <div :style="{ background: event.color }" class="homeDetail-left active">
-        <div class="homeDetail-up-title">
-          <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
-          <p>We have developed:</p>
-        </div>
-        <!-- <router-link class="" to="/"> -->
-        <div @click="goBack" class="homeDetail-left-back hide">
-          <img src="@/assets/images/icon/back.png" alt="" />
-        </div>
-        <!-- </router-link> -->
-        <div class="homeDetail-body">
-          <div class="slideHome-images">
-            <img
-              class="active"
-              :src="`http://axas.api.sector.show/storage/${event.main_image}`"
-              alt=""
-            />
+      <!-- <div class="for-bg-moble"> -->
+        <div
+          :style="{ background: event.color }"
+          class="homeDetail-left active"
+        >
+          <div class="homeDetail-up-title">
+            <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+            <p>We have developed:</p>
           </div>
-          <div>
-            <p class="hide slideHome-description">{{ event.description }}</p>
-            <h3 class="hide slideHome-title">{{ event.title }}</h3>
+          <!-- <router-link class="" to="/"> -->
+          <div @click="goBack" class="homeDetail-left-back hide">
+            <img src="@/assets/images/icon/back.png" alt="" />
           </div>
-        </div>
-        <a :href="`#downDetail`" class="homeDetail-body-down">
+          <!-- </router-link> -->
+          <div class="homeDetail-body">
+            <div class="slideHome-images">
+              <img
+                class="active"
+                :src="`http://axas.api.sector.show/storage/${event.main_image}`"
+                alt=""
+              />
+            </div>
+            <div>
+              <p class="hide slideHome-description">{{ event.description }}</p>
+              <h3 class="hide slideHome-title">{{ event.title }}</h3>
+            </div>
+          </div>
+          <a
+            :href="`#downDetail`"
+            class="d-none  homeDetail-body-down"
+          >
+            <p>Листайте вниз, чтобы увидеть описание проекта</p>
+            <div
+              class="
+                arrow
+                animate__animated
+                animate__pulse
+                animate__delay-2s
+                animate__infinite
+                infinite
+              "
+            >
+              <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
+            </div>
+          </a>
+        <!-- </div> -->
+        <a :href="`#downDetail`" class="d-flex d-md-none homeDetail-body-down">
           <p>Листайте вниз, чтобы увидеть описание проекта</p>
           <div
             class="
@@ -49,11 +72,7 @@
 
           <p class="paragraph-title">{{ event.detail?.task }}</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
-            massa sollicitudin sed. Sapien in pellentesque nascetur purus
-            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
-            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
-            ullamcorper scelerisque.
+            {{ event.detail?.text }}
           </p>
           <div class="paragraph-section">
             <div class="paragraph-item">
@@ -278,6 +297,11 @@ export default {
     },
   },
   methods: {
+    test() {
+      let str = this.event.detail.text;
+      this.event = str.split("//");
+      // console.log(splittedArray);
+    },
     goBack() {
       this.$router.go(-1);
     },
@@ -314,6 +338,7 @@ export default {
       console.log("next");
     },
     homeDetailAnimation() {
+      // const homeDetailUpTitle = document.querySelector(".homeDetail-up-title");
       const HomeDetailLeft = document.querySelector(".homeDetail-left");
       const HomeDetailRight = document.querySelector(".homeDetail-right");
       const SlideHomeImagesImg = document.querySelector(
@@ -334,6 +359,7 @@ export default {
         "animate__animated",
         "animate__fadeInDown"
       );
+      // homeDetailUpTitle.classList.add('active');
       HomeDetailBodyDown.classList.add(
         "animate__animated",
         "animate__fadeInDown"

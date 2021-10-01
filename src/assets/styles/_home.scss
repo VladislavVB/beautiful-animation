@@ -402,18 +402,18 @@
 
 .homePage-wrapper {
   .swiper-pagination-progressbar {
-    z-index: 10;
-    width: 600px;
-    height: 2px;
-    margin-top: auto;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.18);
-    position: absolute;
-    left: 50%;
-    bottom: 54px;
-    transform: translate(-50%);
+    z-index: 10 !important;
+    width: 600px !important;
+    height: 2px !important;
+    margin-top: auto !important;
+    border-radius: 2px !important; 
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 54px !important;
+    transform: translate(-50%) !important;
     &-fill {
-      background-color: #fff;
+      background-color: #fff !important;
     }
   }
 } 
@@ -473,11 +473,11 @@
 
 @include mobile {
   .slideHome-images img.active {
-    width: 365px;
+    width: 300px;
   }
   .homePage-wrapper .swiper-pagination-progressbar {
-    width: 80%;
-    bottom: 70px;
+    width: 80% !important;
+    bottom: 70px !important;
   }
   .sidebar-case {
     display: none;
