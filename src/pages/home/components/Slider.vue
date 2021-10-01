@@ -38,19 +38,22 @@
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
-            <div class="slideHome-gif">
+            <!-- <div class="slideHome-gif">
               <img
                 :src="`http://axas.api.sector.show/storage/${casr.gif}`"
                 alt=""
               />
-            </div>
+            </div> -->
             <img
               :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
               alt=""
+              class=""
             />
           </div>
-          <p class="slideHome-description">{{ casr.description }}</p>
-          <h3 class="slideHome-title">{{ casr.title }}</h3>
+          <div class="slideHome-description-wrapper">
+            <p class="slideHome-description">{{ casr.description }}</p>
+            <h3 class="slideHome-title">{{ casr.title }}</h3>
+          </div>
         </div>
       </router-link>
     </swiper-slide>

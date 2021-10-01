@@ -38,8 +38,8 @@ const routes = [
     props: true,
     meta: {
       title: "Home detail",
-      enterClass: "animate__animated animate__delay-0s",
-      leaveClass: "animate__animated animate__delay-0s", // то что нужно по идее
+      enterClass: "animate__animated animate__delay-5s",
+      leaveClass: "animate__animated animate__delay-5s", // то что нужно по идее
     },
   },
   {

@@ -66,6 +66,7 @@
       opacity: 0;
       visibility: hidden;
     }
+    
   }
 
   &-title {
@@ -473,12 +474,9 @@
 }
 
 @include mobile {
-  .slideHome-images img.active {
-    width: 300px;
-  }
   .homePage-wrapper .swiper-pagination-progressbar {
     width: 80% !important;
-    bottom: 70px !important;
+    bottom: 60px !important;
   }
   .sidebar-case {
     display: none;
@@ -491,6 +489,13 @@
     &-description {
       max-width: 290px;
       margin-bottom: 3px;
+      &-wrapper {
+        width: 300px;
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
@@ -503,7 +508,20 @@
     &-images {
       max-height: 350px;
       max-width: 300px;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        transition: 1s;
+        &.active {
+          width: 320px;
+          margin: 0;
+          transform: translate(-50%, -50%);
+        }
+      }
     }
+     
   }
 
   .homePage {
@@ -579,7 +597,7 @@
   }
 
   .homePage-title {
-    top: 60px;
+    top: 10%;
 
     p {
       margin-top: 8px;
