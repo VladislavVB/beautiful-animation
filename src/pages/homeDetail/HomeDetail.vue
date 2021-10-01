@@ -6,6 +6,7 @@
           :style="{ background: event.color }"
           class="homeDetail-left active"
         >
+        
           <div class="homeDetail-up-title">
             <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
             <p>We have developed:</p>
@@ -23,7 +24,7 @@
                 alt=""
               />
             </div>
-            <div>
+            <div class="slideHome-description-wrapper">
               <p class="hide slideHome-description">{{ event.description }}</p>
               <h3 class="hide slideHome-title">{{ event.title }}</h3>
             </div>
