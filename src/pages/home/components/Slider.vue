@@ -207,7 +207,8 @@ export default {
       // const SlideHomeDescription = document.querySelectorAll(
       //   ".slideHome-description"
       // );
-      const SlideHomeTitle = document.querySelectorAll(".slideHome-title");
+      const slideHomeImages = document.querySelectorAll(".slideHome-images");
+      const slideHomeTitle = document.querySelectorAll(".slideHome-title");
       const slideHomeSescription = document.querySelectorAll(
         ".slideHome-description"
       );
@@ -216,13 +217,16 @@ export default {
       );
       const SidebarMenu = document.querySelector(".sidebar-menu");
 
-      SlideHomeTitle.forEach((elem) => {
+      slideHomeTitle.forEach((elem) => {
         elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
       slideHomeSescription.forEach((elem) => {
         elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
       SlideHomeImages.forEach((elem) => {
+        elem.classList.add("active");
+      });
+      slideHomeImages.forEach((elem) => {
         elem.classList.add("active");
       });
       HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
