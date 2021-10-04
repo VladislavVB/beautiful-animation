@@ -31,9 +31,9 @@
           </div>
           <a
             :href="`#downDetail`"
-            class="d-none  homeDetail-body-down"
+            class="d-none d-md-block d-xl-none homeDetail-body-down"
           >
-            <p>Листайте вниз, чтобы увидеть описание проекта</p>
+            
             <div
               class="
                 arrow
@@ -49,7 +49,7 @@
           </a>
         <!-- </div> -->
         <a :href="`#downDetail`" class="d-flex d-md-none homeDetail-body-down">
-          <p>Листайте вниз, чтобы увидеть описание проекта</p>
+         
           <div
             class="
               arrow

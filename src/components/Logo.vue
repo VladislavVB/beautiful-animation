@@ -11,7 +11,7 @@
         width < 1200 && this.$route.name === 'SubmitPage' ? 'recolorWhite' : ''
       "
     >
-      CROUP 44
+      GROUP 44
     </div>
     <div
       v-else
@@ -20,7 +20,7 @@
       "
       class="sidebar-logo active"
     >
-      CROUP 44
+      GROUP 44
     </div>
   </router-link>
 </template>

@@ -504,20 +504,31 @@
       width: 90%;
       bottom: 135px;
     }
+    &-gif {
+      margin-top: -70%;
+    }
 
     &-images {
       max-height: 350px;
       max-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       img {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -55%);
         transition: 1s;
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
         &.active {
-          width: 320px;
+          // width: 300px;
+          width: 255px;
           margin: 0;
-          transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%) scale(1.3);
         }
       }
     }

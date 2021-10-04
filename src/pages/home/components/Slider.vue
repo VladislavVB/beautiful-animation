@@ -17,6 +17,7 @@
     }"
     :navigation="true"
     :autoplay="true"
+    :autoplayDisableOnInteraction="false"
     :loop="true"
     :delay="4100"
     :speed="1000"
@@ -38,12 +39,12 @@
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
-            <!-- <div class="slideHome-gif">
+            <div class="slideHome-gif">
               <img
                 :src="`http://axas.api.sector.show/storage/${casr.gif}`"
                 alt=""
               />
-            </div> -->
+            </div>
             <img
               :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
               alt=""
@@ -207,6 +208,7 @@ export default {
       // const SlideHomeDescription = document.querySelectorAll(
       //   ".slideHome-description"
       // );
+      const slideHomeGif = document.querySelectorAll(".slideHome-gif");
       const slideHomeImages = document.querySelectorAll(".slideHome-images");
       const slideHomeTitle = document.querySelectorAll(".slideHome-title");
       const slideHomeSescription = document.querySelectorAll(
@@ -218,6 +220,9 @@ export default {
       const SidebarMenu = document.querySelector(".sidebar-menu");
 
       slideHomeTitle.forEach((elem) => {
+        elem.classList.add("animate__animated", "animate__fadeOutDown");
+      });
+      slideHomeGif.forEach((elem) => {
         elem.classList.add("animate__animated", "animate__fadeOutDown");
       });
       slideHomeSescription.forEach((elem) => {

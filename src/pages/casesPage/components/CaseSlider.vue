@@ -75,7 +75,7 @@
     </swiper>
   </div>
 
-  <div class="casesCard-goImage active">
+  <div class="casesCard-goImage ">
     <!-- <img  class="active" src="@/assets/images/home/phoneOne.png" alt="" /> -->
   </div>
 </template>
@@ -109,6 +109,7 @@ export default {
   },
   data() {
     return {
+      activeImage: null,
       swiperSlideCastom: false,
       cases: {},
       isActive: false,
@@ -237,14 +238,18 @@ export default {
         }, 1500);
       });
     },
-    toggleFaq(ddd) {
-      const casesCardGoImage = document.querySelector(".casesCard-goImage");
-      const casesCardImages = document.querySelectorAll(".casesCard-images");
-      casesCardImages.forEach((elem) => {
-        let img = elem.querySelector(".casesCard-img-img");
-        casesCardGoImage.append(img);
-      });
-      this.isActive = ddd;
+    toggleFaq(item) {
+      // const casesCardGoImage = document.querySelector(".casesCard-goImage");
+      // const casesCardImages = document.querySelectorAll(".casesCard-images");
+      // casesCardImages.forEach((elem) => {
+      //   let img = elem.querySelector(".casesCard-img-img");
+      //   casesCardGoImage.append(img);
+      //   console.log(elem + 'dsad');
+      //   // elem.addEventListener('clcik', () => {
+      //   //   console.log('dsfdfdsf' + elem);
+      //   // })
+      // });
+      this.isActive = item;
       const casesPageHead = document.querySelector(".casesPage-head");
       const casesPage = document.querySelector(".casesPage");
       casesPage.classList.add("active");
