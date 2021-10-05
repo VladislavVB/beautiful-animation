@@ -420,6 +420,14 @@
   }
 } 
 
+@include tablet {
+  .homePage {
+    &-title {
+      top: 100px;
+    }
+  }
+}
+
 @media only screen and (max-width: 1700px) {
   .slideHome-images {
     width: 460px;
