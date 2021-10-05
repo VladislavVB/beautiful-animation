@@ -210,7 +210,7 @@
                   <label
                     ><a
                       target="_blank"
-                      href="@/assets/ПолитикаКонфиденциальностиКомпании“Axas”.pdf"
+                      href="https://docs.google.com/document/d/1kT9kKVzXZMtk3cNmTn0HC5jIbuAvTUVgR65uR0kUYDI/edit"
                       >Я согласен на обработку персональных данных</a
                     ></label
                   >
