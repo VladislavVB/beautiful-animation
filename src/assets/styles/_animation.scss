@@ -5,7 +5,7 @@
     // background: linear-gradient(to top, #fa709a, #fee140);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: textG 1s ease-in-out infinite;
+    animation: textG 3s ease-in-out infinite;
   }
 }
 
@@ -13,56 +13,67 @@
   0% {
     background: linear-gradient(270deg, #8A8FFD 0%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   10% {
     background: linear-gradient(270deg, #8A8FFD 15%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   20% {
     background: linear-gradient(270deg, #8A8FFD 30%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   30% {
     background: linear-gradient(270deg, #8A8FFD 45%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   40% {
     background: linear-gradient(270deg, #8A8FFD 50%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   50% {
     background: linear-gradient(270deg, #8A8FFD 65%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   60% {
     background: linear-gradient(270deg, #8A8FFD 80%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   70% {
     background: linear-gradient(270deg, #8A8FFD 100%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   80% {
     background: linear-gradient(270deg, #8A8FFD 70%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   90% {
     background: linear-gradient(270deg, #8A8FFD 40%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 
   100% {
     background: linear-gradient(270deg, #8A8FFD 10%, #D0A3FD 105.43%);
     background-clip: text;
+    transition: 0.1s;
   }
 }
 

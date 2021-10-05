@@ -43,7 +43,7 @@
       <swiper-slide v-for="item in cases" :key="item.id">
         <router-link :to="{ name: 'HomeDetail', params: { id: item.id } }">
           <div
-            @click="toggleFaq(item.id)"
+            @click="toggleFaq(item)"
             class="casesCard"
             :class="isActive === item.id ? 'active' : null"
           >
@@ -75,8 +75,12 @@
     </swiper>
   </div>
 
-  <div class="casesCard-goImage ">
-    <!-- <img  class="active" src="@/assets/images/home/phoneOne.png" alt="" /> -->
+  <div class="casesCard-goImage">
+    <img
+      class=""
+      :src="`http://axas.api.sector.show/storage/${selectedImg}`"
+      alt=""
+    />
   </div>
 </template>
 
@@ -109,10 +113,12 @@ export default {
   },
   data() {
     return {
+      selectedImg: null,
       activeImage: null,
       swiperSlideCastom: false,
       cases: {},
       isActive: false,
+      isImage: false,
       casesList: [
         {
           id: 1,
@@ -241,15 +247,20 @@ export default {
     toggleFaq(item) {
       // const casesCardGoImage = document.querySelector(".casesCard-goImage");
       // const casesCardImages = document.querySelectorAll(".casesCard-images");
-      // casesCardImages.forEach((elem) => {
+      // casesCardImages.forEach((elem, index) => {
+      //   console.log(elem, index);
+      //   // elem.oncklick =function() {
       //   let img = elem.querySelector(".casesCard-img-img");
       //   casesCardGoImage.append(img);
-      //   console.log(elem + 'dsad');
-      //   // elem.addEventListener('clcik', () => {
-      //   //   console.log('dsfdfdsf' + elem);
-      //   // })
+      //   console.log(img);
+      //   // }
       // });
-      this.isActive = item;
+
+      this.isActive = item.id;
+
+      this.selectedImg = item.main_image;
+
+      this.selectedImg;
       const casesPageHead = document.querySelector(".casesPage-head");
       const casesPage = document.querySelector(".casesPage");
       casesPage.classList.add("active");

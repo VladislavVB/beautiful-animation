@@ -114,15 +114,11 @@
                   type="file"
                   @change="uploadFile"
                   class="block-choose-card btnNotKnow"
+                  accept=".png, .jpg, .jpeg, .txt, pdf" 
                 />
-                <div v-for="file in selectedFile" :key="file" class="file-list">
-                  <p>{{file.name}}</p>
-                    <!-- {{ selectedFile.name }} -->
-                    <!-- {{selectedFile}} -->
-                    
-                 
+                <div v-for="(file, index) in selectedFile" :key="file" class="file-list">
+                  <p>{{file}} <img @click="delText(index)" src="@/assets/images/icon/close.png" alt=""> </p>  
                 </div>
-                <!-- <p>Прикрепить файл</p> -->
               </div>
             </div>
           </div>
@@ -268,7 +264,7 @@ export default {
   directives: { maska },
   data() {
     return {
-      selectedFile: null,
+      selectedFile: [],
       isActive: false,
       v$: useVuelidate(),
       name: "",
@@ -289,6 +285,7 @@ export default {
       notKnowD: null,
       textarea: "",
       error: null,
+
     };
   },
   computed: {
@@ -312,10 +309,13 @@ export default {
     // console.log(this.state.formSubData);
   },
   methods: {
+    delText(index) {
+      this.selectedFile.splice(index, 1)
+    },
     uploadFile(event) {
-      console.log(event.target.files[0].name);
-      this.selectedFile = event.target.files[0];
-      console.log(this.selectedFile.name);
+      // console.log(event.target.files[0].name);
+      this.selectedFile.push(event.target.files[0].name);
+      console.log(this.selectedFile);
     },
 
     maskBtn() {

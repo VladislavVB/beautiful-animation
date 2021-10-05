@@ -192,7 +192,7 @@
   display: block;
   margin-top: -9px;
   color: #ff6161;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 300;
   &-text {
     display: inline;
@@ -286,6 +286,7 @@
 }
 
 @include tablet {
+  
   .goWhiteSub {
     color: #fff;
   }
@@ -312,11 +313,15 @@
     }
 
     &-footer {
+      margin-top: 80px;
       &-content {
         flex-direction: column;
 
         .item {
           margin-top: 20px;
+          p {
+            font-size: 10px;
+          }
         }
       }
     }
@@ -489,6 +494,23 @@
     &-active {
       border: 1px solid #8b90fe !important;
       transition: 0.5s;
+    }
+  }
+}
+.file {
+  &-list{
+    p {
+      padding-right: 20px;
+      margin-bottom: 5px;
+      position: relative;
+      img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+      }
     }
   }
 }
