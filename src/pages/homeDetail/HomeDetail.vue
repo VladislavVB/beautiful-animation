@@ -298,11 +298,6 @@ export default {
     },
   },
   methods: {
-    test() {
-      let str = this.event.detail.text;
-      this.event = str.split("//");
-      // console.log(splittedArray);
-    },
     goBack() {
       this.$router.go(-1);
     },
@@ -314,7 +309,6 @@ export default {
 
       const activeFunck = () => {
         sidebarLogoColor.classList.add(".change-color");
-        console.log(111);
       };
       activeFunck();
     },
@@ -433,11 +427,7 @@ export default {
 </script>
 
 <style lang="scss">
-// .sidebar-contact,
-// .sidebar-lang,
-// .sidebar-case {
-//   display: none;
-// }
+
 .notActive {
   .sidebar {
     &-menu {

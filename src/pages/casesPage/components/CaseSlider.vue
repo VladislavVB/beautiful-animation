@@ -1,10 +1,6 @@
 <template>
-  <!-- <div v-if="!loading && !error">
-    <Loader />
-  </div> -->
-  <!-- <div v-else-if="error">Data loading error</div> -->
-  <div class="casesPage">
-    <div class="casesPage-head">
+  <div :class="{ active: isActiveCase }" class="casesPage">
+    <div :class="{ active: isActiveCase }" class="casesPage-head">
       <h2>Кейсы</h2>
     </div>
     <swiper
@@ -53,16 +49,18 @@
                   class="casesCard-gif"
                   :src="`http://axas.api.sector.show/storage/${item.gif}`"
                   alt=""
+                  :class="{ hide: isHide }"
                 />
                 <img
                   class="casesCard-img-img"
                   :src="`http://axas.api.sector.show/storage/${item.main_image}`"
                   alt=""
+                  :class="{ hide: isHide }"
                 />
               </div>
               <div class="casesCard-title">
-                <p>{{ item.description }}</p>
-                <h3>{{ item.title }}</h3>
+                <p :class="{ 'animate__animated': isActiveAnimate, 'animate__fadeOutUp': isActiveFadeOutUp}" >{{ item.description }}</p>
+                <h3 :class="{ 'animate__animated': isActiveAnimate, 'animate__fadeOutUp': isActiveFadeOutUp}" >{{ item.title }}</h3>
               </div>
             </div>
             <div
@@ -80,6 +78,7 @@
       class=""
       :src="`http://axas.api.sector.show/storage/${selectedImg}`"
       alt=""
+      :class="{ active: isActiveCase,  'animate__animated': isActiveAnimate, 'animate__backInUp': isBackInUp}"
     />
   </div>
 </template>
@@ -119,6 +118,12 @@ export default {
       cases: {},
       isActive: false,
       isImage: false,
+
+      isHide: false,
+      isActiveCase: false,
+      isActiveAnimate: false,
+      isBackInUp: false,
+      isActiveFadeOutUp: false,
       casesList: [
         {
           id: 1,
@@ -245,57 +250,14 @@ export default {
       });
     },
     toggleFaq(item) {
-      // const casesCardGoImage = document.querySelector(".casesCard-goImage");
-      // const casesCardImages = document.querySelectorAll(".casesCard-images");
-      // casesCardImages.forEach((elem, index) => {
-      //   console.log(elem, index);
-      //   // elem.oncklick =function() {
-      //   let img = elem.querySelector(".casesCard-img-img");
-      //   casesCardGoImage.append(img);
-      //   console.log(img);
-      //   // }
-      // });
-
       this.isActive = item.id;
-
+      this.isHide = true;
+      this.isActiveCase = true;
+      this.isActiveAnimate = true;
+      this.isBackInUp = true;
+      this.isActiveFadeOutUp = true;
       this.selectedImg = item.main_image;
-
       this.selectedImg;
-      const casesPageHead = document.querySelector(".casesPage-head");
-      const casesPage = document.querySelector(".casesPage");
-      casesPage.classList.add("active");
-
-      const SwiperScrollbar = document.querySelector(".swiper-scrollbar");
-      const SwiperNumber = document.querySelector(
-        ".casesPage .swiper-container .swiper-pagination"
-      );
-      const CasesCardTitle = document.querySelectorAll(".casesCard-title p");
-      const CaseTitlte = document.querySelectorAll(
-        ".casesCard-title h3, .casesCard-title .h3"
-      );
-      const CasesCardImagesImg = document.querySelectorAll(
-        ".casesCard-images img"
-      );
-      const CasesCardGoImageImg = document.querySelector(
-        ".casesCard-goImage img"
-      );
-      casesPageHead.classList.add("active");
-      SwiperScrollbar.classList.add("animate__animated", "animate__fadeOutUp");
-      SwiperNumber.classList.add("animate__animated", "animate__fadeOutUp");
-      CaseTitlte.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutUp");
-      });
-      CasesCardTitle.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutUp");
-      });
-      CasesCardImagesImg.forEach((elem) => {
-        elem.classList.add("active");
-      });
-      CasesCardGoImageImg.classList.add(
-        "animate__animated",
-        "animate__backInUp",
-        "active"
-      );
     },
   },
 };
