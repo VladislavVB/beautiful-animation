@@ -1,5 +1,5 @@
 <template>
-  <div class="homePage-title homePage-title-main">
+  <div :class="{'animate__animated': isAnimated, 'animate__fadeOutUp': isFadeOutUp }" class="homePage-title homePage-title-main">
     <div
       class=""
       data-aos="fade-down"
@@ -39,7 +39,7 @@
             data-swiper-parallax-opacity="0.5"
             class="slideHome-images d-flex"
           >
-            <div class="slideHome-gif">
+            <div :class="{'animate__animated': isAnimated, 'animate__fadeOutDown': isFadeOutDown }" class="slideHome-gif">
               <img
                 :src="`http://axas.api.sector.show/storage/${casr.gif}`"
                 alt=""
@@ -48,23 +48,20 @@
             <img
               :src="`http://axas.api.sector.show/storage/${casr.main_image}`"
               alt=""
-              class=""
+              :class="{ active: isActive }"
             />
           </div>
           <div class="slideHome-description-wrapper">
-            <p class="slideHome-description">{{ casr.description }}</p>
-            <h3 class="slideHome-title">{{ casr.title }}</h3>
+            <p :class="{'animate__animated': isAnimated, 'animate__fadeOutDown': isFadeOutDown }" class="slideHome-description">{{ casr.description }}</p>
+            <h3 :class="{'animate__animated': isAnimated, 'animate__fadeOutDown': isFadeOutDown }" class="slideHome-title">{{ casr.title }}</h3>
           </div>
         </div>
       </router-link>
     </swiper-slide>
   </swiper>
-  <!-- <div class="slideHome-progres">
-    <div class="slideHome-progres-bar"></div>
-  </div> -->
 </template>
 <script>
-// Import Swiper Vue.js components
+
 import { Swiper, SwiperSlide } from "swiper/vue";
 import SwiperCore, {
   Autoplay,
@@ -73,13 +70,10 @@ import SwiperCore, {
   Pagination,
   Navigation,
 } from "swiper";
-import { getCases } from "@/api/casesList/index.js";
-// import { getPostsId } from "@/api/casesList/index.js";
-// import {mapActions} from 'vuex';
 
+import { getCases } from "@/api/casesList/index.js";
 SwiperCore.use([Autoplay, Mousewheel, Parallax, Pagination, Navigation]);
 
-// Import Swiper styles
 import "swiper/swiper.scss";
 export default {
   name: "slideHome",
@@ -92,6 +86,10 @@ export default {
   },
   data() {
     return {
+      isActive: false,
+      isAnimated: false,
+      isFadeOutUp: false,
+      isFadeOutDown: false,
       cases: {},
       casesList: [
         {
@@ -169,80 +167,12 @@ export default {
         console.log("There was an error:", error.response);
       });
   },
-  computed: {},
-  mounted() {
-    this.progressLine();
-    // this.SET_CASESLIST_TO_STATE();
-  },
   methods: {
-    sfa: "asdf",
-    // ...mapActions([
-    //   'SET_CASESLIST_TO_STATE'
-    // ]),
-    sendMethod() {},
-    // stopNext() {
-    //   setTimeout(() => {
-    //     this.$router.push({ name: "HomeDetail" });
-    //     console.log(1111111111);
-    //   }, 1000);
-    // },
-
-    onSwiper(swiper) {
-      console.log(swiper);
-    },
-    onSlideChange() {},
-    progressLine() {
-      let slideLine = document.querySelector(".slideHome-progres-bar");
-      if (!slideLine) return;
-      slideLine.classList.add("active");
-      setTimeout(() => {
-        slideLine.classList.remove("active");
-        setTimeout(() => {
-          this.progressLine();
-        }, 300);
-      }, 3100);
-    },
     goAnimation() {
-      const HomePageTitle = document.querySelector(".homePage-title-main");
-      // const SlideHomeProgres = document.querySelector(".slideHome-progres");
-      // const SlideHomeDescription = document.querySelectorAll(
-      //   ".slideHome-description"
-      // );
-      const slideHomeGif = document.querySelectorAll(".slideHome-gif");
-      const slideHomeImages = document.querySelectorAll(".slideHome-images");
-      const slideHomeTitle = document.querySelectorAll(".slideHome-title");
-      const slideHomeSescription = document.querySelectorAll(
-        ".slideHome-description"
-      );
-      const SlideHomeImages = document.querySelectorAll(
-        ".slideHome-images img"
-      );
-      const SidebarMenu = document.querySelector(".sidebar-menu");
-
-      slideHomeTitle.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutDown");
-      });
-      slideHomeGif.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutDown");
-      });
-      slideHomeSescription.forEach((elem) => {
-        elem.classList.add("animate__animated", "animate__fadeOutDown");
-      });
-      SlideHomeImages.forEach((elem) => {
-        elem.classList.add("active");
-      });
-      slideHomeImages.forEach((elem) => {
-        elem.classList.add("active");
-      });
-      HomePageTitle.classList.add("animate__animated", "animate__fadeOutUp");
-      SidebarMenu.classList.add(
-        "animate__animated",
-        "animate__fadeOutTopRight"
-      );
-    },
-
-    test() {
-      this.$emit("gogogo");
+      this.isActive = true;
+      this.isAnimated = true;
+      this.isFadeOutUp = true;
+      this.isFadeOutDown = true;
     },
   },
 };
