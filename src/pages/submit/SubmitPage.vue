@@ -114,7 +114,7 @@
                   type="file"
                   @change="uploadFile"
                   class="block-choose-card btnNotKnow"
-                  accept=".png, .jpg, .jpeg, .txt, pdf" 
+                  accept=".png, .jpg, .jpeg, .txt, pdf, .docx, doc" 
                 />
                 <div v-for="(file, index) in selectedFile" :key="file" class="file-list">
                   <p>{{file}} <img @click="delText(index)" src="@/assets/images/icon/close.png" alt=""> </p>  
