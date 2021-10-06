@@ -14,7 +14,7 @@
     "
     class="sidebar-contact"
   >
-    <div class="sidebar-contact-item">
+    <a target="_blank" href="https://api.whatsapp.com/send/?phone=79184167161&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9+%D0%B4%D0%B5%D0%BD%D1%8C%21%0A%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0&app_absent=0" class="sidebar-contact-item">
       <svg
         width="30"
         height="30"
@@ -31,8 +31,8 @@
           fill="white"
         />
       </svg>
-    </div>
-    <div class="sidebar-contact-item">
+    </a>
+    <a target="_blank" href="https://t.me/iAXAS" class="sidebar-contact-item teleg">
       <svg
         width="31"
         height="31"
@@ -56,7 +56,7 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </a>
   </div>
   <div
     :class="
@@ -69,7 +69,7 @@
     v-else
     class="sidebar-contact active"
   >
-    <div class="sidebar-contact-item">
+    <a target="_blank" href="https://api.whatsapp.com/send/?phone=79184167161&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9+%D0%B4%D0%B5%D0%BD%D1%8C%21%0A%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0&app_absent=0" class="sidebar-contact-item">
       <svg
         width="30"
         height="30"
@@ -86,8 +86,8 @@
           fill="white"
         />
       </svg>
-    </div>
-    <div class="sidebar-contact-item">
+    </a>
+    <a target="_blank" href="https://t.me/iAXAS" class="sidebar-contact-item">
       <svg
         width="31"
         height="31"
@@ -111,7 +111,7 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </a>
   </div>
 </template>
 
