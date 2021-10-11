@@ -3,7 +3,7 @@
     <div data-aos="fade-right" data-aos-duration="1000" class="submitPage-left">
       <div class="submitPage-left-body">
         <p class="title gradient-text">Оставить заявку</p>
-        <form @submit.prevent="sendRequest">
+        <form @submit.prevent="sendRequest" enctype="multipart/form-data">
           <div class="block-choose">
             <h5 class="block-choose-title">
               Выберите услугу:
@@ -111,13 +111,27 @@
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
                 <input
+                  name="file"
                   type="file"
+                  ref="files"
+                  multiple
                   @change="uploadFile"
                   class="block-choose-card btnNotKnow"
-                  accept=".png, .jpg, .jpeg, .txt, pdf, .docx, doc" 
+                  accept=".png, .jpg, .jpeg, .txt, pdf, .docx, doc"
                 />
-                <div v-for="(file, index) in selectedFile" :key="file" class="file-list">
-                  <p>{{file}} <img @click="delText(index)" src="@/assets/images/icon/close.png" alt=""> </p>  
+                <div
+                  v-for="(file, index) in selectedFile"
+                  :key="file"
+                  class="file-list"
+                >
+                  <p>
+                    {{ file }}
+                    <img
+                      @click="delText(index)"
+                      src="@/assets/images/icon/close.png"
+                      alt=""
+                    />
+                  </p>
                 </div>
               </div>
             </div>
@@ -265,6 +279,7 @@ export default {
   data() {
     return {
       selectedFile: [],
+      realfile: [],
       isActive: false,
       v$: useVuelidate(),
       name: "",
@@ -285,7 +300,6 @@ export default {
       notKnowD: null,
       textarea: "",
       error: null,
-
     };
   },
   computed: {
@@ -310,12 +324,26 @@ export default {
   },
   methods: {
     delText(index) {
-      this.selectedFile.splice(index, 1)
+      this.selectedFile.splice(index, 1);
+      this.realfile.splice(index, 1);
     },
     uploadFile(event) {
       // console.log(event.target.files[0].name);
       this.selectedFile.push(event.target.files[0].name);
-      console.log(this.selectedFile);
+      this.realfile.push(event.target.files[0]);
+      // console.log();
+      // axios
+      //   .post("http://192.168.1.222:8080/upload", data, {
+      //     headers: {
+      //       "Content-Type": "multipart/form-data",
+      //     },
+      //   })
+      //   .then((response) => {
+      //     console.log(response);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error.response);
+      //   });
     },
 
     maskBtn() {
@@ -389,14 +417,8 @@ export default {
       } else {
         console.log("NOT submit");
       }
-      // console.log("ok");
     },
     cheackTextarea() {
-      // console.log(this.selServices);
-      // console.log(this.selBudget);
-      // console.log(this.textarea);
-      // let activeServes = this.activeServ;Не
-      // console.log(activeServes);
       let a = document.querySelector(".services-blok-active");
       console.log(a);
     },
@@ -419,7 +441,7 @@ export default {
           formProject: this.textarea,
           formServ: this.selServices,
           formBudget: this.selBudget,
-          selectedFile: this.selectedFile,
+          selectedFile: this.realfile,
         })
         .then(function (res) {
           console.log(res);
