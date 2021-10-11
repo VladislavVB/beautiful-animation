@@ -330,7 +330,8 @@ export default {
     uploadFile(event) {
       // console.log(event.target.files[0].name);
       this.selectedFile.push(event.target.files[0].name);
-      this.realfile.push(event.target.files[0]);
+      // this.realfile = this.$refs.file.files[0];
+       this.files = this.$refs.files.files;
       // console.log();
       // axios
       //   .post("http://192.168.1.222:8080/upload", data, {
