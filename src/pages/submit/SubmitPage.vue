@@ -279,7 +279,7 @@ export default {
   data() {
     return {
       selectedFile: [],
-      realfile: [],
+      realfile: "",
       isActive: false,
       v$: useVuelidate(),
       name: "",
@@ -325,13 +325,15 @@ export default {
   methods: {
     delText(index) {
       this.selectedFile.splice(index, 1);
-      this.realfile.splice(index, 1);
+      // this.realfile.splice(index, 1);
     },
     uploadFile(event) {
       // console.log(event.target.files[0].name);
       this.selectedFile.push(event.target.files[0].name);
+      this.realfile = this.$refs.files.files;
       // this.realfile = this.$refs.file.files[0];
-       this.files = this.$refs.files.files;
+      // console.log(event.target.files[0]);
+      //  this.files = this.$refs.files.files;
       // console.log();
       // axios
       //   .post("http://192.168.1.222:8080/upload", data, {
@@ -412,6 +414,10 @@ export default {
       this.notKnowD = status;
     },
     submitForm() {
+      for (let i = 0; i < this.realfile.length; i++) {
+        let file = this.realfile[i];
+        formData.append("realfile[" + i + "]", file);
+      }
       this.v$.$validate();
       if (!this.v$.$error) {
         console.log("Submit");
