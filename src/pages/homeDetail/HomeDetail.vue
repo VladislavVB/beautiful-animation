@@ -2,54 +2,48 @@
   <div @scroll="changeColors()" class="homeDetail-wrapper">
     <div class="homeDetail">
       <!-- <div class="for-bg-moble"> -->
-        <div
-          :style="{ background: event.color }"
-          class="homeDetail-left active"
+      <div :style="{ background: event.color }" class="homeDetail-left active">
+        <div class="homeDetail-up-title">
+          <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+          <p>We have developed:</p>
+        </div>
+        <!-- <router-link class="" to="/"> -->
+        <div @click="goBack" class="homeDetail-left-back hide">
+          <img src="@/assets/images/icon/back.png" alt="" />
+        </div>
+        <!-- </router-link> -->
+        <div class="homeDetail-body">
+          <div class="slideHome-images">
+            <img
+              class="active"
+              :src="`http://axas.api.sector.show/storage/${event.main_image}`"
+              alt=""
+            />
+          </div>
+          <div class="slideHome-description-wrapper">
+            <p class="hide slideHome-description">{{ event.description }}</p>
+            <h3 class="hide slideHome-title">{{ event.title }}</h3>
+          </div>
+        </div>
+        <a
+          :href="`#downDetail`"
+          class="d-none d-md-block d-xl-none homeDetail-body-down"
         >
-        
-          <div class="homeDetail-up-title">
-            <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
-            <p>We have developed:</p>
-          </div>
-          <!-- <router-link class="" to="/"> -->
-          <div @click="goBack" class="homeDetail-left-back hide">
-            <img src="@/assets/images/icon/back.png" alt="" />
-          </div>
-          <!-- </router-link> -->
-          <div class="homeDetail-body">
-            <div class="slideHome-images">
-              <img
-                class="active"
-                :src="`http://axas.api.sector.show/storage/${event.main_image}`"
-                alt=""
-              />
-            </div>
-            <div class="slideHome-description-wrapper">
-              <p class="hide slideHome-description">{{ event.description }}</p>
-              <h3 class="hide slideHome-title">{{ event.title }}</h3>
-            </div>
-          </div>
-          <a
-            :href="`#downDetail`"
-            class="d-none d-md-block d-xl-none homeDetail-body-down"
+          <div
+            class="
+              arrow
+              animate__animated
+              animate__pulse
+              animate__delay-2s
+              animate__infinite
+              infinite
+            "
           >
-            
-            <div
-              class="
-                arrow
-                animate__animated
-                animate__pulse
-                animate__delay-2s
-                animate__infinite
-                infinite
-              "
-            >
-              <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
-            </div>
-          </a>
+            <img src="@/assets/images/homeDetail/arrowDown.png" alt="" />
+          </div>
+        </a>
         <!-- </div> -->
         <a :href="`#downDetail`" class="d-flex d-md-none homeDetail-body-down">
-         
           <div
             class="
               arrow
@@ -296,6 +290,9 @@ export default {
     prev() {
       return this.event.id;
     },
+    allCases() {
+      return this.event.casesAmount;
+    },
   },
   methods: {
     goBack() {
@@ -313,24 +310,42 @@ export default {
       activeFunck();
     },
     prevPage() {
-      this.$router.push({
-        name: "HomeDetail",
-        params: { id: this.prev - 1 },
-      });
+      if (this.prev === 1) {
+        this.$router.push({
+          name: "HomeDetail",
+          params: { id: this.allCases },
+        })
+      } else {
+        this.$router.push({
+          name: "HomeDetail",
+          params: { id: this.prev - 1 },
+        })
+      }
+      // console.log(this.evet.casesAmount);
+      this.allCases;
+
       setTimeout(() => {
         window.location.reload();
       }, 300);
       console.log("prev");
     },
     nextPage() {
-      this.$router.push({
-        name: "HomeDetail",
-        params: { id: this.prev + 1 },
-      });
+      if (this.prev === this.allCases) {
+        this.$router.push({
+          name: "HomeDetail",
+          params: { id: 1 },
+        })
+      } else {
+        this.$router.push({
+          name: "HomeDetail",
+          params: { id: this.prev + 1 },
+        })
+      }
+
       setTimeout(() => {
         window.location.reload();
       }, 300);
-      console.log("next");
+
     },
     homeDetailAnimation() {
       // const homeDetailUpTitle = document.querySelector(".homeDetail-up-title");
@@ -427,7 +442,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .notActive {
   .sidebar {
     &-menu {
