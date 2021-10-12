@@ -31,6 +31,10 @@ export default createStore({
     //   })
     // }
     sendRequest(context, payload) {
+      const formData = new FormData();
+      console.log(...payload);
+      console.log(...payload.selectedFile);
+      formData.append("file", ...payload.selectedFile);
       api
         .post(`${SENDCONTACTFORM_URL}`, {
           ...payload,

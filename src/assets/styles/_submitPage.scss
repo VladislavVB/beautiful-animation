@@ -1,5 +1,3 @@
-
-
 .submitPage {
   display: flex;
   height: 100vh;
@@ -208,6 +206,7 @@
   width: 100%;
   text-align: center;
   font-weight: 300;
+  margin-bottom: 0 !important; 
   &::-webkit-file-upload-button {
     visibility: hidden;
     width: 0;
@@ -254,6 +253,30 @@
   }
 }
 
+.file {
+  &-wrapper {
+    position: relative;
+  }
+  &-list {
+    position: absolute;
+    // background-color: #fff;
+    // padding: 10px;
+    // margin: 10px;
+    // margin-left: 10px;
+    // margin-right: 10px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    // left: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ededed;
+  }
+}
+
 @include bigDesctop {
   .submitPage {
     &-footer {
@@ -286,7 +309,6 @@
 }
 
 @include tablet {
-  
   .goWhiteSub {
     color: #fff;
   }
@@ -498,7 +520,7 @@
   }
 }
 .file {
-  &-list{
+  &-list {
     p {
       padding-right: 20px;
       margin-bottom: 5px;

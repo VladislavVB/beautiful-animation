@@ -110,28 +110,26 @@
                 />
               </div>
               <div class="col-xxl-3 col-lg-6 col-sm-6">
-                <input
-                  name="file"
-                  type="file"
-                  ref="files"
-                  multiple
-                  @change="uploadFile"
-                  class="block-choose-card btnNotKnow"
-                  accept=".png, .jpg, .jpeg, .txt, pdf, .docx, doc"
-                />
-                <div
-                  v-for="(file, index) in selectedFile"
-                  :key="file"
-                  class="file-list"
-                >
-                  <p>
-                    {{ file }}
-                    <img
-                      @click="delText(index)"
-                      src="@/assets/images/icon/close.png"
-                      alt=""
-                    />
-                  </p>
+                <div class="file-wrapper">
+                  <input
+                    name="file"
+                    type="file"
+                    ref="file"
+                    id="file"
+                    @change="handleFilesUpload()"
+                    class="block-choose-card btnNotKnow"
+                    accept=".png, .jpg, .jpeg, .txt, pdf, .docx, doc"
+                  />
+                  <div v-if="file" class="file-list">
+                    <p>
+                      {{ file.name }}
+                      <img
+                        @click="delFile(index)"
+                        src="@/assets/images/icon/close.png"
+                        alt=""
+                      />
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -256,6 +254,7 @@
         </div>
       </div>
     </div>
+    <!-- <testSend /> -->
     <div data-aos="fade-up" data-aos-duration="1500" class="submitPage-right">
       <div @click="goBack" class="menuPage-left-back">
         <img src="@/assets/images/icon/back.png" alt="" />
@@ -269,17 +268,22 @@
 
 <script>
 // import axios from "axios";
+import api from "@/instance/api";
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength } from "vuelidate/lib/validators";
 import { maska } from "maska";
+import router from "@/router";
+
+// import testSend from "@/pages/submit/testSend";
 // import { reactive, computed } from "vue";
 export default {
   name: "SubmitPage",
   directives: { maska },
+  // components: {
+  //   testSend,
+  // },
   data() {
     return {
-      selectedFile: [],
-      realfile: "",
       isActive: false,
       v$: useVuelidate(),
       name: "",
@@ -300,11 +304,15 @@ export default {
       notKnowD: null,
       textarea: "",
       error: null,
+      file: "",
     };
   },
   computed: {
     successWindow() {
       return this.$store.state.App.successWindow;
+    },
+    test() {
+      return this.file.length;
     },
   },
   validations() {
@@ -323,30 +331,12 @@ export default {
     // console.log(this.state.formSubData);
   },
   methods: {
-    delText(index) {
-      this.selectedFile.splice(index, 1);
-      // this.realfile.splice(index, 1);
+    delFile() {
+      this.file = null;
     },
-    uploadFile(event) {
-      // console.log(event.target.files[0].name);
-      this.selectedFile.push(event.target.files[0].name);
-      this.realfile = this.$refs.files.files;
-      // this.realfile = this.$refs.file.files[0];
-      // console.log(event.target.files[0]);
-      //  this.files = this.$refs.files.files;
-      // console.log();
-      // axios
-      //   .post("http://192.168.1.222:8080/upload", data, {
-      //     headers: {
-      //       "Content-Type": "multipart/form-data",
-      //     },
-      //   })
-      //   .then((response) => {
-      //     console.log(response);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error.response);
-      //   });
+    handleFilesUpload() {
+      this.file = this.$refs.file.files[0];
+      console.log(this.file);
     },
 
     maskBtn() {
@@ -414,16 +404,16 @@ export default {
       this.notKnowD = status;
     },
     submitForm() {
-      for (let i = 0; i < this.realfile.length; i++) {
-        let file = this.realfile[i];
-        formData.append("realfile[" + i + "]", file);
-      }
-      this.v$.$validate();
-      if (!this.v$.$error) {
-        console.log("Submit");
-      } else {
-        console.log("NOT submit");
-      }
+      // for (let i = 0; i < this.realfile.length; i++) {
+      // let file = this.realfile[i];
+      // formData.append("realfile[" + i + "]", file);
+      // }
+      // this.v$.$validate();
+      // if (!this.v$.$error) {
+      //   console.log("Submit");
+      // } else {
+      //   console.log("NOT submit");
+      // }
     },
     cheackTextarea() {
       let a = document.querySelector(".services-blok-active");
@@ -438,28 +428,50 @@ export default {
       }
     },
     sendRequest() {
-      const fd = new FormData();
-      fd.append("files", this.selectedFile);
-      this.$store
-        .dispatch("sendRequest", {
-          formName: this.name,
-          formPhone: this.phone,
-          formEmail: this.email,
-          formProject: this.textarea,
-          formServ: this.selServices,
-          formBudget: this.selBudget,
-          selectedFile: this.realfile,
-        })
-        .then(function (res) {
-          console.log(res);
-          console.log(res.success);
-          console.log(res.status);
-        })
-        .catch((err) => {
-          console.log(err);
-          this.error = err.response.data.message;
-        });
+      const formData = new FormData();
+      formData.append("formServ", this.selServices);
+      formData.append("formBudget", this.selBudget);
+      formData.append("formName", this.name);
+      formData.append("formPhone", this.phone);
+      formData.append("formEmail", this.email);
+      formData.append("formProject", this.textarea);
+      formData.append("file", this.file);
+      api.post("http://axas.api.sector.show/api/order-request", formData).then(
+        function (result) {
+          console.log(result);
+          router.push("/thanks");
+        },
+        function (error) {
+          console.log(error);
+          this.error = error.response.data.message;
+        }
+      );
+
+      // console.log(this.file);
+      // let sss = this.file;
+      // console.log(toJSON(sss));
+
+      // this.$store
+      //   .dispatch("sendRequest", {
+      //     formName: this.name,
+      //     formPhone: this.phone,
+      //     formEmail: this.email,
+      //     formProject: this.textarea,
+      //     formServ: this.selServices,
+      //     formBudget: this.selBudget,
+      //     // selectedFile: sss,
+      //   })
+      //   .then(function (res) {
+      //     console.log(res);
+      //     console.log(res.success);
+      //     console.log(res.status);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //     this.error = err.response.data.message;
+      //   });
       this.v$.$validate();
+      console.log(this.files);
     },
   },
 };
