@@ -23,7 +23,7 @@
                 <a href="tel:89184167161">+7(918)416-71-61</a>
               </div>
               <div class="contactPage-sochial">
-                <a href="" class="contactPage-sochial-item">
+                <a target="_blank" href="https://www.instagram.com/axas.ru/" class="contactPage-sochial-item">
                   <svg
                     width="26"
                     height="26"
@@ -45,7 +45,7 @@
                     />
                   </svg>
                 </a>
-                <a href="" class="contactPage-sochial-item">
+                <a target="_blank" href="https://www.facebook.com/iAXAS" class="contactPage-sochial-item">
                   <svg
                     width="32"
                     height="32"
@@ -65,9 +65,6 @@
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
-                <a href="" class="contactPage-sochial-item">
-                  <img src="@/assets/images/icon/vk.png" alt="" />
                 </a>
               </div>
             </div>

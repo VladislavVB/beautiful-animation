@@ -7,7 +7,7 @@
       data-aos-easing="ease-in-sine"
       data-aos-duration="1500"
     >
-      <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+      <h3>СОВРЕМЕННОЕ IT АГЕНСТВО</h3>
       <p class="text-center">We have developed:</p>
     </div>
   </div>

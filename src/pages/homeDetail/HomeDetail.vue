@@ -4,7 +4,7 @@
       <!-- <div class="for-bg-moble"> -->
       <div :style="{ background: event.color }" class="homeDetail-left active">
         <div class="homeDetail-up-title">
-          <h3>СОРЕМЕННОЕ IT АГЕНСТВО</h3>
+          <h3>СОВРЕМЕННОЕ IT АГЕНСТВО</h3>
           <p>We have developed:</p>
         </div>
         <!-- <router-link class="" to="/"> -->
@@ -65,23 +65,23 @@
             {{ event.description }}
           </p>
 
-          <p class="paragraph-title">{{ event.detail?.task }}</p>
+          <p class="paragraph-title">Задача</p>
           <p>
-            {{ event.detail?.text }}
+            {{ event.detail?.task }}
           </p>
           <div class="paragraph-section">
             <div class="paragraph-item">
               <p class="paragraph-title">
                 <br />
-                Задача
+                Заказчик:
               </p>
               <p class="paragraph-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                {{ event.detail?.technologies }}
               </p>
             </div>
             <div class="paragraph-item">
-              <p class="paragraph-title"><br />Задача</p>
-              <p class="paragraph-sm">до 800 000 рублей</p>
+              <p class="paragraph-title"><br />Операционная система:</p>
+              <p class="paragraph-sm">{{ event.detail?.budget }}</p>
             </div>
           </div>
           <div class="homeDetail-right-body-img">
@@ -91,13 +91,7 @@
               alt=""
             />
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
-            massa sollicitudin sed. Sapien in pellentesque nascetur purus
-            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
-            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
-            ullamcorper scelerisque.
-          </p>
+          <p v-html="event.detail?.text_1"></p>
           <div class="homeDetail-right-body-img">
             <img
               v-if="event.detail_images?.length"
@@ -105,34 +99,25 @@
               alt=""
             />
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
-            massa sollicitudin sed. Sapien in pellentesque nascetur purus
-            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
-            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
-            ullamcorper scelerisque. <br /><br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque vitae
-            massa sollicitudin sed. Sapien in pellentesque nascetur purus
-            ultrices rhoncus maecenas nibh ultricies. Egestas quis quis urna,
-            sagittis nam. Morbi risus rhoncus commodo pharetra, penatibus
-            ullamcorper scelerisque.
-          </p>
+          <p v-html="event.detail?.text_2"></p>
+          <p v-html="event.detail?.text_3"></p>
           <div class="homeDetail-right-body-img">
             <img
               v-if="event.detail_images?.length"
-              :src="`http://axas.api.sector.show/storage/${event.detail_images[3]}`"
+              :src="`http://axas.api.sector.show/storage/${event.detail_images[2]}`"
               alt=""
             />
           </div>
+          <p class="mb-5" v-html="event.detail?.text_4"></p>
           <div class="paragraph-section">
             <div class="paragraph-item">
-              <p class="paragraph-title">Сферы:</p>
-              <p class="paragraph-sm">Социальные сети/ Реферальная система</p>
+              <p class="paragraph-title">Сроки разработки:</p>
+              <p class="paragraph-sm">{{ event.detail?.deadlines }}</p>
             </div>
-            <div class="paragraph-item">
-              <p class="paragraph-title">Сроки:</p>
+            <!-- <div class="paragraph-item">
+              <p class="paragraph-title">Что-то:</p>
               <p class="paragraph-sm">Проект выполнен за 4 месяца</p>
-            </div>
+            </div> -->
           </div>
           <div class="like-prodgect">
             <h3>Понравился проект?</h3>
@@ -314,12 +299,12 @@ export default {
         this.$router.push({
           name: "HomeDetail",
           params: { id: this.allCases },
-        })
+        });
       } else {
         this.$router.push({
           name: "HomeDetail",
           params: { id: this.prev - 1 },
-        })
+        });
       }
       // console.log(this.evet.casesAmount);
       this.allCases;
@@ -334,18 +319,17 @@ export default {
         this.$router.push({
           name: "HomeDetail",
           params: { id: 1 },
-        })
+        });
       } else {
         this.$router.push({
           name: "HomeDetail",
           params: { id: this.prev + 1 },
-        })
+        });
       }
 
       setTimeout(() => {
         window.location.reload();
       }, 300);
-
     },
     homeDetailAnimation() {
       // const homeDetailUpTitle = document.querySelector(".homeDetail-up-title");

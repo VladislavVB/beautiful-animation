@@ -202,53 +202,53 @@ export default {
       });
   },
   mounted() {
-    setTimeout(() => {
-      this.roundLine();
+    // setTimeout(() => {
+      // this.roundLine();
       // this.teleportImage()
-    }, 1000);
+    // }, 1000);
   },
   computed: {},
   methods: {
-    roundLine() {
-      const dragLine = document.querySelector(
-        ".casesPage .swiper-container .swiper-scrollbar .swiper-scrollbar-drag"
-      );
+    // roundLine() {
+    //   const dragLine = document.querySelector(
+    //     ".casesPage .swiper-container .swiper-scrollbar .swiper-scrollbar-drag"
+    //   );
 
-      let circle = document.createElement("div");
+    //   let circle = document.createElement("div");
 
-      circle.classList.add("circle-active");
+    //   circle.classList.add("circle-active");
 
-      let swiperScrollbar = document.querySelector(".swiper-scrollbar");
-      let wrapper = document.createElement("div");
-      wrapper.classList.add("wrapper-scroll");
-      wrapper.append(circle);
-      swiperScrollbar.append(wrapper);
-      wrapper.append(dragLine);
-      const calculateCircle = (event) => {
-        let p = dragLine.getBoundingClientRect();
-        let position = +event.clientX - +p.x;
-        position = String(position);
+    //   let swiperScrollbar = document.querySelector(".swiper-scrollbar");
+    //   let wrapper = document.createElement("div");
+    //   wrapper.classList.add("wrapper-scroll");
+    //   wrapper.append(circle);
+    //   swiperScrollbar.append(wrapper);
+    //   wrapper.append(dragLine);
+    //   const calculateCircle = (event) => {
+    //     let p = dragLine.getBoundingClientRect();
+    //     let position = +event.clientX - +p.x;
+    //     position = String(position);
 
-        let s = wrapper.getBoundingClientRect().x;
-        let dragWidth = p.x;
-        let n = dragWidth - s;
-        // console.log(position);
-        circle.style.left = position - 20 + n + "px";
-        circle.classList.add("active");
-      };
-      dragLine.addEventListener("mousemove", (event) => {
-        calculateCircle(event);
-      });
-      dragLine.addEventListener("mousedown", (event) => {
-        calculateCircle(event);
-      });
+    //     let s = wrapper.getBoundingClientRect().x;
+    //     let dragWidth = p.x;
+    //     let n = dragWidth - s;
+    //     // console.log(position);
+    //     circle.style.left = position - 20 + n + "px";
+    //     circle.classList.add("active");
+    //   };
+    //   dragLine.addEventListener("mousemove", (event) => {
+    //     calculateCircle(event);
+    //   });
+    //   dragLine.addEventListener("mousedown", (event) => {
+    //     calculateCircle(event);
+    //   });
 
-      dragLine.addEventListener("mouseout", () => {
-        setTimeout(() => {
-          circle.classList.remove("active");
-        }, 1500);
-      });
-    },
+    //   dragLine.addEventListener("mouseout", () => {
+    //     setTimeout(() => {
+    //       circle.classList.remove("active");
+    //     }, 1500);
+    //   });
+    // },
     toggleFaq(item) {
       this.isActive = item.id;
       this.isHide = true;

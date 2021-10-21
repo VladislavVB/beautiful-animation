@@ -17,7 +17,7 @@ const routes = [
     name: "Home",
     component: Home,
     meta: {
-      title: "Home page",
+      title: "GROUP 44",
       enterClass: "animate__animated animate__fadeInLeft animate__fast",
       leaveClass: "xer",
     },
@@ -26,7 +26,7 @@ const routes = [
     path: "/home",
     name: "event-list",
     meta: {
-      title: "EventList",
+      title: "GROUP 44",
       enterClass: "animate__animated animate__fadeInBottomLeft animate__fast",
       leaveClass: "animate__animated animate__fadeOutLeft animate__fast",
       // a
@@ -38,7 +38,7 @@ const routes = [
     component: HomeDetail,
     props: true,
     meta: {
-      title: "Home detail",
+      title: "GROUP 44",
       enterClass: "animate__animated animate__delay-0s",
       leaveClass: "animate__animated animate__delay-0s", // то что нужно по идее
     },
@@ -48,7 +48,7 @@ const routes = [
     name: "MenuPage",
     component: MenuPage,
     meta: {
-      title: "Menu",
+      title: "Меню",
       enterClass: "animate__animated animate__fadeInRight animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
@@ -58,7 +58,7 @@ const routes = [
     name: "AboutPage",
     component: AboutPage,
     meta: {
-      title: "AboutPage",
+      title: "О нас",
       enterClass: "animate__animated animate__fadeInRight animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
@@ -68,7 +68,7 @@ const routes = [
     name: "ContactPage",
     component: ContactPage,
     meta: {
-      title: "Contact",
+      title: "Контакты",
       enterClass: "animate__animated animate__fadeInLeft animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
@@ -78,7 +78,7 @@ const routes = [
     name: "SubmitPage",
     component: SubmitPage,
     meta: {
-      title: "Submit",
+      title: "Заказать звонок",
       enterClass: "animate__animated animate__fadeInRight animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
@@ -88,7 +88,7 @@ const routes = [
     name: "CasesPage",
     component: CasesPage,
     meta: {
-      title: "Casespage",
+      title: "Кейсы",
       enterClass: "animate__animated animate__fadeInUp animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
@@ -98,7 +98,7 @@ const routes = [
     name: "thanksPage",
     component: ThanksPage,
     meta: {
-      title: "ThanksPage",
+      title: "Спасибо",
       enterClass: "animate__animated animate__fadeInRight animate__fast",
       leaveClass: "animate__animated animate__fadeOutRight animate__fast",
     },
@@ -116,6 +116,27 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const loggedIn = localStorage.getItem("user");
+  if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
+    next("/");
+  }
+  next();
+
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  /*if (to.meta.middleware) {
+    const middleware = Array.isArray(to.meta.middleware)
+      ? to.meta.middleware
+      : [to.meta.middleware];
+    const context = { from, next, router, to };
+    const nextMiddleware = nextFactory(context, middleware, 1);
+    return middleware[0]({ ...context, next: nextMiddleware });
+  }
+  return next();*/
 });
 
 export default router;
